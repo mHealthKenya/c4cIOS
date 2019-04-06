@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (4.8.1)
+  - Floaty (4.1.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - SCLAlertView (0.8)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - Floaty (~> 4.1.0)
+  - FMDB
+  - SCLAlertView
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Floaty
+    - FMDB
+    - SCLAlertView
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: c03dbdc7460d572d07f5033d76cdfae4c358d6d5
+
+COCOAPODS: 1.6.0

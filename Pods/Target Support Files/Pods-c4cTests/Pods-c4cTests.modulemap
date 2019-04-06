@@ -1,0 +1,6 @@
+framework module Pods_c4cTests {
+  umbrella header "Pods-c4cTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
