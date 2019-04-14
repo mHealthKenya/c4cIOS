@@ -10,6 +10,8 @@ pod 'SwiftyJSON'
 pod 'Floaty', '~> 4.1.0'
 pod 'SCLAlertView'
 pod 'FMDB'
+pod 'iOSDropDown'
+pod 'DLRadioButton', '~> 1.4'
 
   # Pods for c4c
 

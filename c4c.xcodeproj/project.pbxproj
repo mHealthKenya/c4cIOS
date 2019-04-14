@@ -15,6 +15,10 @@
 		3E18B2122258BBEB0094117B /* c4cTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2112258BBEB0094117B /* c4cTests.swift */; };
 		3E18B21D2258BBEB0094117B /* c4cUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B21C2258BBEB0094117B /* c4cUITests.swift */; };
 		3E18B22C2258C0480094117B /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B22B2258C0480094117B /* SignupController.swift */; };
+		3E18B2302258D0A10094117B /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E18B22F2258D0A10094117B /* iOSDropDown.framework */; };
+		3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2312258D0DE0094117B /* SignupSecondController.swift */; };
+		3E18B2342258D46F0094117B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2332258D46F0094117B /* Data.swift */; };
+		3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */; };
 		7B884E1D1B22799233A3895F /* Pods_c4cUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78992181FFEB92338B491F /* Pods_c4cUITests.framework */; };
 		A1884DE737D2865F628D8D73 /* Pods_c4cTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC9437DA11079573A89D960 /* Pods_c4cTests.framework */; };
 		E26B8A73B0C2BAFA01AF587D /* Pods_c4c.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E979502E0DF2BE97E91228EA /* Pods_c4c.framework */; };
@@ -53,6 +57,10 @@
 		3E18B21C2258BBEB0094117B /* c4cUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c4cUITests.swift; sourceTree = "<group>"; };
 		3E18B21E2258BBEB0094117B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E18B22B2258C0480094117B /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		3E18B22F2258D0A10094117B /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E18B2312258D0DE0094117B /* SignupSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSecondController.swift; sourceTree = "<group>"; };
+		3E18B2332258D46F0094117B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdController.swift; sourceTree = "<group>"; };
 		65B9A10DEB203DC2CC719992 /* Pods-c4cTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c4cTests.debug.xcconfig"; path = "Target Support Files/Pods-c4cTests/Pods-c4cTests.debug.xcconfig"; sourceTree = "<group>"; };
 		76732A8FDA97DE7F145BF01E /* Pods-c4c.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c4c.release.xcconfig"; path = "Target Support Files/Pods-c4c/Pods-c4c.release.xcconfig"; sourceTree = "<group>"; };
 		7C2DBD2FA74DF37ECADD2E6E /* Pods-c4cUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c4cUITests.release.xcconfig"; path = "Target Support Files/Pods-c4cUITests/Pods-c4cUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E18B2302258D0A10094117B /* iOSDropDown.framework in Frameworks */,
 				E26B8A73B0C2BAFA01AF587D /* Pods_c4c.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				3E18B22B2258C0480094117B /* SignupController.swift */,
+				3E18B2312258D0DE0094117B /* SignupSecondController.swift */,
+				3E18B2332258D46F0094117B /* Data.swift */,
+				3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -156,6 +168,7 @@
 		A113D6331A208EC2C175319A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E18B22F2258D0A10094117B /* iOSDropDown.framework */,
 				E979502E0DF2BE97E91228EA /* Pods_c4c.framework */,
 				2DC9437DA11079573A89D960 /* Pods_c4cTests.framework */,
 				AD78992181FFEB92338B491F /* Pods_c4cUITests.framework */,
@@ -173,7 +186,6 @@
 				D3F29663DC1A836E3034C086 /* Pods-c4cUITests.debug.xcconfig */,
 				7C2DBD2FA74DF37ECADD2E6E /* Pods-c4cUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -384,20 +396,24 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-c4c/Pods-c4c-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -412,6 +428,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
+				3E18B2342258D46F0094117B /* Data.swift in Sources */,
+				3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */,
+				3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */,
 				3E18B1FF2258BBEA0094117B /* ViewController.swift in Sources */,
 				3E18B1FD2258BBEA0094117B /* AppDelegate.swift in Sources */,
 			);

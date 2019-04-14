@@ -1,34 +1,42 @@
 PODS:
   - Alamofire (4.8.1)
+  - DLRadioButton (1.4.12)
   - Floaty (4.1.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - iOSDropDown (0.2.7)
   - SCLAlertView (0.8)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - DLRadioButton (~> 1.4)
   - Floaty (~> 4.1.0)
   - FMDB
+  - iOSDropDown
   - SCLAlertView
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - DLRadioButton
     - Floaty
     - FMDB
+    - iOSDropDown
     - SCLAlertView
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  iOSDropDown: 7a4cfc67d5166f319858747b63cd2f7760c4fb4b
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: c03dbdc7460d572d07f5033d76cdfae4c358d6d5
+PODFILE CHECKSUM: f45e081db7753e9a927bb6ad18f6874a1add4363
 
 COCOAPODS: 1.6.0

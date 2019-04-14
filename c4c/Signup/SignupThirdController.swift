@@ -1,20 +1,19 @@
 //
-//  SignupController.swift
+//  SignupThirdController.swift
 //  c4c
 //
-//  Created by MHEALTH KENYA on 06/04/2019.
+//  Created by MHEALTH KENYA on 14/04/2019.
 //  Copyright © 2019 MHEALTH. All rights reserved.
 //
 
 import UIKit
 
-class SignupController: UIViewController {
+class SignupThirdController: UIViewController {
 
-    @IBAction func Nextbtn(_ sender: UIButton) {
+    @IBAction func SignupBtn(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "tosecondsignupsegue", sender: self)
+        print("signing up")
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
