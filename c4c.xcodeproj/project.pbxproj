@@ -19,6 +19,10 @@
 		3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2312258D0DE0094117B /* SignupSecondController.swift */; };
 		3E18B2342258D46F0094117B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2332258D46F0094117B /* Data.swift */; };
 		3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */; };
+		3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4A72264602B00DE7414 /* LandingpageController.swift */; };
+		3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4A9226463BB00DE7414 /* Options.swift */; };
+		3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4AB226468F700DE7414 /* OptionsCell.swift */; };
+		3ECFC4AF2264806000DE7414 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4AE2264806000DE7414 /* LoginController.swift */; };
 		7B884E1D1B22799233A3895F /* Pods_c4cUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78992181FFEB92338B491F /* Pods_c4cUITests.framework */; };
 		A1884DE737D2865F628D8D73 /* Pods_c4cTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC9437DA11079573A89D960 /* Pods_c4cTests.framework */; };
 		E26B8A73B0C2BAFA01AF587D /* Pods_c4c.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E979502E0DF2BE97E91228EA /* Pods_c4c.framework */; };
@@ -61,6 +65,10 @@
 		3E18B2312258D0DE0094117B /* SignupSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSecondController.swift; sourceTree = "<group>"; };
 		3E18B2332258D46F0094117B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdController.swift; sourceTree = "<group>"; };
+		3ECFC4A72264602B00DE7414 /* LandingpageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingpageController.swift; sourceTree = "<group>"; };
+		3ECFC4A9226463BB00DE7414 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		3ECFC4AB226468F700DE7414 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
+		3ECFC4AE2264806000DE7414 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		65B9A10DEB203DC2CC719992 /* Pods-c4cTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c4cTests.debug.xcconfig"; path = "Target Support Files/Pods-c4cTests/Pods-c4cTests.debug.xcconfig"; sourceTree = "<group>"; };
 		76732A8FDA97DE7F145BF01E /* Pods-c4c.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c4c.release.xcconfig"; path = "Target Support Files/Pods-c4c/Pods-c4c.release.xcconfig"; sourceTree = "<group>"; };
 		7C2DBD2FA74DF37ECADD2E6E /* Pods-c4cUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c4cUITests.release.xcconfig"; path = "Target Support Files/Pods-c4cUITests/Pods-c4cUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +133,8 @@
 		3E18B1FB2258BBEA0094117B /* c4c */ = {
 			isa = PBXGroup;
 			children = (
+				3ECFC4AD2264803000DE7414 /* Login */,
+				3ECFC4A622645C6B00DE7414 /* Landingpage */,
 				3E18B22A2258C01E0094117B /* Signup */,
 				3E18B1FC2258BBEA0094117B /* AppDelegate.swift */,
 				3E18B1FE2258BBEA0094117B /* ViewController.swift */,
@@ -163,6 +173,24 @@
 				3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		3ECFC4A622645C6B00DE7414 /* Landingpage */ = {
+			isa = PBXGroup;
+			children = (
+				3ECFC4A72264602B00DE7414 /* LandingpageController.swift */,
+				3ECFC4A9226463BB00DE7414 /* Options.swift */,
+				3ECFC4AB226468F700DE7414 /* OptionsCell.swift */,
+			);
+			path = Landingpage;
+			sourceTree = "<group>";
+		};
+		3ECFC4AD2264803000DE7414 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3ECFC4AE2264806000DE7414 /* LoginController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A113D6331A208EC2C175319A /* Frameworks */ = {
@@ -429,10 +457,14 @@
 			files = (
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
 				3E18B2342258D46F0094117B /* Data.swift in Sources */,
+				3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */,
 				3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */,
+				3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */,
 				3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */,
 				3E18B1FF2258BBEA0094117B /* ViewController.swift in Sources */,
 				3E18B1FD2258BBEA0094117B /* AppDelegate.swift in Sources */,
+				3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */,
+				3ECFC4AF2264806000DE7414 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
