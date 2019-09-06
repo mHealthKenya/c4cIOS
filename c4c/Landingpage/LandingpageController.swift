@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class LandingpageController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
     
@@ -42,6 +43,10 @@ class LandingpageController: UIViewController ,UITableViewDataSource,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedOption=options[indexPath.row]
         print("selected \(selectedOption.name)")
+        
+        SCLAlertView().showInfo("Status", subTitle: "Work in progress") // Info
+
+        
        
         
     }

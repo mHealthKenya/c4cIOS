@@ -9,7 +9,7 @@
 import UIKit
 import iOSDropDown
 
-class SignupSecondController: UIViewController {
+class SignupSecondController: UIViewController,UITextFieldDelegate {
 
     @IBAction func Nextbtn(_ sender: UIButton) {
         
@@ -20,8 +20,11 @@ class SignupSecondController: UIViewController {
     
     @IBOutlet weak var dob: UITextField!
     
-    @IBOutlet weak var fname: UITextField!
+ 
+    @IBOutlet weak var idNumber: UITextField!
     
+    @IBOutlet weak var cadredropdown: DropDown!
+    @IBOutlet weak var genderdropdown: DropDown!
     let datepicker = UIDatePicker()
     
     override func viewDidLoad() {
@@ -29,6 +32,9 @@ class SignupSecondController: UIViewController {
         
         setDob()
         setAffiliationsDropDown()
+        setGendersDropDown()
+        setCadresDropDown()
+        idNumber.delegate = self
        
         
         
@@ -36,31 +42,34 @@ class SignupSecondController: UIViewController {
     
     fileprivate func setAffiliationsDropDown(){
         
-        affiliationdropdown.optionArray = countries
-        affiliationdropdown.optionIds = ids
+        affiliationdropdown.optionArray = affiliations
+        affiliationdropdown.optionIds = affiliationIds
         affiliationdropdown.arrowSize = 10
         affiliationdropdown.isSearchEnable = true
         
     }
     
-    @objc func dobValueChanged(sender: UIDatePicker){
+    fileprivate func setGendersDropDown(){
         
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = DateFormatter.Style.none
-        dob.text = formatter.string(from: sender.date)
+        genderdropdown.optionArray = genders
+        genderdropdown.optionIds = genderIds
+        genderdropdown.arrowSize = 10
+        genderdropdown.isSearchEnable = true
         
     }
     
-    fileprivate func setDob(){
+    fileprivate func setCadresDropDown(){
         
-        datepicker.datePickerMode = UIDatePicker.Mode.date
-        
-        datepicker.addTarget(self, action: #selector(SignupSecondController.dobValueChanged(sender:)), for:  UIControl.Event.valueChanged)
-        
-        dob.inputView = datepicker
+        cadredropdown.optionArray = cadres
+        cadredropdown.optionIds = cadreIds
+        cadredropdown.arrowSize = 10
+        cadredropdown.isSearchEnable = true
         
     }
+    
+   
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

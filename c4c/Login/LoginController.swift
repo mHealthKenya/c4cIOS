@@ -8,19 +8,27 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController,UITextFieldDelegate{
 
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var username: UITextField!
+    
     @IBAction func createAccountButton(_ sender: UIButton) {
         
         createAccount()
     }
+    
     @IBAction func loginButton(_ sender: UIButton) {
         
         login()
         
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        username.delegate = self
+        password.delegate = self
 
     }
     

@@ -79,8 +79,26 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8B-sf-1rg">
+                                        <rect key="frame" x="40" y="399" width="728" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="security hint" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-Qy-2tv" customClass="DropDown" customModule="iOSDropDown">
+                                        <rect key="frame" x="40" y="579" width="728" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpP-fo-4mb">
+                                        <rect key="frame" x="40" y="639" width="728" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25l-Gx-AoJ">
-                                        <rect key="frame" x="40" y="639" width="728" height="51"/>
+                                        <rect key="frame" x="40" y="709" width="728" height="51"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                         <state key="normal" title="Next"/>
@@ -88,18 +106,6 @@
                                             <action selector="Nextbtn:" destination="mqE-f9-sqR" eventType="touchUpInside" id="euG-Xu-qQb"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8B-sf-1rg">
-                                        <rect key="frame" x="40" y="399" width="728" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="security hint" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-Qy-2tv">
-                                        <rect key="frame" x="40" y="579" width="728" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Poa-Qy-2tv" firstAttribute="top" secondItem="TrE-zJ-MLR" secondAttribute="bottom" constant="30" id="0P2-jq-VPW"/>
@@ -111,9 +117,9 @@
                                     <constraint firstItem="Jce-De-wEU" firstAttribute="top" secondItem="h4P-Ll-Sba" secondAttribute="top" constant="60" id="7Hh-Z2-9l5"/>
                                     <constraint firstItem="TrE-zJ-MLR" firstAttribute="top" secondItem="P8p-E3-ziK" secondAttribute="bottom" constant="30" id="9UT-6F-rBB"/>
                                     <constraint firstItem="TrE-zJ-MLR" firstAttribute="leading" secondItem="h4P-Ll-Sba" secondAttribute="leading" constant="40" id="9wC-CY-sHU"/>
+                                    <constraint firstAttribute="trailing" secondItem="hpP-fo-4mb" secondAttribute="trailing" constant="40" id="Afq-Ni-ZZR"/>
                                     <constraint firstItem="r8B-sf-1rg" firstAttribute="leading" secondItem="h4P-Ll-Sba" secondAttribute="leading" constant="40" id="BKd-Gj-3Ur"/>
                                     <constraint firstItem="zoR-KV-B1q" firstAttribute="top" secondItem="h4P-Ll-Sba" secondAttribute="top" id="GkH-Uf-8Hp"/>
-                                    <constraint firstItem="25l-Gx-AoJ" firstAttribute="leading" secondItem="Poa-Qy-2tv" secondAttribute="leading" id="JbM-eU-cSE"/>
                                     <constraint firstItem="Poa-Qy-2tv" firstAttribute="leading" secondItem="h4P-Ll-Sba" secondAttribute="leading" constant="40" id="Kvo-5Y-boS"/>
                                     <constraint firstItem="P8p-E3-ziK" firstAttribute="top" secondItem="r8B-sf-1rg" secondAttribute="bottom" constant="30" id="Pbg-y3-DfH"/>
                                     <constraint firstAttribute="trailing" secondItem="zoR-KV-B1q" secondAttribute="trailing" id="RnY-6E-23K"/>
@@ -121,13 +127,16 @@
                                     <constraint firstItem="Cma-OR-fm1" firstAttribute="top" secondItem="Jce-De-wEU" secondAttribute="bottom" constant="8" id="Vbz-N8-SWC"/>
                                     <constraint firstItem="Jce-De-wEU" firstAttribute="centerX" secondItem="Cma-OR-fm1" secondAttribute="centerX" id="Wjr-qt-Fqa"/>
                                     <constraint firstItem="rHK-BC-mrA" firstAttribute="top" secondItem="7SE-8K-0Y2" secondAttribute="bottom" constant="30" id="Wo2-Fc-eTS"/>
+                                    <constraint firstItem="25l-Gx-AoJ" firstAttribute="leading" secondItem="h4P-Ll-Sba" secondAttribute="leading" constant="40" id="XlJ-8q-pOM"/>
                                     <constraint firstAttribute="trailing" secondItem="Cma-OR-fm1" secondAttribute="trailing" constant="40" id="YMa-uu-ICC"/>
+                                    <constraint firstAttribute="trailing" secondItem="25l-Gx-AoJ" secondAttribute="trailing" constant="40" id="Ygk-d9-YtB"/>
                                     <constraint firstAttribute="trailing" secondItem="r8B-sf-1rg" secondAttribute="trailing" constant="40" id="ZDS-8l-JZR"/>
+                                    <constraint firstItem="25l-Gx-AoJ" firstAttribute="top" secondItem="hpP-fo-4mb" secondAttribute="bottom" constant="40" id="aRN-b5-Zf0"/>
                                     <constraint firstItem="Jce-De-wEU" firstAttribute="centerX" secondItem="h4P-Ll-Sba" secondAttribute="centerX" id="apT-Nb-8zW"/>
                                     <constraint firstAttribute="trailing" secondItem="P8p-E3-ziK" secondAttribute="trailing" constant="40" id="bS2-1p-sp8"/>
+                                    <constraint firstItem="hpP-fo-4mb" firstAttribute="leading" secondItem="h4P-Ll-Sba" secondAttribute="leading" constant="40" id="bVc-ly-huf"/>
                                     <constraint firstItem="P8p-E3-ziK" firstAttribute="leading" secondItem="h4P-Ll-Sba" secondAttribute="leading" constant="40" id="bjc-gB-v2v"/>
                                     <constraint firstItem="7SE-8K-0Y2" firstAttribute="top" secondItem="Cma-OR-fm1" secondAttribute="bottom" constant="30" id="cQc-ZV-4uG"/>
-                                    <constraint firstItem="25l-Gx-AoJ" firstAttribute="top" secondItem="Poa-Qy-2tv" secondAttribute="bottom" constant="30" id="ccK-C3-391"/>
                                     <constraint firstItem="rHK-BC-mrA" firstAttribute="leading" secondItem="7SE-8K-0Y2" secondAttribute="leading" id="ePm-Ot-wLT"/>
                                     <constraint firstItem="qQP-Xd-cJN" firstAttribute="top" secondItem="rHK-BC-mrA" secondAttribute="bottom" constant="30" id="fYy-W8-xUF"/>
                                     <constraint firstItem="qQP-Xd-cJN" firstAttribute="trailing" secondItem="rHK-BC-mrA" secondAttribute="trailing" id="foL-yX-HLL"/>
@@ -136,8 +145,8 @@
                                     <constraint firstItem="TrE-zJ-MLR" firstAttribute="leading" secondItem="h4P-Ll-Sba" secondAttribute="leading" constant="40" id="jKo-JO-qIk"/>
                                     <constraint firstAttribute="trailing" secondItem="TrE-zJ-MLR" secondAttribute="trailing" constant="40" id="jdn-9U-Ivm"/>
                                     <constraint firstAttribute="trailing" secondItem="Poa-Qy-2tv" secondAttribute="trailing" constant="40" id="o9I-Iw-Uk6"/>
-                                    <constraint firstItem="25l-Gx-AoJ" firstAttribute="trailing" secondItem="Poa-Qy-2tv" secondAttribute="trailing" id="obQ-jZ-XNQ"/>
                                     <constraint firstItem="Cma-OR-fm1" firstAttribute="leading" secondItem="7SE-8K-0Y2" secondAttribute="leading" id="pbu-GQ-3xn"/>
+                                    <constraint firstItem="hpP-fo-4mb" firstAttribute="top" secondItem="Poa-Qy-2tv" secondAttribute="bottom" constant="30" id="qPG-h5-Fcm"/>
                                     <constraint firstAttribute="trailing" secondItem="TrE-zJ-MLR" secondAttribute="trailing" constant="40" id="rM4-Au-fO6"/>
                                     <constraint firstItem="Cma-OR-fm1" firstAttribute="leading" secondItem="h4P-Ll-Sba" secondAttribute="leading" constant="40" id="sb3-Lo-9bL"/>
                                     <constraint firstItem="Cma-OR-fm1" firstAttribute="trailing" secondItem="7SE-8K-0Y2" secondAttribute="trailing" id="soW-fx-Xrd"/>
@@ -157,6 +166,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="CoT-oN-lA3"/>
                     <connections>
+                        <outlet property="confirmPassword" destination="TrE-zJ-MLR" id="3cH-Ir-yay"/>
+                        <outlet property="firstName" destination="rHK-BC-mrA" id="1lW-En-3g6"/>
+                        <outlet property="lastName" destination="qQP-Xd-cJN" id="Jk8-Hd-WFh"/>
+                        <outlet property="password" destination="P8p-E3-ziK" id="15a-Hy-cXc"/>
+                        <outlet property="phoneNumber" destination="7SE-8K-0Y2" id="9IA-OJ-3Aw"/>
+                        <outlet property="securityQuestion" destination="Poa-Qy-2tv" id="bSp-rX-vwE"/>
+                        <outlet property="securityanswer" destination="hpP-fo-4mb" id="KYS-6F-JA0"/>
+                        <outlet property="userName" destination="r8B-sf-1rg" id="ZY6-vw-FME"/>
                         <segue destination="Vco-sg-7Am" kind="show" identifier="tosecondsignupsegue" id="VyC-LD-rfF"/>
                     </connections>
                 </viewController>
@@ -303,7 +320,10 @@
                     </view>
                     <connections>
                         <outlet property="affiliationdropdown" destination="bNR-SG-saD" id="73S-18-uf7"/>
+                        <outlet property="cadredropdown" destination="P9Y-7G-VTf" id="Zao-oz-TzT"/>
                         <outlet property="dob" destination="Pig-tI-ekf" id="6sj-tg-A9T"/>
+                        <outlet property="genderdropdown" destination="72I-w0-DMd" id="43d-7M-CPt"/>
+                        <outlet property="idNumber" destination="j30-kn-rD6" id="AhY-GC-LjJ"/>
                         <segue destination="ukp-js-9Ld" kind="show" identifier="tothirdsignupsegue" id="A2S-jq-w1p"/>
                     </connections>
                 </viewController>
@@ -574,6 +594,8 @@
                         <viewLayoutGuide key="safeArea" id="hE9-oP-ian"/>
                     </view>
                     <connections>
+                        <outlet property="dateOfFirstDose" destination="X1a-dS-xgP" id="Acg-UL-JRN"/>
+                        <outlet property="dateOfSecondDose" destination="nBz-Ob-HeO" id="R3r-Ec-nd8"/>
                         <segue destination="qky-LE-KcY" kind="show" identifier="gotolandingsegue" id="PSQ-uy-otZ"/>
                     </connections>
                 </viewController>
@@ -678,6 +700,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="4eE-bn-dmb"/>
                     <connections>
+                        <outlet property="password" destination="fD8-CP-edN" id="hIn-Uj-tMU"/>
+                        <outlet property="username" destination="PLB-1q-LnI" id="3Nz-JG-6Ay"/>
                         <segue destination="mqE-f9-sqR" kind="show" identifier="createaccountsegue" id="FsD-yr-W7h"/>
                         <segue destination="qky-LE-KcY" kind="show" identifier="loginsegue" id="xYw-Ji-wkw"/>
                     </connections>
@@ -709,6 +733,6 @@
         <image name="stetho2" width="1500" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xYw-Ji-wkw"/>
+        <segue reference="PSQ-uy-otZ"/>
     </inferredMetricsTieBreakers>
 </document>

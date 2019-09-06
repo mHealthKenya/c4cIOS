@@ -19,6 +19,8 @@
 		3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2312258D0DE0094117B /* SignupSecondController.swift */; };
 		3E18B2342258D46F0094117B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2332258D46F0094117B /* Data.swift */; };
 		3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */; };
+		3EABCD102322443400334907 /* HideKeyboardOnReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */; };
+		3EABCD1223224CF500334907 /* DatePickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABCD1123224CF500334907 /* DatePickers.swift */; };
 		3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4A72264602B00DE7414 /* LandingpageController.swift */; };
 		3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4A9226463BB00DE7414 /* Options.swift */; };
 		3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4AB226468F700DE7414 /* OptionsCell.swift */; };
@@ -65,6 +67,8 @@
 		3E18B2312258D0DE0094117B /* SignupSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSecondController.swift; sourceTree = "<group>"; };
 		3E18B2332258D46F0094117B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdController.swift; sourceTree = "<group>"; };
+		3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardOnReturn.swift; sourceTree = "<group>"; };
+		3EABCD1123224CF500334907 /* DatePickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickers.swift; sourceTree = "<group>"; };
 		3ECFC4A72264602B00DE7414 /* LandingpageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingpageController.swift; sourceTree = "<group>"; };
 		3ECFC4A9226463BB00DE7414 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		3ECFC4AB226468F700DE7414 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		3E18B1FB2258BBEA0094117B /* c4c */ = {
 			isa = PBXGroup;
 			children = (
+				3EABCD0E2322440000334907 /* Utils */,
 				3ECFC4AD2264803000DE7414 /* Login */,
 				3ECFC4A622645C6B00DE7414 /* Landingpage */,
 				3E18B22A2258C01E0094117B /* Signup */,
@@ -173,6 +178,15 @@
 				3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		3EABCD0E2322440000334907 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */,
+				3EABCD1123224CF500334907 /* DatePickers.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		3ECFC4A622645C6B00DE7414 /* Landingpage */ = {
@@ -455,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EABCD102322443400334907 /* HideKeyboardOnReturn.swift in Sources */,
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
 				3E18B2342258D46F0094117B /* Data.swift in Sources */,
 				3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */,
@@ -465,6 +480,7 @@
 				3E18B1FD2258BBEA0094117B /* AppDelegate.swift in Sources */,
 				3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */,
 				3ECFC4AF2264806000DE7414 /* LoginController.swift in Sources */,
+				3EABCD1223224CF500334907 /* DatePickers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
