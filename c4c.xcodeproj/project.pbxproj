@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0D5733235732F800B9CFC9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D5732235732F800B9CFC9 /* Config.swift */; };
 		3E18B1FD2258BBEA0094117B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B1FC2258BBEA0094117B /* AppDelegate.swift */; };
 		3E18B1FF2258BBEA0094117B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B1FE2258BBEA0094117B /* ViewController.swift */; };
 		3E18B2022258BBEA0094117B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E18B2002258BBEA0094117B /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		2DC9437DA11079573A89D960 /* Pods_c4cTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_c4cTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0D5732235732F800B9CFC9 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3E18B1F92258BBEA0094117B /* c4c.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = c4c.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E18B1FC2258BBEA0094117B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E18B1FE2258BBEA0094117B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0D5731235732D400B9CFC9 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				3E0D5732235732F800B9CFC9 /* Config.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		3E18B1F02258BBEA0094117B = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		3E18B1FB2258BBEA0094117B /* c4c */ = {
 			isa = PBXGroup;
 			children = (
+				3E0D5731235732D400B9CFC9 /* Configs */,
 				3EABCD0E2322440000334907 /* Utils */,
 				3ECFC4AD2264803000DE7414 /* Login */,
 				3ECFC4A622645C6B00DE7414 /* Landingpage */,
@@ -475,6 +486,7 @@
 				3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */,
 				3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */,
 				3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */,
+				3E0D5733235732F800B9CFC9 /* Config.swift in Sources */,
 				3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */,
 				3E18B1FF2258BBEA0094117B /* ViewController.swift in Sources */,
 				3E18B1FD2258BBEA0094117B /* AppDelegate.swift in Sources */,

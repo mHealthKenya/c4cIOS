@@ -166,6 +166,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CoT-oN-lA3"/>
                     <connections>
+                        <outlet property="NextBtnOutlet" destination="25l-Gx-AoJ" id="ShR-5i-ymf"/>
                         <outlet property="confirmPassword" destination="TrE-zJ-MLR" id="3cH-Ir-yay"/>
                         <outlet property="firstName" destination="rHK-BC-mrA" id="1lW-En-3g6"/>
                         <outlet property="lastName" destination="qQP-Xd-cJN" id="Jk8-Hd-WFh"/>
