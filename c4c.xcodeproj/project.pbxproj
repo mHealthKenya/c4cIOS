@@ -71,6 +71,7 @@
 		3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdController.swift; sourceTree = "<group>"; };
 		3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardOnReturn.swift; sourceTree = "<group>"; };
 		3EABCD1123224CF500334907 /* DatePickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickers.swift; sourceTree = "<group>"; };
+		3EBED7C2235849B9007D56A6 /* c4c-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "c4c-Bridging-Header.h"; sourceTree = "<group>"; };
 		3ECFC4A72264602B00DE7414 /* LandingpageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingpageController.swift; sourceTree = "<group>"; };
 		3ECFC4A9226463BB00DE7414 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		3ECFC4AB226468F700DE7414 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		3E18B1F02258BBEA0094117B = {
 			isa = PBXGroup;
 			children = (
+				3EBED7C123584965007D56A6 /* FMDB */,
 				3E18B1FB2258BBEA0094117B /* c4c */,
 				3E18B2102258BBEB0094117B /* c4cTests */,
 				3E18B21B2258BBEB0094117B /* c4cUITests */,
@@ -198,6 +200,14 @@
 				3EABCD1123224CF500334907 /* DatePickers.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		3EBED7C123584965007D56A6 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				3EBED7C2235849B9007D56A6 /* c4c-Bridging-Header.h */,
+			);
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 		3ECFC4A622645C6B00DE7414 /* Landingpage */ = {
@@ -314,6 +324,7 @@
 				TargetAttributes = {
 					3E18B1F82258BBEA0094117B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					3E18B20C2258BBEB0094117B = {
 						CreatedOnToolsVersion = 10.1;
@@ -668,6 +679,7 @@
 			baseConfigurationReference = BEAC4C5E7EF57800EAC21F41 /* Pods-c4c.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BHH7Z98A8Y;
 				INFOPLIST_FILE = c4c/Info.plist;
@@ -677,6 +689,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mhealth.c4c;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FMDB/c4c-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -687,6 +701,7 @@
 			baseConfigurationReference = 76732A8FDA97DE7F145BF01E /* Pods-c4c.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BHH7Z98A8Y;
 				INFOPLIST_FILE = c4c/Info.plist;
@@ -696,6 +711,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mhealth.c4c;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FMDB/c4c-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

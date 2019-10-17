@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4P-Ll-Sba">
-                                <rect key="frame" x="-20" y="30" width="808" height="964"/>
+                                <rect key="frame" x="-20" y="-20" width="808" height="1064"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stetho2" translatesAutoresizingMaskIntoConstraints="NO" id="zoR-KV-B1q">
                                         <rect key="frame" x="0.0" y="0.0" width="808" height="776"/>
@@ -85,7 +85,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="security hint" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-Qy-2tv" customClass="DropDown" customModule="iOSDropDown">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="security hint" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-Qy-2tv">
                                         <rect key="frame" x="40" y="579" width="728" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -172,15 +172,16 @@
                         <outlet property="lastName" destination="qQP-Xd-cJN" id="Jk8-Hd-WFh"/>
                         <outlet property="password" destination="P8p-E3-ziK" id="15a-Hy-cXc"/>
                         <outlet property="phoneNumber" destination="7SE-8K-0Y2" id="9IA-OJ-3Aw"/>
-                        <outlet property="securityQuestion" destination="Poa-Qy-2tv" id="bSp-rX-vwE"/>
+                        <outlet property="secQn" destination="Poa-Qy-2tv" id="ht7-vB-UDp"/>
                         <outlet property="securityanswer" destination="hpP-fo-4mb" id="KYS-6F-JA0"/>
                         <outlet property="userName" destination="r8B-sf-1rg" id="ZY6-vw-FME"/>
                         <segue destination="Vco-sg-7Am" kind="show" identifier="tosecondsignupsegue" id="VyC-LD-rfF"/>
+                        <segue destination="BZV-jz-35R" kind="show" identifier="signupToLoginSegue" id="J4s-p4-CXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eit-Ie-1p1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810.9375" y="71.484375"/>
+            <point key="canvasLocation" x="507" y="185"/>
         </scene>
         <!--Signup Second Controller-->
         <scene sceneID="i5Q-g7-NCW">
@@ -191,7 +192,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdX-bG-5Xn">
-                                <rect key="frame" x="-20" y="30" width="808" height="964"/>
+                                <rect key="frame" x="-20" y="-20" width="808" height="1064"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stetho2" translatesAutoresizingMaskIntoConstraints="NO" id="Ql3-Wz-nmF">
                                         <rect key="frame" x="0.0" y="0.0" width="1064" height="1406"/>
@@ -341,7 +342,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-y8-awU">
-                                <rect key="frame" x="0.0" y="70" width="768" height="954"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="400" id="fNP-xl-9VX" customClass="OptionsCell" customModule="c4c" customModuleProvider="target">
@@ -409,7 +410,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of9-ru-9YO">
-                                <rect key="frame" x="-20" y="30" width="808" height="964"/>
+                                <rect key="frame" x="-20" y="-20" width="808" height="1064"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stetho2" translatesAutoresizingMaskIntoConstraints="NO" id="t7D-5v-Z4l">
                                         <rect key="frame" x="0.0" y="0.0" width="1064" height="1406"/>
@@ -613,7 +614,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2k-6l-8ad">
-                                <rect key="frame" x="-20" y="30" width="808" height="964"/>
+                                <rect key="frame" x="-20" y="-20" width="808" height="1064"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stetho2" translatesAutoresizingMaskIntoConstraints="NO" id="niD-Me-83l">
                                         <rect key="frame" x="0.0" y="0.0" width="808" height="1000"/>
@@ -701,6 +702,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4eE-bn-dmb"/>
                     <connections>
+                        <outlet property="creatAccountBtn" destination="h2t-de-7kg" id="Mk9-to-bxE"/>
                         <outlet property="password" destination="fD8-CP-edN" id="hIn-Uj-tMU"/>
                         <outlet property="username" destination="PLB-1q-LnI" id="3Nz-JG-6Ay"/>
                         <segue destination="mqE-f9-sqR" kind="show" identifier="createaccountsegue" id="FsD-yr-W7h"/>
@@ -734,6 +736,8 @@
         <image name="stetho2" width="1500" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PSQ-uy-otZ"/>
+        <segue reference="FsD-yr-W7h"/>
+        <segue reference="J4s-p4-CXO"/>
+        <segue reference="xYw-Ji-wkw"/>
     </inferredMetricsTieBreakers>
 </document>

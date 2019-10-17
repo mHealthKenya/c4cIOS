@@ -12,24 +12,105 @@ import SCLAlertView
 import Alamofire
 import SwiftyJSON
 
+
 class SignupController: UIViewController ,UITextFieldDelegate{
 
+    @IBOutlet weak var secQn: UITextField!
     @IBOutlet weak var NextBtnOutlet: UIButton!
     @IBOutlet weak var securityanswer: UITextField!
-    @IBOutlet weak var securityQuestion: DropDown!
+    
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
+    var hasAccount:Bool=false
+    var dob:String?
+    var gender:String?
+    var cadre:String?
+    var idnum:String?
+    var mflcode:String?
     
     var spinner = UIActivityIndicatorView()
     
     
     @IBAction func Nextbtn(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "tosecondsignupsegue", sender: self)
+        if(hasAccount){
+            
+                print("creating account")
+            
+                if ((phoneNumber.text?.isEmpty)!) {
+                   displayErrorDialog(mytitle: "Verification Error", mymessage: "Phone number is required")
+                }
+                else  if ((firstName.text?.isEmpty)!) {
+                    displayErrorDialog(mytitle: "Verification Error", mymessage: "First name is required")
+                }
+                else  if ((lastName.text?.isEmpty)!) {
+                    displayErrorDialog(mytitle: "Verification Error", mymessage: "Last name is required")
+                }
+                else  if ((userName.text?.isEmpty)!) {
+                    displayErrorDialog(mytitle: "Verification Error", mymessage: "Username is required")
+                }
+                else  if ((password.text?.isEmpty)!) {
+                    displayErrorDialog(mytitle: "Verification Error", mymessage: "Password is required")
+                }
+                else  if ((confirmPassword.text?.isEmpty)!) {
+                    displayErrorDialog(mytitle: "Verification Error", mymessage: "Confirm password is required")
+                }
+                else  if ((secQn.text?.isEmpty)!) {
+                    displayErrorDialog(mytitle: "Verification Error", mymessage: "security question is required")
+                }
+                else  if ((securityanswer.text?.isEmpty)!) {
+                    displayErrorDialog(mytitle: "Verification Error", mymessage: "security answer is required")
+                }
+                else{
+                
+                    
+                    insertIntoDb(phone: phoneNumber.text!, fname: firstName.text!, lname: lastName.text!, uname: userName.text!, password: password.text!, secqn: secQn.text!, secans: securityanswer.text!, gender: self.gender!, cadre: self.cadre!, idnum: self.idnum!, age: self.dob!, mflcode: self.mflcode!)
+                    
+                        performSegue(withIdentifier: "signupToLoginSegue", sender: self)
+                    
+                }
+            
+        }
+        else{
+            
+            performSegue(withIdentifier: "tosecondsignupsegue", sender: self)
+            
+        }
+        
+        
+    }
+    
+    
+    private func insertIntoDb(phone: String,fname: String,lname: String,uname: String,password: String,secqn: String,secans: String,gender: String,cadre: String,idnum: String,age: String,mflcode: String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists userData(phone text, fname text,lname text,uname text,password text,secqn text,secans text,gender text,cadre text,idnum text,age text,mflcode text)", values: nil)
+            try database.executeUpdate("delete from userData",values:nil)
+            try database.executeUpdate("insert into userData (phone,fname,lname,uname,password,secqn,secans,gender,cadre,idnum,age,mflcode) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", values: [phone,fname,lname,uname,password,secqn,secans,gender,cadre,idnum,age,mflcode])
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
     }
     
     
@@ -81,17 +162,17 @@ class SignupController: UIViewController ,UITextFieldDelegate{
         else{
             
             
-            verifyingNumber()
+            verifyingNumber(phoneNumber:phoneNumber.text!)
             
         }
     }
     
     
-    func verifyingNumber(){
+    func verifyingNumber(phoneNumber:String){
         
         let parameters: Parameters=[
             
-            "phone_no":"0713559850"
+            "phone_no":phoneNumber
             
         ]
         
@@ -107,7 +188,9 @@ class SignupController: UIViewController ,UITextFieldDelegate{
                 self.dismissSpinner()
                 
                 print(value)
-                self.toggleFields(myval: false)
+                
+               
+                
                 
                 let jsonData = value as! NSDictionary
                 
@@ -183,9 +266,14 @@ class SignupController: UIViewController ,UITextFieldDelegate{
                             for x in responseUser{
 
 
-                                let dob:String=x["DOB"] as! String
+                                self.dob=x["DOB"] as! String
+                                self.gender=x["gender_id"] as! String
+                                self.cadre=x["cadre_id"] as! String
+                                self.idnum=x["national_id"] as! String
+                                self.mflcode=x["facility_id"] as! String
                                 
-                                print("DATE OF BIRTH \(dob)")
+                                
+                                print("DATE OF BIRTH \(self.dob)")
 //                                let phone:String=x["phone"] as! String
 //                                let password:String=x["password"] as! String
 //                                let lname:String=x["lname"] as! String
@@ -201,7 +289,8 @@ class SignupController: UIViewController ,UITextFieldDelegate{
                     }
 
 
-
+                self.hasAccount=true
+                self.toggleFields(myval: false)
 
                 
                 
@@ -209,9 +298,12 @@ class SignupController: UIViewController ,UITextFieldDelegate{
             case .failure(let error):
                 self.dismissSpinner()
                 
+                self.hasAccount=false
+                self.toggleFields(myval: false)
+                
                 print(error.localizedDescription)
                 
-                self.displayErrorDialog(mytitle: "Signup Error", mymessage: error.localizedDescription)
+//                self.displayErrorDialog(mytitle: "Signup Error", mymessage: error.localizedDescription)
             }
         })
     }
@@ -223,6 +315,20 @@ class SignupController: UIViewController ,UITextFieldDelegate{
 //        userName.removeFromSuperview()
         
         NextBtnOutlet.isHidden=myval
+        
+        if(hasAccount){
+            
+            self.NextBtnOutlet.setTitle("Create Account", for: .normal)
+            
+        }
+        else{
+            
+            self.NextBtnOutlet.setTitle("Next", for: .normal)
+
+        }
+        
+        
+        
 //        NextBtnOutlet.removeFromSuperview()
     
         
@@ -241,7 +347,7 @@ class SignupController: UIViewController ,UITextFieldDelegate{
         securityanswer.isHidden=myval
 //        securityanswer.removeFromSuperview()
         
-        securityQuestion.isHidden=myval
+        secQn.isHidden=myval
 //        securityQuestion.removeFromSuperview()
         
         addVerifyButton(myval: myval)
@@ -260,6 +366,7 @@ class SignupController: UIViewController ,UITextFieldDelegate{
         password.delegate = self
         confirmPassword.delegate = self
         toggleFields(myval: true)
+        
 
         // Do any additional setup after loading the view.
     }
