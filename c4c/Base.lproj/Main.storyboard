@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GzV-4J-EVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ukp-js-9Ld">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -214,7 +214,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Affiliation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-SG-saD" customClass="DropDown" customModule="iOSDropDown">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Affiliation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-SG-saD">
                                         <rect key="frame" x="40" y="219" width="728" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="nyy-qe-JPw"/>
@@ -234,8 +234,11 @@
                                                 <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Vco-sg-7Am" id="kYE-tm-161"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="72I-w0-DMd" customClass="DropDown" customModule="iOSDropDown">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="72I-w0-DMd">
                                         <rect key="frame" x="40" y="279" width="728" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="kvP-6R-EXX"/>
@@ -243,8 +246,11 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Vco-sg-7Am" id="Sme-VY-3r6"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Cadre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9Y-7G-VTf" customClass="DropDown" customModule="iOSDropDown">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Cadre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9Y-7G-VTf">
                                         <rect key="frame" x="40" y="339" width="728" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="aNM-jO-R3u"/>
@@ -252,6 +258,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Vco-sg-7Am" id="oBL-6B-jdZ"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pig-tI-ekf">
                                         <rect key="frame" x="40" y="459" width="728" height="30"/>
@@ -321,10 +330,10 @@
                         <viewLayoutGuide key="safeArea" id="OqD-tt-fer"/>
                     </view>
                     <connections>
-                        <outlet property="affiliationdropdown" destination="bNR-SG-saD" id="73S-18-uf7"/>
-                        <outlet property="cadredropdown" destination="P9Y-7G-VTf" id="Zao-oz-TzT"/>
+                        <outlet property="affiliationTextfield" destination="bNR-SG-saD" id="58z-oH-fgY"/>
+                        <outlet property="cadreTextfield" destination="P9Y-7G-VTf" id="XR1-Km-HNP"/>
                         <outlet property="dob" destination="Pig-tI-ekf" id="6sj-tg-A9T"/>
-                        <outlet property="genderdropdown" destination="72I-w0-DMd" id="43d-7M-CPt"/>
+                        <outlet property="genderTextfield" destination="72I-w0-DMd" id="5Me-OT-ENB"/>
                         <outlet property="idNumber" destination="j30-kn-rD6" id="AhY-GC-LjJ"/>
                         <segue destination="ukp-js-9Ld" kind="show" identifier="tothirdsignupsegue" id="A2S-jq-w1p"/>
                     </connections>
@@ -514,23 +523,32 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select County" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sha-fh-gXi" customClass="DropDown" customModule="iOSDropDown">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select County" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sha-fh-gXi">
                                         <rect key="frame" x="40" y="848.5" width="728" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ukp-js-9Ld" id="r54-pa-cD8"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Sub county" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Nz-H9-qXc" customClass="DropDown" customModule="iOSDropDown">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Sub county" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Nz-H9-qXc">
                                         <rect key="frame" x="40" y="898.5" width="728" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ukp-js-9Ld" id="olq-iO-fgh"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select facility" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ght-JY-iDt" customClass="DropDown" customModule="iOSDropDown">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select facility" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ght-JY-iDt">
                                         <rect key="frame" x="40" y="948.5" width="728" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ukp-js-9Ld" id="BIz-zF-Lay"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN5-lS-IGp">
                                         <rect key="frame" x="40" y="998.5" width="728" height="49"/>
@@ -596,8 +614,11 @@
                         <viewLayoutGuide key="safeArea" id="hE9-oP-ian"/>
                     </view>
                     <connections>
+                        <outlet property="countyTextfield" destination="Sha-fh-gXi" id="We5-cG-rkb"/>
                         <outlet property="dateOfFirstDose" destination="X1a-dS-xgP" id="Acg-UL-JRN"/>
                         <outlet property="dateOfSecondDose" destination="nBz-Ob-HeO" id="R3r-Ec-nd8"/>
+                        <outlet property="facilityTextfield" destination="ght-JY-iDt" id="YFI-wB-d0y"/>
+                        <outlet property="subcountyTextfield" destination="5Nz-H9-qXc" id="e9B-Vx-uv4"/>
                         <segue destination="qky-LE-KcY" kind="show" identifier="gotolandingsegue" id="PSQ-uy-otZ"/>
                     </connections>
                 </viewController>
@@ -736,8 +757,7 @@
         <image name="stetho2" width="1500" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FsD-yr-W7h"/>
         <segue reference="J4s-p4-CXO"/>
-        <segue reference="xYw-Ji-wkw"/>
+        <segue reference="PSQ-uy-otZ"/>
     </inferredMetricsTieBreakers>
 </document>

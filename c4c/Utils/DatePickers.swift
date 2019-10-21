@@ -18,6 +18,7 @@ extension SignupSecondController{
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.none
         dob.text = formatter.string(from: sender.date)
+//        self.view.endEditing(true)
         
     }
     
@@ -47,7 +48,14 @@ extension SignupThirdController{
         
     }
     
-    
+    @objc func secondDoseDateValueChanged(sender: UIDatePicker){
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        dateOfSecondDose.text = formatter.string(from: sender.date)
+        
+    }
     
     
      func setDateFirstDose(){
@@ -60,9 +68,16 @@ extension SignupThirdController{
         
     }
     
+    func setDateSecondDose(){
+        
+        datepicker.datePickerMode = UIDatePicker.Mode.date
+        
+        dateOfSecondDose.addTarget(self, action: #selector(secondDoseDateValueChanged(sender:)), for:  UIControl.Event.valueChanged)
+        
+        dateOfSecondDose.inputView = datepicker
+        
+    }
     
-    
-    
-    
+
     
 }
