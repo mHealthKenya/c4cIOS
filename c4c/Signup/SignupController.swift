@@ -13,7 +13,7 @@ import Alamofire
 import SwiftyJSON
 
 
-class SignupController: UIViewController ,UITextFieldDelegate{
+class SignupController: UIViewController ,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
 
     @IBOutlet weak var secQn: UITextField!
     @IBOutlet weak var NextBtnOutlet: UIButton!
@@ -32,54 +32,63 @@ class SignupController: UIViewController ,UITextFieldDelegate{
     var idnum:String?
     var mflcode:String?
     
+    var pickerView = UIPickerView()
+    
     var spinner = UIActivityIndicatorView()
     
     
     @IBAction func Nextbtn(_ sender: UIButton) {
         
-        if(hasAccount){
+       
             
                 print("creating account")
             
                 if ((phoneNumber.text?.isEmpty)!) {
-                   displayErrorDialog(mytitle: "Verification Error", mymessage: "Phone number is required")
+                   displayErrorDialog(mytitle: "Signup Error", mymessage: "Phone number is required")
                 }
                 else  if ((firstName.text?.isEmpty)!) {
-                    displayErrorDialog(mytitle: "Verification Error", mymessage: "First name is required")
+                    displayErrorDialog(mytitle: "Signup Error", mymessage: "First name is required")
                 }
                 else  if ((lastName.text?.isEmpty)!) {
-                    displayErrorDialog(mytitle: "Verification Error", mymessage: "Last name is required")
+                    displayErrorDialog(mytitle: "Signup Error", mymessage: "Last name is required")
                 }
                 else  if ((userName.text?.isEmpty)!) {
-                    displayErrorDialog(mytitle: "Verification Error", mymessage: "Username is required")
+                    displayErrorDialog(mytitle: "Signup Error", mymessage: "Username is required")
                 }
                 else  if ((password.text?.isEmpty)!) {
-                    displayErrorDialog(mytitle: "Verification Error", mymessage: "Password is required")
+                    displayErrorDialog(mytitle: "Signup Error", mymessage: "Password is required")
                 }
                 else  if ((confirmPassword.text?.isEmpty)!) {
-                    displayErrorDialog(mytitle: "Verification Error", mymessage: "Confirm password is required")
+                    displayErrorDialog(mytitle: "Signup Error", mymessage: "Confirm password is required")
                 }
                 else  if ((secQn.text?.isEmpty)!) {
-                    displayErrorDialog(mytitle: "Verification Error", mymessage: "security question is required")
+                    displayErrorDialog(mytitle: "Signup Error", mymessage: "security question is required")
                 }
                 else  if ((securityanswer.text?.isEmpty)!) {
-                    displayErrorDialog(mytitle: "Verification Error", mymessage: "security answer is required")
+                    displayErrorDialog(mytitle: "Signup Error", mymessage: "security answer is required")
                 }
                 else{
                 
-                    
-                    insertIntoDb(phone: phoneNumber.text!, fname: firstName.text!, lname: lastName.text!, uname: userName.text!, password: password.text!, secqn: secQn.text!, secans: securityanswer.text!, gender: self.gender!, cadre: self.cadre!, idnum: self.idnum!, age: self.dob!, mflcode: self.mflcode!)
-                    
+                     if(hasAccount){
+                        
+                        insertIntoDb(phone: phoneNumber.text!, fname: firstName.text!, lname: lastName.text!, uname: userName.text!, password: password.text!, secqn: secQn.text!, secans: securityanswer.text!, gender: self.gender!, cadre: self.cadre!, idnum: self.idnum!, age: self.dob!, mflcode: self.mflcode!)
+                        
                         performSegue(withIdentifier: "signupToLoginSegue", sender: self)
+                        
+                    }
+                     else{
+                        
+                        insertSignupOne(phone: phoneNumber.text!, fname: firstName.text!, lname: lastName.text!, uname: userName.text!, password: password.text!, secqn: secQn.text!, secans: securityanswer.text!)
+                        
+                        performSegue(withIdentifier: "tosecondsignupsegue", sender: self)
+                        
+                    }
+                    
                     
                 }
             
-        }
-        else{
-            
-            performSegue(withIdentifier: "tosecondsignupsegue", sender: self)
-            
-        }
+        
+        
         
         
     }
@@ -409,6 +418,57 @@ class SignupController: UIViewController ,UITextFieldDelegate{
         spinner.stopAnimating()
         UIApplication.shared.endIgnoringInteractionEvents()
         
+    }
+    
+    
+    
+    
+    //dropdown select options
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+            
+            return securityQuestions[row]
+        
+      
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       
+            return securityQuestions.count
+        
+       
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    
+            secQn.text = securityQuestions[row]
+            self.view.endEditing(true)
+    
+        
+        
+        
+    }
+    
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.pickerView.delegate=self
+        self.pickerView.dataSource=self
+    
+        secQn.inputView = pickerView
+            
+       
     }
     
 

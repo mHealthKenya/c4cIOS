@@ -34,47 +34,48 @@ extension SignupSecondController{
 }
 
 extension SignupThirdController{
+
     
     
-    
-    
-    
-    @objc func firstDoseDateValueChanged(sender: UIDatePicker){
+   
+    @objc func dateOfFirstDoseValueChanged(sender: UIDatePicker){
         
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.none
         dateOfFirstDose.text = formatter.string(from: sender.date)
+        //        self.view.endEditing(true)
         
     }
     
-    @objc func secondDoseDateValueChanged(sender: UIDatePicker){
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = DateFormatter.Style.none
-        dateOfSecondDose.text = formatter.string(from: sender.date)
-        
-    }
-    
-    
-     func setDateFirstDose(){
+    func setDateOfFirstDose(){
         
         datepicker.datePickerMode = UIDatePicker.Mode.date
         
-        dateOfFirstDose.addTarget(self, action: #selector(firstDoseDateValueChanged(sender:)), for:  UIControl.Event.valueChanged)
+        datepicker.addTarget(self, action: #selector(dateOfFirstDoseValueChanged(sender:)), for:  UIControl.Event.valueChanged)
         
         dateOfFirstDose.inputView = datepicker
         
     }
     
-    func setDateSecondDose(){
+    
+    @objc func dateOfsecondDoseValueChanged(sender: UIDatePicker){
         
-        datepicker.datePickerMode = UIDatePicker.Mode.date
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        dateOfSecondDose.text = formatter.string(from: sender.date)
+        //        self.view.endEditing(true)
         
-        dateOfSecondDose.addTarget(self, action: #selector(secondDoseDateValueChanged(sender:)), for:  UIControl.Event.valueChanged)
+    }
+    
+    func setDateOfSecondDose(){
         
-        dateOfSecondDose.inputView = datepicker
+        datepicker2.datePickerMode = UIDatePicker.Mode.date
+        
+        datepicker2.addTarget(self, action: #selector(dateOfsecondDoseValueChanged(sender:)), for:  UIControl.Event.valueChanged)
+        
+        dateOfSecondDose.inputView = datepicker2
         
     }
     

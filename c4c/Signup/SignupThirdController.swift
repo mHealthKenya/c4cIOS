@@ -8,11 +8,13 @@
 
 import UIKit
 
+
 class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
 
     @IBOutlet weak var dateOfSecondDose: UITextField!
     @IBOutlet weak var dateOfFirstDose: UITextField!
     let datepicker = UIDatePicker()
+    let datepicker2 = UIDatePicker()
     
     @IBOutlet weak var countyTextfield: UITextField!
     
@@ -26,6 +28,8 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
     var myfacilities:[String]=[]
     var currentTextField=UITextField()
     
+    var spinner = UIActivityIndicatorView()
+    
     
     @IBAction func SignupBtn(_ sender: UIButton) {
         
@@ -35,13 +39,15 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        getCounties()
         
-        mycounties=["aff1","aff2","aff3","aff4","aff5","aff6"]
+        
+//        mycounties=["aff1","aff2","aff3","aff4","aff5","aff6"]
         mysubcounties=["cadre1","cadre2","cadre3","cadre4"]
         myfacilities=["Male","Female"]
         
-        setDateFirstDose()
-//        setDateSecondDose()
+        setDateOfFirstDose()
+        setDateOfSecondDose()
         
 //        dateOfFirstDose.delegate = self
 //        dateOfSecondDose.delegate = self
@@ -49,8 +55,7 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
 
         // Do any additional setup after loading the view.
     }
-   
-
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -112,6 +117,9 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
         if(currentTextField==countyTextfield){
             
             countyTextfield.text = mycounties[row]
+            
+            getSubCounties(countyName: mycounties[row])
+            
             self.view.endEditing(true)
             
         }
@@ -119,6 +127,7 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
             
             subcountyTextfield.text = mysubcounties[row]
             self.view.endEditing(true)
+            getFacilities(subCountyName: mysubcounties[row])
             
         }
         else if(currentTextField==facilityTextfield){

@@ -13,6 +13,12 @@ let URL_USER_LOGIN = "https://sinqanventures.co.ke/Kilifibackend/functionalities
 
 let URL_VERIFY_NUMBER="https://c4c.mhealthkenya.co.ke/Core/chkMobile"
 
+let GETCOUNTY_URL = "https://c4c.mhealthkenya.co.ke/core/CountySearch";
+
+let GETSUBCOUNTY_URL = "https://c4c.mhealthkenya.co.ke/core/SubCountySearch";
+
+let GETFACILITY_URL = "https://c4c.mhealthkenya.co.ke/core/FacSearch";
+
 let URL_GET_ALL_CATEGORIES = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/item_cat"
 let URL_GET_ALL_PLACES = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/places"
 let URL_GET_ALL_EVENTS = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/event"
@@ -22,3 +28,16 @@ let URL_GET_ALL_TODOS = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/to-do"
 
 
 let URL_GET_ALL_ITEMS = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/kilifi_item"
+
+let mycadre:[String]=[ "Student", "Doctor", "Nurse", "Clinical Officer", "Laboratory Technologist", "Cleaner", "Waste Handlers", "VCT Counselor", "Other"]
+let mygender:[String]=["Male","Female"]
+let securityQuestions :[String] = ["what is your favourite pet ?", "what is your favourite country ?"];
+
+let affiliation:[String] = ["MOH","KNH", "KMTC", "EGPAF","GIS","AMREF","UMB","FHI360","CHS","UNITID",
+    "KMPDB", "Not Applicable"];
+let itemsspecialisation:[String] = ["Anaesthesia", "Cardiothoracic surgery", "Dermatology", "Ear Nose And Throat",
+    "Internal Medicine", "Microbiology", "Neurosurgery", "Obstetrics and Gynaecology", "Occupational Medicine",
+    "Ophthalmology", "Orthopaedic Surgery", "Paediatrics and Child Health", "Palliative Medicine",
+    "Pathology", "Psychiatry", "Plastic and Reconstructive Surgery", "Public Health", "Radiology",
+    "Surgery", "Immunology", "Infectious Diseases", "Clinical Medical Genetics", "Emergency Medicine",
+    "Opthalmology"];

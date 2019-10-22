@@ -8,6 +8,7 @@
 
 import UIKit
 import iOSDropDown
+import SCLAlertView
 
 class SignupSecondController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
     
@@ -23,9 +24,6 @@ class SignupSecondController: UIViewController,UITextFieldDelegate,UIPickerViewD
    
     let datepicker = UIDatePicker()
     var pickerView = UIPickerView()
-    var myaffiliations:[String]=["aff1","aff2","aff3","aff4","aff5","aff6"]
-    var mycadre:[String]=["cadre1","cadre2","cadre3","cadre4"]
-    var mygender:[String]=["gender1","gender2","gender3","gender4"]
     var currentTextField=UITextField()
     
     
@@ -33,12 +31,6 @@ class SignupSecondController: UIViewController,UITextFieldDelegate,UIPickerViewD
         super.viewDidLoad()
     
         setDob()
-        
-        myaffiliations=["aff1","aff2","aff3","aff4","aff5","aff6"]
-        mycadre=["cadre1","cadre2","cadre3","cadre4"]
-        mygender=["Male","Female"]
-        
-        
         idNumber.delegate = self
         
        
@@ -46,7 +38,40 @@ class SignupSecondController: UIViewController,UITextFieldDelegate,UIPickerViewD
 
     @IBAction func Nextbtn(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "tothirdsignupsegue", sender: self)
+        
+    
+        
+        if ((affiliationTextfield.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "affiliation is required")
+        }
+        else  if ((genderTextfield.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "gender is required")
+        }
+        else  if ((cadreTextfield.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "Cadre is required")
+        }
+        else  if ((dob.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "Date of birth is required")
+        }
+        else  if ((idNumber.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "Id number is required")
+        }
+        else{
+          
+                
+                insertSignupTwo(affiliation: affiliationTextfield.text!, gender: genderTextfield.text!, cadre: cadreTextfield.text!, idnumber: idNumber.text!, dob: dob.text!)
+                
+                performSegue(withIdentifier: "tothirdsignupsegue", sender: self)
+           
+        }
+        
+        
+    }
+    
+    
+    fileprivate func displayErrorDialog(mytitle:String!,mymessage:String!){
+        
+        SCLAlertView().showError(mymessage, subTitle:mytitle, closeButtonTitle:"OK")
     }
     
 
@@ -60,7 +85,7 @@ class SignupSecondController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         if(currentTextField==affiliationTextfield){
             
-            return myaffiliations[row]
+            return affiliation[row]
             
         }
         else if(currentTextField==genderTextfield){
@@ -83,7 +108,7 @@ class SignupSecondController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         if(currentTextField==affiliationTextfield){
             
-            return myaffiliations.count
+            return affiliation.count
             
         }
         else if(currentTextField==genderTextfield){
@@ -105,12 +130,12 @@ class SignupSecondController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        print(myaffiliations[row])
+        print(affiliation[row])
         
         
         if(currentTextField==affiliationTextfield){
             
-            affiliationTextfield.text = myaffiliations[row]
+            affiliationTextfield.text = affiliation[row]
             self.view.endEditing(true)
             
         }
