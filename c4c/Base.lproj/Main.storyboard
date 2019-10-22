@@ -459,6 +459,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="HbvYes:" destination="ukp-js-9Ld" eventType="touchUpInside" id="oSi-Qg-2JR"/>
                                                     <outletCollection property="otherButtons" destination="rhT-NB-U4U" id="2r1-wS-GSI"/>
                                                     <outletCollection property="otherButtons" destination="Eld-ud-ngz" id="96E-NQ-stb"/>
                                                 </connections>
@@ -469,6 +470,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="HbvPartially:" destination="ukp-js-9Ld" eventType="touchUpInside" id="gsG-5E-MZx"/>
                                                     <outletCollection property="otherButtons" destination="Eld-ud-ngz" id="9nQ-gn-s3T"/>
                                                     <outletCollection property="otherButtons" destination="yzI-3M-yDs" id="Vhq-kr-B6T"/>
                                                 </connections>
@@ -479,6 +481,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="HbvNo:" destination="ukp-js-9Ld" eventType="touchUpInside" id="fUu-xM-HSw"/>
                                                     <outletCollection property="otherButtons" destination="rhT-NB-U4U" id="5V9-RO-EcP"/>
                                                     <outletCollection property="otherButtons" destination="yzI-3M-yDs" id="TCP-aY-Q8H"/>
                                                 </connections>
@@ -506,6 +509,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="secondDoseYes:" destination="ukp-js-9Ld" eventType="touchUpInside" id="jlR-Sh-kIB"/>
                                                     <outletCollection property="otherButtons" destination="WXd-6n-Njc" id="uRG-J3-Dv5"/>
                                                 </connections>
                                             </button>
@@ -515,6 +519,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="secondDoseNo:" destination="ukp-js-9Ld" eventType="touchUpInside" id="Jp5-Vh-Zsc"/>
                                                     <outletCollection property="otherButtons" destination="10Q-hc-fCy" id="yY2-RM-ZUN"/>
                                                 </connections>
                                             </button>

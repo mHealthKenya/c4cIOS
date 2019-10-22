@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SCLAlertView
 
 
 class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
 
+  
     @IBOutlet weak var dateOfSecondDose: UITextField!
     @IBOutlet weak var dateOfFirstDose: UITextField!
     let datepicker = UIDatePicker()
@@ -27,14 +29,68 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
     var mysubcounties:[String]=[]
     var myfacilities:[String]=[]
     var currentTextField=UITextField()
+    var SelectedHBVVaccinated = ""
+    var selectedSecondDose = ""
     
     var spinner = UIActivityIndicatorView()
     
     
     @IBAction func SignupBtn(_ sender: UIButton) {
         
-        print("signing up")
-        performSegue(withIdentifier: "gotolandingsegue", sender: self)
+        if ((SelectedHBVVaccinated.isEmpty)) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "HBV vaccination is required")
+        }
+        else  if (((SelectedHBVVaccinated == "Yes") || (SelectedHBVVaccinated == "Partially")) && (dateOfFirstDose.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "Date of first dose is required")
+        }
+        else if ((SelectedHBVVaccinated == "Yes") && (selectedSecondDose.isEmpty)) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "Second dose is required")
+        }
+        else  if (((selectedSecondDose == "Yes")) && (dateOfSecondDose.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "Date of second dose is required")
+        }
+        else  if ((countyTextfield.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "County is required")
+        }
+        else  if ((subcountyTextfield.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "SubCounty is required")
+        }
+        else  if ((facilityTextfield.text?.isEmpty)!) {
+            displayErrorDialog(mytitle: "Signup Error", mymessage: "Facility is required")
+        }
+      
+        else{
+            
+    
+            performSegue(withIdentifier: "gotolandingsegue", sender: self)
+
+            
+        }
+    }
+    
+    @IBAction func secondDoseYes(_ sender: Any) {
+        
+        selectedSecondDose = "Yes"
+    }
+    
+    @IBAction func secondDoseNo(_ sender: Any) {
+        
+        selectedSecondDose = "No"
+    }
+    @IBAction func HbvNo(_ sender: Any) {
+        
+        SelectedHBVVaccinated = "No"
+        
+    }
+    @IBAction func HbvPartially(_ sender: Any) {
+        
+        SelectedHBVVaccinated = "Partially"
+        
+    }
+    @IBAction func HbvYes(_ sender: Any) {
+        
+        SelectedHBVVaccinated = "Yes"
+        
     }
     override func viewDidLoad() {
         
@@ -168,6 +224,12 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
             currentTextField.inputView = pickerView
             
         }
+    }
+    
+    
+    fileprivate func displayErrorDialog(mytitle:String!,mymessage:String!){
+        
+        SCLAlertView().showError(mymessage, subTitle:mytitle, closeButtonTitle:"OK")
     }
    
     
