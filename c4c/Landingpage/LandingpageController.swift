@@ -44,7 +44,18 @@ class LandingpageController: UIViewController ,UITableViewDataSource,UITableView
         let selectedOption=options[indexPath.row]
         print("selected \(selectedOption.name)")
         
-        SCLAlertView().showInfo("Status", subTitle: "Work in progress") // Info
+        if((selectedOption.name?.contains("Report Exposure"))!){
+            
+            performSegue(withIdentifier: "reportexposureSegue", sender: self)
+            
+        }
+        else{
+            
+            SCLAlertView().showInfo("Status", subTitle: "Work in progress") // Info
+            
+        }
+        
+        
 
         
        

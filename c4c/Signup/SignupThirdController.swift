@@ -120,23 +120,6 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
     }
     
     func printValues(){
-        
-        
-//        fname => k
-//        lname => k
-//        phone => 0712341234
-//        partner => KNH
-//        gender => Male
-//        cdr => Doctor
-//        other cadre => -1
-//        idno => 1234567
-//        dob => Oct 22, 1998
-//        mfl =>
-//        hbv1 => Yes
-//        dose1 => Oct 22, 2018
-//        hbv2 => Yes
-//        dose2 => Oct 19, 2019
-        
         print("fname => \(fname)")
          print("lname => \(lname)")
          print("phone => \(phone)")
@@ -483,47 +466,7 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
             }
         }
             
-//            (response) in
-//            switch response.result{
-//
-//            case .success(let value):
-//
-//                self.dismissSpinner()
-//
-//                print(value)
-            
-//                 performSegue(withIdentifier: "gotolandingsegue", sender: self)
-               
-//                let jsonData = value as! NSDictionary
-//
-//                print(jsonData)
-                
-//                if let json=response.result.value as! [String: Any]?{
-//
-//                    if let responseUser=json["result"] as! [[String: Any]]?{
-//
-//                        print(responseUser)
-//
-//                        for x in responseUser{
-//
-//
-//                            self.dob=x["DOB"] as! String
-//
-//
-//                        }
-//
-//                    }
-//
-//                }
-                
-                
-//            case .failure(let error):
-//                self.dismissSpinner()
-//
-//                print(error.localizedDescription)
-//
-//            }
-//        })
+
     }
     
     
