@@ -53,6 +53,10 @@ class LoginController: UIViewController,UITextFieldDelegate{
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        checkIfUserExists()
+    }
+    
     private func checkIfUserExists(){
         
         

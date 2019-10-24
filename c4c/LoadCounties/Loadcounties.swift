@@ -171,6 +171,7 @@ extension SignupThirdController{
             case .success(let value):
                 
                 self.dismissSpinner()
+                self.deleteFacilities()
                 
                 if let json=response.result.value as! [String: Any]?{
                     
@@ -183,7 +184,7 @@ extension SignupThirdController{
                             
                             let facilityName:String=x["name"] as! String
                             let mflcode:String=x["code"] as! String
-                            print("name is \(facilityName)")
+                            print("name is \(facilityName) mflcode is \(mflcode)")
                             self.myfacilities.append(facilityName)
                             self.saveFacilities(facilityname: facilityName, mflcode: mflcode)
                             
@@ -207,6 +208,33 @@ extension SignupThirdController{
     
    
     
+    private func deleteFacilities(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+                        try database.executeUpdate("delete from facilities",values:nil)
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
     
     
     private func saveFacilities(facilityname: String,mflcode: String){
@@ -225,7 +253,7 @@ extension SignupThirdController{
         
         do {
             try database.executeUpdate("create table if not exists facilities(name text, mflcode text)", values: nil)
-            try database.executeUpdate("delete from facilities",values:nil)
+//            try database.executeUpdate("delete from facilities",values:nil)
             try database.executeUpdate("insert into facilities (name,mflcode) values (?, ?)", values: [facilityname,mflcode])
             
         } catch {

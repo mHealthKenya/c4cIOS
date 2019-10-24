@@ -88,6 +88,35 @@ extension SignupSecondController{
 extension SignupThirdController{
     
     
+    private func insertIntoDb(phone: String,fname: String,lname: String,uname: String,password: String,secqn: String,secans: String,gender: String,cadre: String,idnum: String,age: String,mflcode: String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists userData(phone text, fname text,lname text,uname text,password text,secqn text,secans text,gender text,cadre text,idnum text,age text,mflcode text)", values: nil)
+            try database.executeUpdate("delete from userData",values:nil)
+            try database.executeUpdate("insert into userData (phone,fname,lname,uname,password,secqn,secans,gender,cadre,idnum,age,mflcode) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", values: [phone,fname,lname,uname,password,secqn,secans,gender,cadre,idnum,age,mflcode])
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
     
     
 }

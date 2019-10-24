@@ -8,26 +8,19 @@
 
 import Foundation
 
-let URL_USER_REGISTER = "https://sinqanventures.co.ke/Kilifibackend/functionalities/register.php"
-let URL_USER_LOGIN = "https://sinqanventures.co.ke/Kilifibackend/functionalities/login.php"
+let URL_VERIFY_NUMBER="https://c4c.mhealthkenya.co.ke/index.php/Core/chkMobile"
 
-let URL_VERIFY_NUMBER="https://c4c.mhealthkenya.co.ke/Core/chkMobile"
+let GETCOUNTY_URL = "https://c4c.mhealthkenya.co.ke/index.php/core/CountySearch";
 
-let GETCOUNTY_URL = "https://c4c.mhealthkenya.co.ke/core/CountySearch";
+let GETSUBCOUNTY_URL = "https://c4c.mhealthkenya.co.ke/index.php/core/SubCountySearch";
 
-let GETSUBCOUNTY_URL = "https://c4c.mhealthkenya.co.ke/core/SubCountySearch";
+let GETFACILITY_URL = "https://c4c.mhealthkenya.co.ke/index.php/core/FacSearch";
 
-let GETFACILITY_URL = "https://c4c.mhealthkenya.co.ke/core/FacSearch";
+let SIGNUP_URL = "https://c4c.mhealthkenya.co.ke/index.php/Core/AppReg";
 
-let URL_GET_ALL_CATEGORIES = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/item_cat"
-let URL_GET_ALL_PLACES = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/places"
-let URL_GET_ALL_EVENTS = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/event"
-let URL_GET_ALL_EVENTS_VENUES = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/event_venue"
-let URL_GET_ALL_AMENITIES = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/amenities"
-let URL_GET_ALL_TODOS = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/to-do"
+let CREATPROFILE_URL = "https://c4c.mhealthkenya.co.ke/Core/SignUp";
 
 
-let URL_GET_ALL_ITEMS = "https://cre8ivedge.net/dev/kilifi/wp-json/wp/v2/kilifi_item"
 
 let mycadre:[String]=[ "Student", "Doctor", "Nurse", "Clinical Officer", "Laboratory Technologist", "Cleaner", "Waste Handlers", "VCT Counselor", "Other"]
 let mygender:[String]=["Male","Female"]

@@ -8,6 +8,8 @@
 
 import UIKit
 import SCLAlertView
+import Alamofire
+import SwiftyJSON
 
 
 class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
@@ -31,6 +33,24 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
     var currentTextField=UITextField()
     var SelectedHBVVaccinated = ""
     var selectedSecondDose = ""
+    var fname=""
+    var lname=""
+    var phone=""
+    var gender=""
+    var cadre=""
+    var othercadre="-1"
+    var idno=""
+    var dob=""
+    var mflno=""
+    var hbv1="-1"
+    var dose1="-1"
+    var hbv2="-1"
+    var dose2="-1"
+    var secqn=""
+    var password=""
+    var secans=""
+    var uname=""
+    var partner=""
     
     var spinner = UIActivityIndicatorView()
     
@@ -60,36 +80,224 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
         }
       
         else{
+            hbv1=SelectedHBVVaccinated
+            if(dateOfFirstDose.text!.isEmpty){
+                
+                dose1="-1"
+            }
+            else{
+                
+                dose1=dateOfFirstDose.text!
+            }
+            if(selectedSecondDose.isEmpty){
+                hbv2="-1"
+            }
+            else{
+                hbv2=selectedSecondDose
+            }
+            if(dateOfSecondDose.text!.isEmpty){
+                
+                dose2="-1"
+            }
+            else{
+                
+                dose2=dateOfSecondDose.text!
+            }
             
-    
-            performSegue(withIdentifier: "gotolandingsegue", sender: self)
+            getFirstSignupDetails()
+            getSecondSignupDetails()
+            getSavedMflcode()
+            
+
+
+            registerUserRemotely()
+            printValues()
+            
+           
 
             
         }
     }
     
+    func printValues(){
+        
+        
+//        fname => k
+//        lname => k
+//        phone => 0712341234
+//        partner => KNH
+//        gender => Male
+//        cdr => Doctor
+//        other cadre => -1
+//        idno => 1234567
+//        dob => Oct 22, 1998
+//        mfl =>
+//        hbv1 => Yes
+//        dose1 => Oct 22, 2018
+//        hbv2 => Yes
+//        dose2 => Oct 19, 2019
+        
+        print("fname => \(fname)")
+         print("lname => \(lname)")
+         print("phone => \(phone)")
+         print("partner => \(partner)")
+         print("gender => \(gender)")
+         print("cdr => \(cadre)")
+         print("other cadre => \(othercadre)")
+         print("idno => \(idno)")
+         print("dob => \(dob)")
+         print("mfl => \(mflno)")
+        print("hbv1 => \(hbv1)")
+        print("dose1 => \(dose1)")
+        print("hbv2 => \(hbv2)")
+        print("dose2 => \(dose2)")
+        
+    }
+    
+    
+    
+    private func getSecondSignupDetails(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            
+            let rs = try database.executeQuery("select affiliation, gender, cadre, idnumber, dob from signupTwo", values: nil)
+            while rs.next() {
+                
+                partner = String((affiliation.index(of: rs.string(forColumn: "affiliation")!))!+1)
+                gender = String((mygender.index(of: rs.string(forColumn: "gender")!))!+1)
+                cadre = String((mycadre.index(of: rs.string(forColumn: "cadre")!))!+1)
+                idno = rs.string(forColumn: "idnumber")!
+                dob = rs.string(forColumn: "dob")!
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    private func getFirstSignupDetails(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            
+            let rs = try database.executeQuery("select phone, fname, lname, uname, password, secqn, secans from signupOne", values: nil)
+            while rs.next() {
+                uname = rs.string(forColumn: "uname")!
+                phone = rs.string(forColumn: "phone")!
+                fname = rs.string(forColumn: "fname")!
+                lname = rs.string(forColumn: "lname")!
+                password = rs.string(forColumn: "password")!
+                secqn = rs.string(forColumn: "secqn")!
+                secans = rs.string(forColumn: "secans")!
+                
+            
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    private func getSavedMflcode(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            
+            let rs = try database.executeQuery("select name, mflcode from facilities", values: nil)
+            while rs.next() {
+                
+                let facilityname = rs.string(forColumn: "name")!
+                print("saved facility name \(rs.string(forColumn: "name")!) saved facility code \(rs.string(forColumn: "mflcode")) active facility \(facilityTextfield.text)")
+                
+                if(facilityname == facilityTextfield.text){
+
+                    mflno = rs.string(forColumn: "mflcode")!
+
+                }
+              
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+       
+    }
+    
+    
     @IBAction func secondDoseYes(_ sender: Any) {
         
-        selectedSecondDose = "Yes"
+        selectedSecondDose = "2"
     }
     
     @IBAction func secondDoseNo(_ sender: Any) {
         
-        selectedSecondDose = "No"
+        selectedSecondDose = "1"
     }
     @IBAction func HbvNo(_ sender: Any) {
         
-        SelectedHBVVaccinated = "No"
+        SelectedHBVVaccinated = "1"
         
     }
     @IBAction func HbvPartially(_ sender: Any) {
         
-        SelectedHBVVaccinated = "Partially"
+        SelectedHBVVaccinated = "3"
         
     }
     @IBAction func HbvYes(_ sender: Any) {
         
-        SelectedHBVVaccinated = "Yes"
+        SelectedHBVVaccinated = "2"
         
     }
     override func viewDidLoad() {
@@ -99,8 +307,8 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
         
         
 //        mycounties=["aff1","aff2","aff3","aff4","aff5","aff6"]
-        mysubcounties=["cadre1","cadre2","cadre3","cadre4"]
-        myfacilities=["Male","Female"]
+//        mysubcounties=["cadre1","cadre2","cadre3","cadre4"]
+//        myfacilities=["Male","Female"]
         
         setDateOfFirstDose()
         setDateOfSecondDose()
@@ -231,8 +439,151 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
         
         SCLAlertView().showError(mymessage, subTitle:mytitle, closeButtonTitle:"OK")
     }
+    
+    
+
+    func registerUserRemotely(){
+        
+        let parameters: Parameters=[
+            
+            "fname":fname,
+            "lname":lname,
+            "phone_no":phone,
+            "partner":partner,
+            "gender":gender,
+            "cdr":cadre,
+            "other_cadre":othercadre,
+            "idno":idno,
+            "dob":dob,
+            "mflno":mflno,
+            "hbv1":hbv1,
+            "dose1":dose1,
+            "hbv2":hbv2,
+            "dose2":dose2
+            
+        ]
+        
+        displaySpinner()
+        
+        Alamofire.request(CREATPROFILE_URL, method: .post, parameters: parameters).responseString { response in
+            self.dismissSpinner()
+            print(response.description)
+            if(response.description.lowercased().contains("welldone")){
+                
+                            self.insertIntoDb(phone: self.phone, fname: self.fname, lname: self.lname, uname: self.uname, password: self.password, secqn: self.secqn, secans: self.secans, gender: self.gender, cadre: self.cadre, idnum: self.idno, age: self.dob, mflcode: self.mflno)
+                
+                self.goToLandingPage()
+                
+                
+            }
+            else{
+                
+                self.displayErrorDialog(mytitle: "Signup Error", mymessage: "\(response.description)")
+                
+            }
+        }
+            
+//            (response) in
+//            switch response.result{
+//
+//            case .success(let value):
+//
+//                self.dismissSpinner()
+//
+//                print(value)
+            
+//                 performSegue(withIdentifier: "gotolandingsegue", sender: self)
+               
+//                let jsonData = value as! NSDictionary
+//
+//                print(jsonData)
+                
+//                if let json=response.result.value as! [String: Any]?{
+//
+//                    if let responseUser=json["result"] as! [[String: Any]]?{
+//
+//                        print(responseUser)
+//
+//                        for x in responseUser{
+//
+//
+//                            self.dob=x["DOB"] as! String
+//
+//
+//                        }
+//
+//                    }
+//
+//                }
+                
+                
+//            case .failure(let error):
+//                self.dismissSpinner()
+//
+//                print(error.localizedDescription)
+//
+//            }
+//        })
+    }
+    
+    
+    private func goToLandingPage(){
+        
+        performSegue(withIdentifier: "gotolandingsegue", sender: self)
+
+    }
+    
+    
+    private func insertIntoDb(phone: String,fname: String,lname: String,uname: String,password: String,secqn: String,secans: String,gender: String,cadre: String,idnum: String,age: String,mflcode: String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists userData(phone text, fname text,lname text,uname text,password text,secqn text,secans text,gender text,cadre text,idnum text,age text,mflcode text)", values: nil)
+            try database.executeUpdate("delete from userData",values:nil)
+            try database.executeUpdate("insert into userData (phone,fname,lname,uname,password,secqn,secans,gender,cadre,idnum,age,mflcode) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", values: [phone,fname,lname,uname,password,secqn,secans,gender,cadre,idnum,age,mflcode])
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
    
     
+    
+    fileprivate func displaySpinner(){
+        
+        
+        spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+        spinner.style = UIActivityIndicatorView.Style.init(rawValue: 10)!
+        spinner.center=view.center
+        spinner.color = .red
+        spinner.hidesWhenStopped = true
+        view.addSubview(spinner)
+        spinner.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    
+    fileprivate func dismissSpinner(){
+        
+        spinner.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+        
+    }
 
 
 }
