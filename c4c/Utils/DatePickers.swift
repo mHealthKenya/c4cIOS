@@ -82,3 +82,53 @@ extension SignupThirdController{
 
     
 }
+
+
+extension ReportExposureViewController{
+    
+
+    
+    @objc func dateOfFirstDoseValueChanged(sender: UIDatePicker){
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        datetimeofexposure.text = formatter.string(from: sender.date)
+        //        self.view.endEditing(true)
+        
+    }
+    
+    func setDateOfFirstDose(){
+        
+        dateOfExposurepicker.datePickerMode = UIDatePicker.Mode.date
+        
+        dateOfExposurepicker.addTarget(self, action: #selector(dateOfFirstDoseValueChanged(sender:)), for:  UIControl.Event.valueChanged)
+        
+        datetimeofexposure.inputView = dateOfExposurepicker
+        
+    }
+    
+    
+    @objc func dateOfsecondDoseValueChanged(sender: UIDatePicker){
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        dateofinitiationcurrentpep.text = formatter.string(from: sender.date)
+        //        self.view.endEditing(true)
+        
+    }
+    
+    func setDateOfSecondDose(){
+        
+        dateOfPepInitpicker.datePickerMode = UIDatePicker.Mode.date
+        
+        dateOfPepInitpicker.addTarget(self, action: #selector(dateOfsecondDoseValueChanged(sender:)), for:  UIControl.Event.valueChanged)
+        
+        dateofinitiationcurrentpep.inputView = dateOfPepInitpicker
+        
+    }
+    
+    
+    
+}

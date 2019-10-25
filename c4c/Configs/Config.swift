@@ -20,6 +20,7 @@ let SIGNUP_URL = "https://c4c.mhealthkenya.co.ke/index.php/Core/AppReg";
 
 let CREATPROFILE_URL = "https://c4c.mhealthkenya.co.ke/Core/SignUp";
 
+let REPORTEXPOSURE_URL = "https://c4c.mhealthkenya.co.ke/Core/RptExp";
 
 
 let mycadre:[String]=[ "Student", "Doctor", "Nurse", "Clinical Officer", "Laboratory Technologist", "Cleaner", "Waste Handlers", "VCT Counselor", "Other"]
@@ -34,3 +35,78 @@ let itemsspecialisation:[String] = ["Anaesthesia", "Cardiothoracic surgery", "De
     "Pathology", "Psychiatry", "Plastic and Reconstructive Surgery", "Public Health", "Radiology",
     "Surgery", "Immunology", "Infectious Diseases", "Clinical Medical Genetics", "Emergency Medicine",
     "Opthalmology"];
+
+
+
+let SPINNERLISTWHERE:[String] = ["Medical Ward", "Surgical Ward", "Theater", "Maternity", "Dental Clinic", "OP/MCH", "Laundry", "Laboratory","Other"];
+let SPINNERLISTWHAT:[String] = ["Needle Stick", "Cuts", "Splash on Mucosa", "Non-intact Skin", "Bite", "Other"];
+let SPINNERLISTDEVICE:[String] = [
+    "Syringe/Needle IM/SC Injection",
+    "Syring/Needle Blood Drawing",
+    "Phlebotomy Needle/ Vacuum set",
+    "IV Catheter/Canula",
+    "Needle on IV Line",
+    "Unused Needle",
+    "Lancet",
+    "Suture Needle",
+    "Scalpel",
+    "Capillary Tube",
+    "Glass Slide",
+    "Pippete Tip",
+    "Other"
+];
+
+let SPINNERLISTSAFETY:[String] = ["Yes", "No", "Not Known"];
+
+let SPINNERLISTAUTODISABLE:[String] = ["Yes", "No", "Not Known"];
+
+let SPINNERLISTDEEP:[String] = ["Superficial", "Deep"];
+let SPINNERLISTDEEPALGORITHM:[String] = ["Little or no Bleeding", "Deep Stick/Cut, Profuse Bleeding"];
+
+
+let SPINNERLISTPURPOSE:[String] = [
+    "Injections",
+    "Blood Collection",
+    "Cannulation/Strat IV",
+    "Connect IV Line",
+    "Place Arterial/Central Line",
+    "Fingerstick/Heel stick",
+    "Other"
+];
+
+
+
+let SPINNERLISTWHEN:[String] = [
+    "During procedure",
+    "Disassembling device",
+    "Recapping",
+    "Cleaning after procedure",
+    "Device left on Table, Floor etc.",
+    "Device placed in appropriate trash bin",
+    "Device protruded from trash container",
+    "During disposal",
+    "Other"
+];
+
+let SPINNERLISTWHENALGORITHM:[String] = [
+    "During use",
+    "After use",
+    "Between steps of a procedure",
+    "After use",
+    "After use",
+    "After disposal",
+    "After disposal",
+    "During disposal",
+    "Other"
+];
+
+let SPINNERLISTHIVSTATUS:[String] = ["HIV+", "HIV-", "Unknown"];
+
+let SPINNERLISTPEPINIT:[String] = ["Yes", "No"];
+
+
+//
+let SPINNERLISTEXPOSURERESULT:[String] = [
+    "Patient Contact","Leaking Specimen Container","Faulty Apparatus","Contaminated Surfaces","Other"];
+
+let SPINNERLISTHBVSTATUS:[String] = ["HBV+", "HBV-", "Unknown"];
