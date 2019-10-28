@@ -730,6 +730,7 @@
                     </view>
                     <size key="freeformSize" width="768" height="1900"/>
                     <connections>
+                        <outlet property="contentView" destination="whL-ll-FOb" id="0VO-EN-lVO"/>
                         <outlet property="dateofinitiationcurrentpep" destination="zjg-zk-beE" id="gQD-e7-ybh"/>
                         <outlet property="datetimeofexposure" destination="bDN-PE-tJS" id="PDx-Uf-IyK"/>
                         <outlet property="describeinjury" destination="JKt-gk-Aky" id="rGh-c6-8SE"/>
@@ -745,6 +746,8 @@
                         <outlet property="howinjuryoccuredotherConstraint" destination="Fqf-5i-4w0" id="ICe-vP-27l"/>
                         <outlet property="howinjuryoccurother" destination="gUs-pR-cYk" id="O7Q-bT-8jw"/>
                         <outlet property="howmanyexposures" destination="lVc-h8-nt6" id="lpY-Hd-1n0"/>
+                        <outlet property="myscrollview" destination="hnG-Wx-jGc" id="ZdO-Jg-vpv"/>
+                        <outlet property="myview" destination="lYt-rh-OHT" id="KKt-lt-DTh"/>
                         <outlet property="purpose" destination="yqs-7l-GJK" id="p3A-8x-wyO"/>
                         <outlet property="purposeother" destination="ZV0-6d-p6H" id="e9s-Pb-8W1"/>
                         <outlet property="resultofOtherConstraint" destination="KkY-ke-3SB" id="sPc-aX-fFM"/>

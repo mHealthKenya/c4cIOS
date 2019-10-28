@@ -9,7 +9,7 @@
 import UIKit
 import SCLAlertView
 
-class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
+class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate {
     
     @IBOutlet weak var datetimeofexposure: UITextField!
     
@@ -55,6 +55,7 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     @IBOutlet weak var waspepinitiated: UITextField!
     
     
+    @IBOutlet weak var myscrollview: UIScrollView!
     
     
     @IBOutlet weak var whereOtherConstraint: NSLayoutConstraint!
@@ -67,7 +68,9 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     @IBOutlet weak var howinjuryoccuredotherConstraint: NSLayoutConstraint!
     
     
+    @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet var myview: UIView!
     let dateOfExposurepicker = UIDatePicker()
     let dateOfPepInitpicker = UIDatePicker()
     
@@ -75,6 +78,17 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     var currentTextField=UITextField()
     
     @IBAction func ReportExposureBtn(_ sender: UIButton) {
+        
+        validate()
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x != 0 {
+            
+            scrollView.contentOffset.x = 0
+            
+        }
     }
     
     override func viewDidLoad() {
@@ -83,12 +97,57 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         
         setDateOfFirstDose()
         setDateOfSecondDose()
+        myscrollview.delegate = self
+//        myscrollview.contentSize = CGSize(width: self.view.frame.width, height: 300)
+//        contentView.frame.size.height = 300
+//        myview.frame.size.height = 300
+
+        
 
         // Do any additional setup after loading the view.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         hideOthers()
+        toggleFields(isHidden: true)
+        
+    }
+    
+    func toggleFields(isHidden:Bool){
+        
+        if(isHidden){
+            
+            exposurewasresultof.isEnabled = false
+            exposurewasresultof.backgroundColor = .gray
+            
+            whichdevice.isEnabled = false
+            whichdevice.backgroundColor = .gray
+            
+            devicesafetydesigned.isEnabled = false
+            devicesafetydesigned.backgroundColor = .gray
+            
+            purpose.isEnabled = false
+            purpose.backgroundColor = .gray
+        
+            
+        }
+        else{
+            
+            
+            exposurewasresultof.isEnabled = true
+            exposurewasresultof.backgroundColor = .white
+            
+            whichdevice.isEnabled = true
+            whichdevice.backgroundColor = .white
+            
+            devicesafetydesigned.isEnabled = true
+            devicesafetydesigned.backgroundColor = .white
+            
+            purpose.isEnabled = true
+            purpose.backgroundColor = .white
+            
+        }
     }
     
     
@@ -134,7 +193,7 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     
     
     
-    fileprivate func displayErrorDialog(mytitle:String!,mymessage:String!){
+    func displayErrorDialog(mytitle:String!,mymessage:String!){
         
         SCLAlertView().showError(mymessage, subTitle:mytitle, closeButtonTitle:"OK")
     }
@@ -316,10 +375,22 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
                 
                 typeother.isHidden = false
                 typeofexposureOtherConstraint.constant = 40
+                toggleFields(isHidden: true)
+                
+                
+            }
+                
+            else if(SPINNERLISTWHAT[row].lowercased().contains("cuts") || SPINNERLISTWHAT[row].lowercased().contains("needle stick")){
+                
+                
+                typeother.isHidden = true
+                typeofexposureOtherConstraint.constant = -40
+                toggleFields(isHidden: false)
                 
                 
             }
             else{
+                toggleFields(isHidden: true)
                 
                 typeother.isHidden = true
                 typeother.text = ""
@@ -494,6 +565,8 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         }
         
     }
+    
+   
     
     
     /****************************************end new code here *************************************/
