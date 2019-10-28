@@ -7,56 +7,15 @@
 //
 
 import Foundation
+import SCLAlertView
+import Alamofire
+import SwiftyJSON
 
 extension ReportExposureViewController{
     
     
     func validate(){
         
-        
-        
-//        @IBOutlet weak var datetimeofexposure: UITextField!
-//
-//        @IBOutlet weak var whereexposureoccured: UITextField!
-//
-//        @IBOutlet weak var whereother: UITextField!
-//
-//        @IBOutlet weak var typeother: UITextField!
-//
-//        @IBOutlet weak var typeofexposure: UITextField!
-//
-//        @IBOutlet weak var exposurewasresultof: UITextField!
-//
-//        @IBOutlet weak var exposureresultother: UITextField!
-//
-//        @IBOutlet weak var whichdevice: UITextField!
-//
-//        @IBOutlet weak var whichdeviceother: UITextField!
-//
-//        @IBOutlet weak var devicesafetydesigned: UITextField!
-//
-//        @IBOutlet weak var devicesafetyother: UITextField!
-//
-//        @IBOutlet weak var describeinjury: UITextField!
-//
-//        @IBOutlet weak var describeother: UITextField!
-//
-//        @IBOutlet weak var purpose: UITextField!
-//
-//        @IBOutlet weak var purposeother: UITextField!
-//        @IBOutlet weak var howinjuryoccured: UITextField!
-//
-//        @IBOutlet weak var howinjuryoccurother: UITextField!
-//
-//        @IBOutlet weak var dateofinitiationcurrentpep: UITextField!
-//
-//        @IBOutlet weak var hivstatus: UITextField!
-//
-//        @IBOutlet weak var hbvstatus: UITextField!
-//
-//        @IBOutlet weak var howmanyexposures: UITextField!
-//
-//        @IBOutlet weak var waspepinitiated: UITextField!
         
         if(datetimeofexposure.text!.isEmpty){
             
@@ -114,7 +73,7 @@ extension ReportExposureViewController{
             displayErrorDialog(mytitle: "Report exposure error", mymessage: "device other is required")
             
         }
-        else if(devicesafetyother.text!.isEmpty && (devicesafetyother.isEnabled)){
+        else if(devicesafetyother.text!.isEmpty && (!devicesafetyother.isHidden)){
             
             displayErrorDialog(mytitle: "Report exposure error", mymessage: "device safety other is required")
             
@@ -176,8 +135,169 @@ extension ReportExposureViewController{
         }
         else{
             
-            print("reporting")
+            
+            dateofexposureS = datetimeofexposure.text!
+            numberofexposuresS = howmanyexposures.text!
+            HbvStatusS = String(SPINNERLISTHBVSTATUS.index(of: (hbvstatus.text!))! + 1)
+            HivStatusS = String(SPINNERLISTHIVSTATUS.index(of: (hivstatus.text!))! + 1)
+            pepinitS = String(SPINNERLISTPEPINIT.index(of: (waspepinitiated.text!))! + 1)
+            
+            
+            if(devicesafetydesigned.isEnabled){
+                
+                deviceSafetyS = String(SPINNERLISTSAFETY.index(of: (devicesafetydesigned.text!))! + 1)
+                
+            }
+            else{
+                
+                deviceSafetyS = "-1"
+                
+            }
+            
+            
+            dateofpepinitS = dateofinitiationcurrentpep.text!
+            if(!exposureresultother.isHidden){
+                
+                exposureresultS = exposureresultother.text!
+            }
+            else{
+                
+                exposureresultS = String(SPINNERLISTEXPOSURERESULT.index(of: (exposurewasresultof.text!))! + 1)
+            }
+            
+            if(!whereother.isHidden){
+                
+                whereS = whereother.text!
+            }
+            else{
+                
+                whereS = String(SPINNERLISTWHERE.index(of: (whereexposureoccured.text!))! + 1)
+            }
+            
+            if(!typeother.isHidden){
+                
+                whatS = typeother.text!
+            }
+            else{
+                
+                whatS = String(SPINNERLISTWHAT.index(of: (typeofexposure.text!))! + 1)
+            }
+            
+            if(!purposeother.isHidden){
+                
+                purposeS = purposeother.text!
+            }
+            else{
+                
+                purposeS = String(SPINNERLISTPURPOSE.index(of: (purpose.text!))! + 1)
+            }
+            
+            if(!howinjuryoccurother.isHidden){
+                           
+               whenS = howinjuryoccurother.text!
+           }
+           else{
+               
+               whenS = String(SPINNERLISTWHEN.index(of: (howinjuryoccured.text!))! + 1)
+           }
+            
+            if(!whichdeviceother.isHidden){
+                
+                deviceS = whichdeviceother.text!
+            }
+            else{
+                
+                deviceS = String(SPINNERLISTDEVICE.index(of: (whichdevice.text!))! + 1)
+            }
+            
+            if(!describeother.isHidden){
+                           
+                   deepS = describeother.text!
+               }
+               else{
+                   
+                   deepS = String(SPINNERLISTDEEPALGORITHM.index(of: (describeinjury.text!))! + 1)
+               }
+            
+            
+            
+//            getUserPhoneNumber()
+            myphoneS="0713559850"
+            reportExposureRemotely()
+
         }
+        
+    }
+
+
+    
+    func reportExposureRemotely(){
+
+        
+        let parameters: Parameters=[
+            
+            KEY_REPORTEXPOSURE_DATEEXPD:dateofexposureS,
+            KEY_REPORTEXPOSURE_DATEPEP:dateofpepinitS,
+            KEY_REPORTEXPOSURE_DEEP:deepS,
+            KEY_REPORTEXPOSURE_DEVICE:deviceS,
+            KEY_REPORTEXPOSURE_DEVICESAFETY:deviceSafetyS,
+            KEY_REPORTEXPOSURE_ELOC:whereS,
+            KEY_REPORTEXPOSURE_ETYPE:whatS,
+            KEY_REPORTEXPOSURE_EXPNO:numberofexposuresS,
+            KEY_REPORTEXPOSURE_EXPRESULT:exposureresultS,
+            KEY_REPORTEXPOSURE_HIVSTATUS:HivStatusS,
+            KEY_REPORTEXPOSURE_HBVSTATUS:HbvStatusS,
+            KEY_REPORTEXPOSURE_PEPINIT:pepinitS,
+            KEY_REPORTEXPOSURE_PURP:purposeS,
+            KEY_REPORTEXPOSURE_WHENITHAPND:whenS,
+            KEY_REPORTEXPOSURE_PHONENO:myphoneS
+           
+        ]
+        
+        displaySpinner()
+        
+        Alamofire.request(REPORTEXPOSURE_URL, method: .post, parameters: parameters).responseString { response in
+            self.dismissSpinner()
+            print(response.description)
+          
+        }
+            
+
+    }
+    
+    
+    
+    
+    
+ func getUserPhoneNumber(){
+        
+
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            let rs = try database.executeQuery("select phone from userData", values: nil)
+            while rs.next() {
+                let phoneS = rs.string(forColumn: "phone")
+                myphoneS = phoneS!
+              
+                }
+            }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
         
     }
     

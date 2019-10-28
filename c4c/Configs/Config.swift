@@ -110,3 +110,20 @@ let SPINNERLISTEXPOSURERESULT:[String] = [
     "Patient Contact","Leaking Specimen Container","Faulty Apparatus","Contaminated Surfaces","Other"];
 
 let SPINNERLISTHBVSTATUS:[String] = ["HBV+", "HBV-", "Unknown"];
+
+
+let KEY_REPORTEXPOSURE_ELOC = "eloc";
+let KEY_REPORTEXPOSURE_ETYPE = "etype";
+let KEY_REPORTEXPOSURE_PURP = "purp";
+let KEY_REPORTEXPOSURE_WHENITHAPND = "whenithapnd";
+let KEY_REPORTEXPOSURE_HIVSTATUS = "HivStatus";
+let KEY_REPORTEXPOSURE_HBVSTATUS = "HbvStatus";
+let KEY_REPORTEXPOSURE_EXPNO = "expno";
+let KEY_REPORTEXPOSURE_PEPINIT = "pepinit";
+let KEY_REPORTEXPOSURE_DATEEXPD = "dateexpd";
+let KEY_REPORTEXPOSURE_DEVICE = "device";
+let KEY_REPORTEXPOSURE_DEVICESAFETY = "deviceSafety";
+let KEY_REPORTEXPOSURE_DEEP = "deep";
+let KEY_REPORTEXPOSURE_DATEPEP = "datepep";
+let KEY_REPORTEXPOSURE_EXPRESULT = "expresult";
+let KEY_REPORTEXPOSURE_PHONENO = "phone_no";

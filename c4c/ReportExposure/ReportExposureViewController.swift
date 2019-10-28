@@ -77,6 +77,25 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     var pickerView = UIPickerView()
     var currentTextField=UITextField()
     
+    var whereS:String = ""
+    var whatS:String = ""
+    var purposeS:String = ""
+    var whenS:String = ""
+    var HivStatusS:String = ""
+    var HbvStatusS:String = ""
+    var numberofexposuresS:String = ""
+    var pepinitS:String = ""
+    var dateofexposureS:String = ""
+    var deviceS:String = ""
+    var deviceSafetyS:String = ""
+    var deepS:String = ""
+    var dateofpepinitS:String = ""
+    var exposureresultS:String = ""
+    var myphoneS:String = ""
+    
+    
+    var spinner = UIActivityIndicatorView()
+    
     @IBAction func ReportExposureBtn(_ sender: UIButton) {
         
         validate()
@@ -119,15 +138,19 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         if(isHidden){
             
             exposurewasresultof.isEnabled = false
+            exposurewasresultof.text = ""
             exposurewasresultof.backgroundColor = .gray
             
             whichdevice.isEnabled = false
+            whichdevice.text = ""
             whichdevice.backgroundColor = .gray
             
             devicesafetydesigned.isEnabled = false
+            devicesafetydesigned.text = ""
             devicesafetydesigned.backgroundColor = .gray
             
             purpose.isEnabled = false
+            purpose.text = ""
             purpose.backgroundColor = .gray
         
             
@@ -366,6 +389,7 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
             self.view.endEditing(true)
             
         }
+            
         else if(currentTextField==typeofexposure){
             
             typeofexposure.text = SPINNERLISTWHAT[row]
@@ -404,6 +428,26 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         else if(currentTextField==exposurewasresultof){
             
             exposurewasresultof.text = SPINNERLISTEXPOSURERESULT[row]
+            
+            
+            
+            
+           if(SPINNERLISTEXPOSURERESULT[row].lowercased().contains("other")){
+               
+               
+               exposureresultother.isHidden = false
+               resultofOtherConstraint.constant = 40
+               
+           
+           }
+           else{
+               
+               exposureresultother.isHidden = true
+               exposureresultother.text = ""
+               resultofOtherConstraint.constant = -40
+
+           }
+            
             self.view.endEditing(true)
             
            
@@ -412,6 +456,23 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         else if(currentTextField==whichdevice){
             
             whichdevice.text = SPINNERLISTDEVICE[row]
+            
+            if(SPINNERLISTDEVICE[row].lowercased().contains("other")){
+                
+                
+                whichdeviceother.isHidden = false
+                whichdeviceotherConstraint.constant = 40
+                
+            
+            }
+            else{
+                
+                whichdeviceother.isHidden = true
+                whichdeviceother.text = ""
+                whichdeviceotherConstraint.constant = -40
+
+            }
+            
             self.view.endEditing(true)
             
            
@@ -420,6 +481,25 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         else if(currentTextField==devicesafetydesigned){
             
             devicesafetydesigned.text = SPINNERLISTSAFETY[row]
+            
+            
+            if(SPINNERLISTSAFETY[row].lowercased().contains("other")){
+                           
+                           
+                   devicesafetyother.isHidden = false
+                   safetydesignedOtherConstraint.constant = 40
+                   
+               
+               }
+               else{
+                   
+                   devicesafetyother.isHidden = true
+                   devicesafetyother.text = ""
+                   safetydesignedOtherConstraint.constant = -40
+
+               }
+            
+            
             self.view.endEditing(true)
             
         
@@ -428,6 +508,28 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         else if(currentTextField==describeinjury){
             
             describeinjury.text = SPINNERLISTDEEPALGORITHM[row]
+            
+            
+            
+            
+            if(SPINNERLISTDEEPALGORITHM[row].lowercased().contains("other")){
+                
+                
+                describeother.isHidden = false
+                describeotherConstraint.constant = 40
+                
+            
+            }
+            else{
+                
+                describeother.isHidden = true
+                describeother.text = ""
+                describeotherConstraint.constant = -40
+
+            }
+            
+            
+        
             self.view.endEditing(true)
             
         
@@ -436,6 +538,23 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         else if(currentTextField==purpose){
             
             purpose.text = SPINNERLISTPURPOSE[row]
+            
+            if(SPINNERLISTPURPOSE[row].lowercased().contains("other")){
+                
+                
+                purposeother.isHidden = false
+                whatpurposeotherConstraint.constant = 40
+                
+            
+            }
+            else{
+                
+                purposeother.isHidden = true
+                purposeother.text = ""
+                whatpurposeotherConstraint.constant = -40
+
+            }
+            
             self.view.endEditing(true)
            
             
@@ -443,6 +562,26 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         else if(currentTextField==howinjuryoccured){
             
             howinjuryoccured.text = SPINNERLISTWHEN[row]
+            
+            
+            if(SPINNERLISTWHEN[row].lowercased().contains("other")){
+                
+                
+                howinjuryoccurother.isHidden = false
+                howinjuryoccuredotherConstraint.constant = 40
+                
+            
+            }
+            else{
+                
+                howinjuryoccurother.isHidden = true
+                howinjuryoccurother.text = ""
+                howinjuryoccuredotherConstraint.constant = -40
+
+            }
+            
+            
+            
             self.view.endEditing(true)
             
             
@@ -567,6 +706,27 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     }
     
    
+    
+    func displaySpinner(){
+          
+          
+          spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+          spinner.style = UIActivityIndicatorView.Style.init(rawValue: 10)!
+          spinner.center=view.center
+          spinner.color = .red
+          spinner.hidesWhenStopped = true
+          view.addSubview(spinner)
+          spinner.startAnimating()
+          UIApplication.shared.beginIgnoringInteractionEvents()
+          
+      }
+      
+     func dismissSpinner(){
+          
+          spinner.stopAnimating()
+          UIApplication.shared.endIgnoringInteractionEvents()
+          
+      }
     
     
     /****************************************end new code here *************************************/
