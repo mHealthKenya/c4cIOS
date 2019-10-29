@@ -49,6 +49,11 @@ class LandingpageController: UIViewController ,UITableViewDataSource,UITableView
             performSegue(withIdentifier: "reportexposureSegue", sender: self)
             
         }
+        else if((selectedOption.name?.contains("Immunisation Profile"))!){
+            
+            performSegue(withIdentifier: "immunisationprofilesegue", sender: self)
+            
+        }
         else{
             
             SCLAlertView().showInfo("Status", subTitle: "Work in progress") // Info
