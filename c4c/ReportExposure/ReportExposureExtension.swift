@@ -160,7 +160,7 @@ extension ReportExposureViewController{
                 
                 exposureresultS = exposureresultother.text!
             }
-            else{
+            else if(exposurewasresultof.isEnabled){
                 
                 exposureresultS = String(SPINNERLISTEXPOSURERESULT.index(of: (exposurewasresultof.text!))! + 1)
             }
@@ -187,7 +187,7 @@ extension ReportExposureViewController{
                 
                 purposeS = purposeother.text!
             }
-            else{
+            else if(purpose.isEnabled){
                 
                 purposeS = String(SPINNERLISTPURPOSE.index(of: (purpose.text!))! + 1)
             }
@@ -205,7 +205,7 @@ extension ReportExposureViewController{
                 
                 deviceS = whichdeviceother.text!
             }
-            else{
+            else if(whichdevice.isEnabled){
                 
                 deviceS = String(SPINNERLISTDEVICE.index(of: (whichdevice.text!))! + 1)
             }
@@ -221,8 +221,8 @@ extension ReportExposureViewController{
             
             
             
-//            getUserPhoneNumber()
-            myphoneS="0713559850"
+            getUserPhoneNumber()
+//            myphoneS="0721990078"
             reportExposureRemotely()
 
         }
@@ -258,6 +258,12 @@ extension ReportExposureViewController{
         
         Alamofire.request(REPORTEXPOSURE_URL, method: .post, parameters: parameters).responseString { response in
             self.dismissSpinner()
+            
+            self.hideOthers()
+            self.toggleFields(isHidden: true)
+            self.clearFields()
+            
+            self.displaySuccessDialog(mytitle: "Report Exposure", mymessage: response.description)
             print(response.description)
           
         }
@@ -299,6 +305,24 @@ extension ReportExposureViewController{
         database.close()
         
         
+    }
+    
+    
+    func clearFields(){
+        
+        datetimeofexposure.text = ""
+        whereexposureoccured.text = ""
+        typeofexposure.text = ""
+        exposurewasresultof.text = ""
+        whichdevice.text = ""
+        describeinjury.text = ""
+        howinjuryoccured.text = ""
+        dateofinitiationcurrentpep.text = ""
+        hivstatus.text = ""
+        hbvstatus.text = ""
+        howmanyexposures.text = ""
+        waspepinitiated.text = ""
+     
     }
     
     

@@ -77,21 +77,21 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     var pickerView = UIPickerView()
     var currentTextField=UITextField()
     
-    var whereS:String = ""
-    var whatS:String = ""
-    var purposeS:String = ""
-    var whenS:String = ""
-    var HivStatusS:String = ""
-    var HbvStatusS:String = ""
-    var numberofexposuresS:String = ""
-    var pepinitS:String = ""
-    var dateofexposureS:String = ""
-    var deviceS:String = ""
-    var deviceSafetyS:String = ""
-    var deepS:String = ""
-    var dateofpepinitS:String = ""
-    var exposureresultS:String = ""
-    var myphoneS:String = ""
+    var whereS:String = "-1"
+    var whatS:String = "-1"
+    var purposeS:String = "-1"
+    var whenS:String = "-1"
+    var HivStatusS:String = "-1"
+    var HbvStatusS:String = "-1"
+    var numberofexposuresS:String = "-1"
+    var pepinitS:String = "-1"
+    var dateofexposureS:String = "-1"
+    var deviceS:String = "-1"
+    var deviceSafetyS:String = "-1"
+    var deepS:String = "-1"
+    var dateofpepinitS:String = "-1"
+    var exposureresultS:String = "-1"
+    var myphoneS:String = "-1"
     
     
     var spinner = UIActivityIndicatorView()
@@ -113,7 +113,7 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       
         setDateOfFirstDose()
         setDateOfSecondDose()
         myscrollview.delegate = self
@@ -130,6 +130,7 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     override func viewDidAppear(_ animated: Bool) {
         hideOthers()
         toggleFields(isHidden: true)
+         
         
     }
     
@@ -219,6 +220,14 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
     func displayErrorDialog(mytitle:String!,mymessage:String!){
         
         SCLAlertView().showError(mymessage, subTitle:mytitle, closeButtonTitle:"OK")
+    }
+    
+    func displaySuccessDialog(mytitle:String!,mymessage:String!){
+        
+        SCLAlertView().showSuccess(mymessage, subTitle:mytitle, closeButtonTitle:"OK")
+        
+        
+//        SCLAlertView().showSuccess(mytitle, subTitle: mymessage)
     }
     
     

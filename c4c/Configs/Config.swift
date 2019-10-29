@@ -8,7 +8,7 @@
 
 import Foundation
 
-let URL_VERIFY_NUMBER="https://c4c.mhealthkenya.co.ke/index.php/Core/chkMobile"
+let URL_VERIFY_NUMBER="https://c4c.mhealthkenya.co.ke/index.php/Core/chkMobile";
 
 let GETCOUNTY_URL = "https://c4c.mhealthkenya.co.ke/index.php/core/CountySearch";
 
