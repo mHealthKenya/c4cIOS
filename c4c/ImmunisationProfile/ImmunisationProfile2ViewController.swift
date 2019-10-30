@@ -1,29 +1,19 @@
 //
-//  ImmunisationProfileViewController.swift
+//  ImmunisationProfile2ViewController.swift
 //  c4c
 //
-//  Created by MHEALTH KENYA on 29/10/2019.
+//  Created by MHEALTH KENYA on 30/10/2019.
 //  Copyright © 2019 MHEALTH. All rights reserved.
 //
 
 import UIKit
 
-class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
+class ImmunisationProfile2ViewController: UIViewController {
 
-    @IBOutlet weak var myscrollview: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        myscrollview.delegate = self
 
         // Do any additional setup after loading the view.
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.x != 0 {
-            
-            scrollView.contentOffset.x = 0
-            
-        }
     }
     
 
