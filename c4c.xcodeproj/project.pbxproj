@@ -23,7 +23,6 @@
 		3E5467562362DDF200C51398 /* ReportExposureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5467552362DDF200C51398 /* ReportExposureExtension.swift */; };
 		3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */; };
 		3E89CEE923682FCA00EABDF2 /* ImmunisationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */; };
-		3E958BFF2369CB1D007EEC5D /* ImmunisationProfile2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E958BFE2369CB1D007EEC5D /* ImmunisationProfile2ViewController.swift */; };
 		3EA963D2235EE31F00F4FD32 /* Loadcounties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA963D1235EE31F00F4FD32 /* Loadcounties.swift */; };
 		3EA963D5235EFFB000F4FD32 /* SignupTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA963D4235EFFB000F4FD32 /* SignupTables.swift */; };
 		3EABCD102322443400334907 /* HideKeyboardOnReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */; };
@@ -78,7 +77,6 @@
 		3E5467552362DDF200C51398 /* ReportExposureExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExposureExtension.swift; sourceTree = "<group>"; };
 		3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdController.swift; sourceTree = "<group>"; };
 		3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfileViewController.swift; sourceTree = "<group>"; };
-		3E958BFE2369CB1D007EEC5D /* ImmunisationProfile2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfile2ViewController.swift; sourceTree = "<group>"; };
 		3EA963D1235EE31F00F4FD32 /* Loadcounties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadcounties.swift; sourceTree = "<group>"; };
 		3EA963D4235EFFB000F4FD32 /* SignupTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTables.swift; sourceTree = "<group>"; };
 		3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardOnReturn.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */,
-				3E958BFE2369CB1D007EEC5D /* ImmunisationProfile2ViewController.swift */,
 			);
 			path = ImmunisationProfile;
 			sourceTree = "<group>";
@@ -546,7 +543,6 @@
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
 				3E18B2342258D46F0094117B /* Data.swift in Sources */,
 				3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */,
-				3E958BFF2369CB1D007EEC5D /* ImmunisationProfile2ViewController.swift in Sources */,
 				3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */,
 				3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */,
 				3E0D5733235732F800B9CFC9 /* Config.swift in Sources */,

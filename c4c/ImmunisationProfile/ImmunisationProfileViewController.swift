@@ -9,11 +9,74 @@
 import UIKit
 
 class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
+    
+    
+    let firstDoseHepatitispicker = UIDatePicker()
+    let secondDoseHepatitispicker = UIDatePicker()
+    let DoseInfluenzapicker = UIDatePicker()
+    let firstDoseVaricellapicker = UIDatePicker()
+    let secondDoseVaricellapicker = UIDatePicker()
+    let firstDoseTdappicker = UIDatePicker()
+    let boosterDoseTdappicker = UIDatePicker()
+    let firstDoseMeaslespicker = UIDatePicker()
+    let secondDoseMeaslespicker = UIDatePicker()
+    let firstDoseMeningocopicker = UIDatePicker()
+    let secondDoseMeningocopicker = UIDatePicker()
+    
+    
+    @IBOutlet weak var hepatitisFirstdoseDate: UITextField!
+    
+    @IBOutlet weak var hepatitisSeconddoseDate: UITextField!
+    
+    @IBOutlet weak var influenzaDosedate: UITextField!
+    
+    @IBOutlet weak var varicellaFirstdoseDate: UITextField!
+    
+    
+    @IBOutlet weak var varicellaSeconddoseDate: UITextField!
+    
+    
+    @IBOutlet weak var tdapFirstdoseDate: UITextField!
+    
+    
+    @IBOutlet weak var tdapBoosterdoseDate: UITextField!
+    
+    
+    @IBOutlet weak var measlesFirstdoseDate: UITextField!
+    
+    @IBOutlet weak var measlesSeconddoseDate: UITextField!
+    
+    
+    @IBOutlet weak var meningocoFirstdoseDate: UITextField!
+    
+    
+    @IBOutlet weak var meningocoSeconddoseDate: UITextField!
+    
+    
+    
+    
+    
+    
+    
 
     @IBOutlet weak var myscrollview: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         myscrollview.delegate = self
+        
+        setDateOfHepatitisFirstDose()
+        setDateOfHepatitisSecondDose()
+        setDateOfTdap()
+        setDateOfInfluenza()
+        setDateOfTdapSecondDose()
+        setDateOfMeaslesFirstDose()
+        setDateOfMeaslesSecondDose()
+        setDateOfMeningocoFirstDose()
+        setDateOfMeningocoSecondDose()
+        setDateOfVaricellaFirstDose()
+        setDateOfVaricellaSecondDose()
+    
 
         // Do any additional setup after loading the view.
     }
