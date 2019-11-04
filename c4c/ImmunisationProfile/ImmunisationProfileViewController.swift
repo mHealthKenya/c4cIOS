@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DLRadioButton
 
 class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
     
@@ -52,14 +53,270 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var meningocoSeconddoseDate: UITextField!
     
+    @IBOutlet weak var myscrollview: UIScrollView!
+   
+    
+      //***************set button actions for radiobuttons********
+    
+    @IBAction func HepatitisVaccinationYes(_ sender: Any) {
+        
+        hpbFirstYesSelected()
+    }
+    
+    
+    @IBAction func HepatitisVaccinationPartially(_ sender: Any) {
+        
+        hpbFirstPartiallySelected()
+    }
+    
+    
+    @IBAction func HepatitisVaccinationNo(_ sender: Any) {
+        
+        hpbFirstNoSelected()
+    }
+    
+    
+    @IBAction func HepatitisSecondDoseYes(_ sender: Any) {
+        
+        hpbSecondYesSelected()
+    }
+    
+    
+    @IBAction func HepatitisSecondDoseNo(_ sender: Any) {
+        
+        hpbSecondNoSelected()
+    }
+    
+    
+    
+    @IBAction func InfluenzaPregnantYes(_ sender: Any) {
+        
+        influenzafirstYesSelected()
+    }
+    
+    
+    @IBAction func InfluenzaPregnantNo(_ sender: Any) {
+        
+        influenzafirstNoSelected()
+    }
+    
+    
+    @IBAction func InfluenzaTrimesterFirst(_ sender: Any) {
+        
+        influenzaFirstTrimesterSelected()
+        
+    }
+    
+    @IBAction func InfluenzaTrimesterSecond(_ sender: Any) {
+        
+        influenzaSecondTrimesterSelected()
+        
+    }
+    
+    
+    @IBAction func InfluenzaTrimesterThird(_ sender: Any) {
+        
+        influenzaThirdtrimesterSelected()
+        
+    }
+    
+    
+    
+    @IBAction func InfluenzaVaccinationYes(_ sender: Any) {
+        
+        influenzaSecondYesSelected()
+    }
+    
+    
+    @IBAction func InfluenzaVaccinationNo(_ sender: Any) {
+        
+        influenzaSecondNoselected()
+        
+    }
+    
+    
+    
+    @IBAction func VaricellaVaccinationYes(_ sender: Any) {
+        
+        varicellafirstYesSelected()
+    }
+    
+    
+    @IBAction func VaricellaVaccinationNo(_ sender: Any) {
+        
+        varicellafirstNoSelected()
+        
+    }
+    
+    
+    
+    @IBAction func VaricellaHistoryYes(_ sender: Any) {
+        
+        varicellasecondYesSelected()
+       
+    }
+    
+    
+    @IBAction func VaricellaHistoryNo(_ sender: Any) {
+        
+        varicellasecondNoSelected()
+      
+    }
+    
+    
+    
+    @IBAction func TdapImmunisedYes(_ sender: Any) {
+        
+        tdapfirstYesSelected()
+        
+    }
+    
+    
+    
+    @IBAction func TdapImmunisedNo(_ sender: Any) {
+        
+        tdapfirstNoSelected()
+        
+    }
+    
+    
+    @IBAction func TdapBoosterYes(_ sender: Any) {
+        
+        tdapsecondYesSelected()
+        
+    }
+    
+    @IBAction func TdapBoosterNo(_ sender: Any) {
+        
+        tdapsecondNoSelected()
+        
+    }
+    
+    
+    @IBAction func MeaslesImmunisationYes(_ sender: Any) {
+        
+        measlesfirstYesSelected()
+        
+    }
+    
+    
+    @IBAction func MeaslesImmunisationNo(_ sender: Any) {
+        
+        measlesfirstNoSelected()
+    }
+    
+    
+    @IBAction func MeningocoImmunisationYes(_ sender: Any) {
+        
+        meningocofirstYesSelected()
+    }
+    
+    
+    @IBAction func MeningocoImmunisationNo(_ sender: Any) {
+        
+        meningocofirstNoSelected()
+        
+    }
     
     
     
     
     
+    
+    
+    @IBAction func UpdateProfileBtn(_ sender: Any) {
+        
+        print("updating profile")
+    }
+    
+    
+    
+    
+    //***************set outlets for radiobuttons********
+    
+    
+    
+    @IBOutlet weak var HepatitisVaccinationYesOutlet: DLRadioButton!
+    
+    @IBOutlet weak var HepatitisVaccinationPartiallyOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var HepatitisVaccinationNoOutlet: DLRadioButton!
+    
+    @IBOutlet weak var HepatitisSecondDoseYesOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var HepatitisSecondDoseNoOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var InfluenzaPregnantYesOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var InfluenzaPregnantNoOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var InfluenzaTrimesterFirstOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var InfluenzaTrimesterSecondOutlet: DLRadioButton!
+    
+    @IBOutlet weak var InfluenzaTrimesterThirdOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var InfluenzaVaccinatedYesOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var InfluenzaVaccinatedNoOutlet: DLRadioButton!
+    
+    @IBOutlet weak var VaricellaVaccinatedYesOutlet: DLRadioButton!
+    
+    @IBOutlet weak var VaricellaVaccinatedNoOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var VaricellaHistoryYesOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var VaricellaHistoryNoOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var TdapImmunisationYesOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var TdapImmunisationNoOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var TdapBoosterYesOutlet: DLRadioButton!
+    
+    @IBOutlet weak var TdapBoosterNoOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var MeaslesImmunisationYesOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var MeaslesImmunisationNoOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var MeningocoImmunisationYesOutlet: DLRadioButton!
+    
+    
+    @IBOutlet weak var MeningocoImmunisationNoOutlet: DLRadioButton!
+    
+    
+    
+    @IBOutlet weak var hpbsecondLabel: UILabel!
+    
+    @IBOutlet weak var influenzafirstLabel: UILabel!
+    
+    @IBOutlet weak var influenzasecondLabel: UILabel!
+    
+    
+    @IBOutlet weak var influenzathirdLabel: UILabel!
+    
+    
+    @IBOutlet weak var tdapsecondLabel: UILabel!
     
 
-    @IBOutlet weak var myscrollview: UIScrollView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +333,15 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
         setDateOfMeningocoSecondDose()
         setDateOfVaricellaFirstDose()
         setDateOfVaricellaSecondDose()
+        
+        HepatitisVaccinationYesOutlet.isSelected = true
+        
+        hideHpbDetails()
+        hideInfluenzaDetails()
+        hideVaricellaDetails()
+        hideTdapDetails()
+        hideMeningocoDetails()
+        hideMeasleDetails()
     
 
         // Do any additional setup after loading the view.
@@ -89,15 +355,6 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

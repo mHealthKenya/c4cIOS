@@ -27,6 +27,7 @@
 		3EA963D5235EFFB000F4FD32 /* SignupTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA963D4235EFFB000F4FD32 /* SignupTables.swift */; };
 		3EABCD102322443400334907 /* HideKeyboardOnReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */; };
 		3EABCD1223224CF500334907 /* DatePickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABCD1123224CF500334907 /* DatePickers.swift */; };
+		3EB0FD762370181500AAC46E /* ImmunisationProfileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0FD752370181500AAC46E /* ImmunisationProfileExtension.swift */; };
 		3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4A72264602B00DE7414 /* LandingpageController.swift */; };
 		3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4A9226463BB00DE7414 /* Options.swift */; };
 		3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4AB226468F700DE7414 /* OptionsCell.swift */; };
@@ -81,6 +82,7 @@
 		3EA963D4235EFFB000F4FD32 /* SignupTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTables.swift; sourceTree = "<group>"; };
 		3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardOnReturn.swift; sourceTree = "<group>"; };
 		3EABCD1123224CF500334907 /* DatePickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickers.swift; sourceTree = "<group>"; };
+		3EB0FD752370181500AAC46E /* ImmunisationProfileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfileExtension.swift; sourceTree = "<group>"; };
 		3EBED7C2235849B9007D56A6 /* c4c-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "c4c-Bridging-Header.h"; sourceTree = "<group>"; };
 		3ECFC4A72264602B00DE7414 /* LandingpageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingpageController.swift; sourceTree = "<group>"; };
 		3ECFC4A9226463BB00DE7414 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */,
+				3EB0FD752370181500AAC46E /* ImmunisationProfileExtension.swift */,
 			);
 			path = ImmunisationProfile;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				3E5467562362DDF200C51398 /* ReportExposureExtension.swift in Sources */,
 				3E18B1FF2258BBEA0094117B /* ViewController.swift in Sources */,
 				3E18B1FD2258BBEA0094117B /* AppDelegate.swift in Sources */,
+				3EB0FD762370181500AAC46E /* ImmunisationProfileExtension.swift in Sources */,
 				3EA963D5235EFFB000F4FD32 /* SignupTables.swift in Sources */,
 				3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */,
 				3ECFC4AF2264806000DE7414 /* LoginController.swift in Sources */,
