@@ -34,6 +34,8 @@ func insertSignupOne(phone: String,fname: String,lname: String,uname: String,pas
         try database.executeUpdate("delete from signupOne",values:nil)
         try database.executeUpdate("insert into signupOne (phone,fname,lname,uname,password,secqn,secans) values (?, ?, ?, ?, ?, ?, ?)", values: [phone,fname,lname,uname,password,secqn,secans])
         
+//        try database.executeUpdate("update test set x = ? where y = ?", values: ["foo", "bar"])
+        
     } catch {
         print("failed: \(error.localizedDescription)")
     }
@@ -42,6 +44,231 @@ func insertSignupOne(phone: String,fname: String,lname: String,uname: String,pas
     
     
 }
+    
+    
+    
+    
+    
+    func hepatitisTable(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists hpb(radiofirst text, firstdate text,radiosecond text,seconddate text)", values: nil)
+
+            
+            try database.executeUpdate("insert into hpb (radiofirst,firstdate,radiosecond,seconddate) values (?, ?, ?, ?)", values: ["","","",""])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    func influenzaTable(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists influenza(gender text,radiofirst text,radiosecond text,radiothird text,dosedate text)", values: nil)
+            
+            try database.executeUpdate("delete from influenza",values:nil)
+            
+            try database.executeUpdate("insert into influenza (gender,radiofirst,radiosecond,radiothird,dosedate) values (?, ?, ?, ?, ?)", values: ["test","test","test","test","test"])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    func varicellaTable(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists varicella(radiofirst text,radiosecond text,doseone text,dosetwo text)", values: nil)
+            
+            try database.executeUpdate("delete from varicella",values:nil)
+            
+            try database.executeUpdate("insert into varicella (radiofirst,radiosecond,doseone,dosetwo) values (?, ?, ?, ?)", values: ["","","",""])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    func tdapTable(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists tdap(radiofirst text,dateone text,radiosecond text,datetwo text)", values: nil)
+            
+            try database.executeUpdate("delete from tdap",values:nil)
+            
+            try database.executeUpdate("insert into tdap (radiofirst,dateone,radiosecond,datetwo) values (?, ?, ?, ?)", values: ["","","",""])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+        
+    }
+    
+    
+    
+    func measlesTable(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists measles(radiofirst text,dateone text,datetwo text)", values: nil)
+            
+            try database.executeUpdate("delete from measles",values:nil)
+            
+            try database.executeUpdate("insert into measles (radiofirst,dateone,datetwo) values (?, ?, ?)", values: ["","",""])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    func meningocoTable(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            try database.executeUpdate("create table if not exists meningoco(radiofirst text,dateone text,datetwo text)", values: nil)
+            
+            try database.executeUpdate("delete from meningoco",values:nil)
+            
+            try database.executeUpdate("insert into meningoco (radiofirst,dateone,datetwo) values (?, ?, ?)", values: ["","",""])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 

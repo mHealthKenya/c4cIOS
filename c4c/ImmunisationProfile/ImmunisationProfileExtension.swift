@@ -181,6 +181,7 @@ extension ImmunisationProfileViewController{
     func hpbSecondYesSelected(){
         
         hepatitisSeconddoseDate.isEnabled = true
+       
         
     }
     
@@ -416,6 +417,193 @@ extension ImmunisationProfileViewController{
         
         meningocoFirstdoseDate.text = ""
         meningocoSeconddoseDate.text = ""
+        
+        
+    }
+    
+    
+    
+    func hepatitisTable(radiofirstS: String,firstdateS: String,radiosecondS: String,seconddateS: String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+           
+            
+                    try database.executeUpdate("update hpb set radiofirst = ?, firstdate = ?, radiosecond = ?, seconddate = ?", values: [radiofirstS,firstdateS,radiosecondS,seconddateS])
+           
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    func influenzaTable(gender:String,radiofirstS: String,radiosecondS: String,radiothirdS: String,doseDateS:String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            try database.executeUpdate("update influenza set gender = ?,radiofirst = ?,radiosecond = ?,radiothird = ?, dosedate = ?", values: [gender,radiofirstS,radiosecondS,radiothirdS,doseDateS])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    func varicellaTable(radiofirstS: String,radiosecondS: String,doseOneDateS: String,doseTwoDateS:String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+           
+            try database.executeUpdate("update varicella set radiofirst = ?, radiosecond = ?, doseone = ?, dosetwo = ?", values: [radiofirstS,radiosecondS,doseOneDateS,doseTwoDateS])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    func tdapTable(radiofirstS: String,firstDateS: String,radiosecondS: String,secondDateS:String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+          
+            
+             try database.executeUpdate("update tdap set radiofirst = ?, dateone = ?, radiosecond = ?, datetwo = ?", values: [radiofirstS,firstDateS,radiosecondS,secondDateS])
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+       
+        
+        
+    }
+    
+    
+    
+    func measlesTable(radiofirstS: String,dateoneS: String,datetwoS:String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+           
+            try database.executeUpdate("update measles set radiofirst = ?, dateone = ?, datetwo = ?", values: [radiofirstS,dateoneS,datetwoS])
+            
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    func meningocoTable(radiofirstS: String,dateoneS: String,datetwoS:String){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            try database.executeUpdate("update meningoco set radiofirst = ?, dateone = ?, datetwo = ?", values: [radiofirstS,dateoneS,datetwoS])
+            
+            
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
         
         
     }

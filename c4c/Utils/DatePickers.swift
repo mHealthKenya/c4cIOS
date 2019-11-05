@@ -15,7 +15,7 @@ extension SignupSecondController{
     @objc func dobValueChanged(sender: UIDatePicker){
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.none
         dob.text = formatter.string(from: sender.date)
@@ -92,8 +92,9 @@ extension ReportExposureViewController{
     @objc func dateOfFirstDoseValueChanged(sender: UIDatePicker){
         
         let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = DateFormatter.Style.none
+        formatter.dateFormat = "dd/MM/yyyy hh:mm a"
+//        formatter.dateStyle = DateFormatter.Style.medium
+//        formatter.timeStyle = DateFormatter.Style.none
         datetimeofexposure.text = formatter.string(from: sender.date)
         //        self.view.endEditing(true)
         
@@ -101,7 +102,8 @@ extension ReportExposureViewController{
     
     func setDateOfFirstDose(){
         
-        dateOfExposurepicker.datePickerMode = UIDatePicker.Mode.date
+        
+               dateOfExposurepicker.datePickerMode = UIDatePicker.Mode.dateAndTime
         
         dateOfExposurepicker.addTarget(self, action: #selector(dateOfFirstDoseValueChanged(sender:)), for:  UIControl.Event.valueChanged)
         

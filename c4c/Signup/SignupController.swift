@@ -376,6 +376,12 @@ class SignupController: UIViewController ,UITextFieldDelegate,UIPickerViewDelega
         confirmPassword.delegate = self
         toggleFields(myval: true)
         
+        influenzaTable()
+        tdapTable()
+        measlesTable()
+        meningocoTable()
+        hepatitisTable()
+        
 
         // Do any additional setup after loading the view.
     }

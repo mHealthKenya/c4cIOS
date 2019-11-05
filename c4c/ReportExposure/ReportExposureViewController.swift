@@ -117,6 +117,8 @@ class ReportExposureViewController: UIViewController,UITextFieldDelegate,UIPicke
         setDateOfFirstDose()
         setDateOfSecondDose()
         myscrollview.delegate = self
+        
+        self.title = "Report Exposure"
 //        myscrollview.contentSize = CGSize(width: self.view.frame.width, height: 300)
 //        contentView.frame.size.height = 300
 //        myview.frame.size.height = 300

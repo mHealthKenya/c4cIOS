@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k4c-RE-lsr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GzV-4J-EVM">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -330,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVl-TD-cBy" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696" y="60"/>
+            <point key="canvasLocation" x="2729" y="225"/>
         </scene>
         <!--Immunisation Profile View Controller-->
         <scene sceneID="hXU-eK-cJ0">
@@ -341,7 +341,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPM-fJ-dNE">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="2600"/>
+                                <rect key="frame" x="0.0" y="50" width="768" height="2550"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rko-Un-SeT" userLabel="contentView">
                                         <rect key="frame" x="8" y="0.0" width="768" height="2594"/>
@@ -1116,6 +1116,7 @@
                     <connections>
                         <outlet property="tableViewOptions" destination="tfM-y8-awU" id="eaY-Hf-zhg"/>
                         <segue destination="be6-lF-8fo" kind="show" identifier="reportexposureSegue" id="x64-nI-48q"/>
+                        <segue destination="k4c-RE-lsr" kind="show" identifier="immunisationProfileSegue" id="rz0-GP-jOC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h19-KA-Cj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1296,9 +1297,9 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93k-Uc-d77">
-                                                <rect key="frame" x="40" y="1716" width="688" height="42"/>
+                                                <rect key="frame" x="40" y="1716" width="688" height="38"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="REPORT EXPOSURE">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

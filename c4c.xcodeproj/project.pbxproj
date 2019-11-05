@@ -20,6 +20,7 @@
 		3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2312258D0DE0094117B /* SignupSecondController.swift */; };
 		3E18B2342258D46F0094117B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2332258D46F0094117B /* Data.swift */; };
 		3E2A701E23618FBA00BA3825 /* ReportExposureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A701D23618FBA00BA3825 /* ReportExposureViewController.swift */; };
+		3E4CEF6B23719E0F00B610B1 /* NavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CEF6A23719E0F00B610B1 /* NavigationBarExtension.swift */; };
 		3E5467562362DDF200C51398 /* ReportExposureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5467552362DDF200C51398 /* ReportExposureExtension.swift */; };
 		3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */; };
 		3E89CEE923682FCA00EABDF2 /* ImmunisationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */; };
@@ -75,6 +76,7 @@
 		3E18B2312258D0DE0094117B /* SignupSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSecondController.swift; sourceTree = "<group>"; };
 		3E18B2332258D46F0094117B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		3E2A701D23618FBA00BA3825 /* ReportExposureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExposureViewController.swift; sourceTree = "<group>"; };
+		3E4CEF6A23719E0F00B610B1 /* NavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtension.swift; sourceTree = "<group>"; };
 		3E5467552362DDF200C51398 /* ReportExposureExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExposureExtension.swift; sourceTree = "<group>"; };
 		3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdController.swift; sourceTree = "<group>"; };
 		3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfileViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */,
 				3EABCD1123224CF500334907 /* DatePickers.swift */,
+				3E4CEF6A23719E0F00B610B1 /* NavigationBarExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */,
 				3E0D5733235732F800B9CFC9 /* Config.swift in Sources */,
 				3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */,
+				3E4CEF6B23719E0F00B610B1 /* NavigationBarExtension.swift in Sources */,
 				3E5467562362DDF200C51398 /* ReportExposureExtension.swift in Sources */,
 				3E18B1FF2258BBEA0094117B /* ViewController.swift in Sources */,
 				3E18B1FD2258BBEA0094117B /* AppDelegate.swift in Sources */,

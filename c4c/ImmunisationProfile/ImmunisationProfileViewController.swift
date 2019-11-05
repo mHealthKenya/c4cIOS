@@ -226,8 +226,280 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
     
     @IBAction func UpdateProfileBtn(_ sender: Any) {
         
-        print("updating profile")
+        
+        setHepatitisTableData()
+        getHepatitisSavedData()
+        
+        
+        
+        
     }
+    
+    func setHepatitisTableData(){
+    
+        
+        var radiofirst = ""
+        var firstdate = ""
+        var radiosecond = ""
+        var seconddate = ""
+        
+        
+        if(HepatitisVaccinationYesOutlet.isSelected){
+            
+            radiofirst = "Yes"
+            
+        }
+        if(HepatitisVaccinationNoOutlet.isSelected){
+            
+            radiofirst = "No"
+        }
+        
+        if(HepatitisVaccinationPartiallyOutlet.isSelected){
+            
+            radiofirst = "Partially"
+        }
+        
+        
+        if(HepatitisSecondDoseNoOutlet.isSelected){
+            
+            radiosecond = "No"
+        }
+        if(HepatitisSecondDoseYesOutlet.isSelected){
+            
+            radiosecond = "Yes"
+            
+        }
+        
+        if(hepatitisFirstdoseDate.isEnabled){
+            
+            firstdate = hepatitisFirstdoseDate.text!
+        }
+        else{
+            
+            firstdate = ""
+        }
+        
+        if(hepatitisSeconddoseDate.isEnabled){
+            
+            seconddate = hepatitisSeconddoseDate.text!
+        }
+        else{
+            
+            seconddate = ""
+        }
+        
+        
+        hepatitisTable(radiofirstS: radiofirst, firstdateS: firstdate, radiosecondS: radiosecond, seconddateS: seconddate)
+        
+        
+    }
+    
+    
+    func getHepatitisSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            
+            let rs = try database.executeQuery("select radiofirst,firstdate,radiosecond,seconddate from hpb", values: nil)
+            while rs.next() {
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let firstdate = rs.string(forColumn: "firstdate")
+                let radiosecond = rs.string(forColumn: "radiosecond")
+                let seconddate = rs.string(forColumn: "seconddate")
+                
+                
+                print("gender hepa is \(radiofirst)")
+                print("radiofirst hepa is \(firstdate)")
+                print("radiosecond hepa is \(radiosecond)")
+                
+              
+//                if(hepatitisFirstdoseDate.isEnabled){
+//
+//                    hepatitisFirstdoseDate.text = firstdate
+//
+//                }
+//
+//                if(hepatitisSeconddoseDate.isEnabled){
+//
+//                    hepatitisSeconddoseDate.text = seconddate
+//
+//                }
+                
+//                hepatitisFirstdoseDate.isEnabled = false
+//                hepatitisFirstdoseDate.text = ""
+//                hepatitisSeconddoseDate.text = ""
+//                hepatitisSeconddoseDate.isEnabled = false
+//                HepatitisSecondDoseYesOutlet.isEnabled = false
+//                HepatitisSecondDoseYesOutlet.isSelected = false
+//                HepatitisSecondDoseNoOutlet.isEnabled = false
+//                HepatitisSecondDoseNoOutlet.isSelected = false
+//                HepatitisSecondDoseNoOutlet.titleLabel?.isEnabled = false
+//                HepatitisSecondDoseYesOutlet.titleLabel?.isEnabled = false
+//
+//                hpbsecondLabel.isEnabled = false
+                
+                
+                if(radiofirst == "Yes"){
+                    
+                    HepatitisVaccinationYesOutlet.isSelected=true
+                    
+                    
+                    
+                    hepatitisFirstdoseDate.isEnabled = true
+                    hepatitisFirstdoseDate.text = firstdate
+                    
+                    HepatitisSecondDoseYesOutlet.isEnabled = true
+                    
+                    HepatitisSecondDoseNoOutlet.isEnabled = true
+                    
+                    HepatitisSecondDoseNoOutlet.titleLabel?.isEnabled = true
+                    HepatitisSecondDoseYesOutlet.titleLabel?.isEnabled = true
+                    
+                    hpbsecondLabel.isEnabled = true
+                }
+                if(radiofirst == "No"){
+                    
+                    HepatitisVaccinationNoOutlet.isSelected=true
+                    
+                    hepatitisSeconddoseDate.isEnabled = false
+                    
+                    
+                    
+                    
+                    
+                    hepatitisFirstdoseDate.isEnabled = false
+                    hepatitisFirstdoseDate.text = ""
+                    
+                    HepatitisSecondDoseYesOutlet.isEnabled = false
+                    
+                    HepatitisSecondDoseNoOutlet.isEnabled = false
+                    
+                    HepatitisSecondDoseNoOutlet.titleLabel?.isEnabled = false
+                    HepatitisSecondDoseYesOutlet.titleLabel?.isEnabled = false
+                    
+                    hpbsecondLabel.isEnabled = false
+                    
+                }
+                if(radiofirst == "Partially"){
+                    
+                    HepatitisVaccinationPartiallyOutlet.isSelected=true
+                    hepatitisSeconddoseDate.isEnabled = true
+                    
+                    
+                    hepatitisFirstdoseDate.isEnabled = true
+                    hepatitisFirstdoseDate.text = firstdate
+                    
+                    HepatitisSecondDoseYesOutlet.isEnabled = true
+                    
+                    HepatitisSecondDoseNoOutlet.isEnabled = true
+                    
+                    HepatitisSecondDoseNoOutlet.titleLabel?.isEnabled = true
+                    HepatitisSecondDoseYesOutlet.titleLabel?.isEnabled = true
+                    
+                    hpbsecondLabel.isEnabled = true
+                }
+                
+                
+                if(radiosecond == "Yes"){
+                    
+                    HepatitisSecondDoseYesOutlet.isSelected=true
+                    
+                     hepatitisSeconddoseDate.isEnabled = true
+                     hepatitisSeconddoseDate.text = seconddate
+                    
+                    
+                }
+                if(radiosecond == "No"){
+                    
+                    HepatitisSecondDoseNoOutlet.isSelected=true
+                    hepatitisSeconddoseDate.isEnabled = false
+                    hepatitisSeconddoseDate.text = ""
+                    
+                    
+                }
+                
+//                if(radiosecond == "No"){
+//
+//                    HepatitisSecondDoseNoOutlet.isSelected = true
+//
+//                }
+//                else if(radiosecond == "Yes"){
+//
+//                    HepatitisSecondDoseYesOutlet.isSelected = true
+//                }
+                
+        
+                
+               
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    
+    func getInfluenzaSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            
+            let rs = try database.executeQuery("select * from influenza", values: nil)
+            while rs.next() {
+                let radiofirst = rs.string(forColumn: "gender")
+                let firstdate = rs.string(forColumn: "radiofirst")
+                let radiosecond = rs.string(forColumn: "radiosecond")
+                let seconddate = rs.string(forColumn: "radiothird")
+                
+                
+               print("gender is \(radiofirst)")
+               print("radiofirst is \(firstdate)")
+                
+                
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
     
     
     
@@ -334,17 +606,29 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
         setDateOfVaricellaFirstDose()
         setDateOfVaricellaSecondDose()
         
-        HepatitisVaccinationYesOutlet.isSelected = true
+       
         
-        hideHpbDetails()
+//        hideHpbDetails()
         hideInfluenzaDetails()
         hideVaricellaDetails()
         hideTdapDetails()
         hideMeningocoDetails()
         hideMeasleDetails()
+        
+        self.title = "Immunisation Profile"
+        
+        
+//        getHepatitisSavedData()
+        
+        
     
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        getInfluenzaSavedData()
+        getHepatitisSavedData()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

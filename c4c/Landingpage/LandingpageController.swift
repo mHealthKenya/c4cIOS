@@ -51,7 +51,7 @@ class LandingpageController: UIViewController ,UITableViewDataSource,UITableView
         }
         else if((selectedOption.name?.contains("Immunisation Profile"))!){
             
-            performSegue(withIdentifier: "immunisationprofilesegue", sender: self)
+            performSegue(withIdentifier: "immunisationProfileSegue", sender: self)
             
         }
         else{
@@ -66,6 +66,21 @@ class LandingpageController: UIViewController ,UITableViewDataSource,UITableView
        
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+               let backItem = UIBarButtonItem()
+                backItem.title = ""
+                navigationItem.backBarButtonItem = backItem
+    }
+    
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let backItem = UIBarButtonItem()
+//        backItem.title = "Something Else"
+//        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+//    }
     
 
     override func viewDidLoad() {
