@@ -19,12 +19,17 @@
 		3E18B2302258D0A10094117B /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E18B22F2258D0A10094117B /* iOSDropDown.framework */; };
 		3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2312258D0DE0094117B /* SignupSecondController.swift */; };
 		3E18B2342258D46F0094117B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18B2332258D46F0094117B /* Data.swift */; };
+		3E20FCB12374521500AF7343 /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20FCB02374521500AF7343 /* MyCardViewController.swift */; };
+		3E20FCB32374525900AF7343 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20FCB22374525900AF7343 /* CollectionViewCell.swift */; };
 		3E2A701E23618FBA00BA3825 /* ReportExposureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A701D23618FBA00BA3825 /* ReportExposureViewController.swift */; };
 		3E3CFB622372CCB900B123E4 /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CFB612372CCB900B123E4 /* FaqViewController.swift */; };
 		3E3CFB642372CD5D00B123E4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CFB632372CD5D00B123E4 /* ColorExtension.swift */; };
 		3E4CEF6B23719E0F00B610B1 /* NavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CEF6A23719E0F00B610B1 /* NavigationBarExtension.swift */; };
 		3E5467562362DDF200C51398 /* ReportExposureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5467552362DDF200C51398 /* ReportExposureExtension.swift */; };
 		3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */; };
+		3E61BBD52373FFCF000CCD49 /* FaqExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BBD42373FFCF000CCD49 /* FaqExtension.swift */; };
+		3E61BBD7237417BE000CCD49 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BBD6237417BE000CCD49 /* FaqTableViewCell.swift */; };
+		3E61BBD923741982000CCD49 /* FAQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BBD823741982000CCD49 /* FAQuestionsViewController.swift */; };
 		3E89CEE923682FCA00EABDF2 /* ImmunisationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */; };
 		3EA963D2235EE31F00F4FD32 /* Loadcounties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA963D1235EE31F00F4FD32 /* Loadcounties.swift */; };
 		3EA963D5235EFFB000F4FD32 /* SignupTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA963D4235EFFB000F4FD32 /* SignupTables.swift */; };
@@ -78,12 +83,17 @@
 		3E18B22F2258D0A10094117B /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E18B2312258D0DE0094117B /* SignupSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSecondController.swift; sourceTree = "<group>"; };
 		3E18B2332258D46F0094117B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		3E20FCB02374521500AF7343 /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
+		3E20FCB22374525900AF7343 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3E2A701D23618FBA00BA3825 /* ReportExposureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExposureViewController.swift; sourceTree = "<group>"; };
 		3E3CFB612372CCB900B123E4 /* FaqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
 		3E3CFB632372CD5D00B123E4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		3E4CEF6A23719E0F00B610B1 /* NavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtension.swift; sourceTree = "<group>"; };
 		3E5467552362DDF200C51398 /* ReportExposureExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExposureExtension.swift; sourceTree = "<group>"; };
 		3E5DADC42263486E00AFA8CB /* SignupThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdController.swift; sourceTree = "<group>"; };
+		3E61BBD42373FFCF000CCD49 /* FaqExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqExtension.swift; sourceTree = "<group>"; };
+		3E61BBD6237417BE000CCD49 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
+		3E61BBD823741982000CCD49 /* FAQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQuestionsViewController.swift; sourceTree = "<group>"; };
 		3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfileViewController.swift; sourceTree = "<group>"; };
 		3EA963D1235EE31F00F4FD32 /* Loadcounties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadcounties.swift; sourceTree = "<group>"; };
 		3EA963D4235EFFB000F4FD32 /* SignupTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTables.swift; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 		3E18B1FB2258BBEA0094117B /* c4c */ = {
 			isa = PBXGroup;
 			children = (
+				3E61BBDA2374373C000CCD49 /* Cardview */,
 				3E3CFB602372CC9000B123E4 /* Faq */,
 				3EB5A3B82372B0AA005498F9 /* InformationCenter */,
 				3E89CEE723682FA200EABDF2 /* ImmunisationProfile */,
@@ -232,8 +243,20 @@
 			isa = PBXGroup;
 			children = (
 				3E3CFB612372CCB900B123E4 /* FaqViewController.swift */,
+				3E61BBD42373FFCF000CCD49 /* FaqExtension.swift */,
+				3E61BBD6237417BE000CCD49 /* FaqTableViewCell.swift */,
+				3E61BBD823741982000CCD49 /* FAQuestionsViewController.swift */,
 			);
 			path = Faq;
+			sourceTree = "<group>";
+		};
+		3E61BBDA2374373C000CCD49 /* Cardview */ = {
+			isa = PBXGroup;
+			children = (
+				3E20FCB02374521500AF7343 /* MyCardViewController.swift */,
+				3E20FCB22374525900AF7343 /* CollectionViewCell.swift */,
+			);
+			path = Cardview;
 			sourceTree = "<group>";
 		};
 		3E89CEE723682FA200EABDF2 /* ImmunisationProfile */ = {
@@ -571,15 +594,19 @@
 			files = (
 				3EABCD102322443400334907 /* HideKeyboardOnReturn.swift in Sources */,
 				3EA963D2235EE31F00F4FD32 /* Loadcounties.swift in Sources */,
+				3E61BBD52373FFCF000CCD49 /* FaqExtension.swift in Sources */,
 				3E3CFB642372CD5D00B123E4 /* ColorExtension.swift in Sources */,
+				3E61BBD7237417BE000CCD49 /* FaqTableViewCell.swift in Sources */,
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
 				3E18B2342258D46F0094117B /* Data.swift in Sources */,
 				3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */,
 				3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */,
 				3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */,
+				3E20FCB32374525900AF7343 /* CollectionViewCell.swift in Sources */,
 				3E0D5733235732F800B9CFC9 /* Config.swift in Sources */,
 				3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */,
 				3EB5A3BA2372B0F1005498F9 /* InformationCenterTableViewController.swift in Sources */,
+				3E20FCB12374521500AF7343 /* MyCardViewController.swift in Sources */,
 				3E4CEF6B23719E0F00B610B1 /* NavigationBarExtension.swift in Sources */,
 				3E5467562362DDF200C51398 /* ReportExposureExtension.swift in Sources */,
 				3E18B1FF2258BBEA0094117B /* ViewController.swift in Sources */,
@@ -590,6 +617,7 @@
 				3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */,
 				3ECFC4AF2264806000DE7414 /* LoginController.swift in Sources */,
 				3EABCD1223224CF500334907 /* DatePickers.swift in Sources */,
+				3E61BBD923741982000CCD49 /* FAQuestionsViewController.swift in Sources */,
 				3E2A701E23618FBA00BA3825 /* ReportExposureViewController.swift in Sources */,
 				3E89CEE923682FCA00EABDF2 /* ImmunisationProfileViewController.swift in Sources */,
 			);

@@ -22,17 +22,21 @@ class FaqViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sectionNames = [ "iPhone", "iPad", "Apple Watch" ];
-        sectionItems = [ ["iPhone 5", "iPhone 5s", "iPhone 6", "iPhone 6 Plus", "iPhone 7", "iPhone 7 Plus"],
-                         ["iPad Mini", "iPad Air 2", "iPad Pro", "iPad Pro 9.7"],
-                         ["Apple Watch", "Apple Watch 2", "Apple Watch 2 (Nike)"]
-        ];
+        setFaqContent()
+       
         self.tableView!.tableFooterView = UIView()
+        self.title = "FAQ"
+        sizeHeaderToFit()
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        
+        
+        //code to autoresize the label
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
         
     }
     
@@ -48,10 +52,16 @@ class FaqViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             tableView.backgroundView = nil
             return sectionNames.count
         } else {
-            let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
+            
+            
+            
+            
+            
+            let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: CGFloat.greatestFiniteMagnitude))
             messageLabel.text = "Retrieving data.\nPlease wait."
             messageLabel.numberOfLines = 0;
             messageLabel.textAlignment = .center;
+            messageLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             messageLabel.font = UIFont(name: "HelveticaNeue", size: 20.0)!
             messageLabel.sizeToFit()
             self.tableView.backgroundView = messageLabel;
@@ -76,7 +86,7 @@ class FaqViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44.0;
+        return 50;
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
@@ -110,6 +120,13 @@ class FaqViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         let section = self.sectionItems[indexPath.section] as! NSArray
         cell.textLabel?.textColor = UIColor.black
         cell.textLabel?.text = section[indexPath.row] as? String
+        
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        cell.textLabel?.font = font
+//        cell.textLabel?.text = text
+        
+        cell.textLabel?.sizeToFit()
         
         return cell
     }
