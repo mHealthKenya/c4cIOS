@@ -119,7 +119,7 @@ class LoginController: UIViewController,UITextFieldDelegate{
                 
                 if(username.text!==uname && password.text!==passwords){
                     
-                    performSegue(withIdentifier: "loginsegue", sender: self)
+                    performSegue(withIdentifier: "theloginsegue", sender: self)
                     
                     
                 }

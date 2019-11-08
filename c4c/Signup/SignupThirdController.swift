@@ -472,7 +472,7 @@ class SignupThirdController: UIViewController,UITextFieldDelegate,UIPickerViewDe
     
     private func goToLandingPage(){
         
-        performSegue(withIdentifier: "gotolandingsegue", sender: self)
+        performSegue(withIdentifier: "thelandingsegue", sender: self)
 
     }
     

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SCLAlertView
+import SafariServices
 
 struct Headline {
     
@@ -77,6 +79,39 @@ class InformationCenterTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected \(headlines[indexPath.row].title)")
+        
+        if((headlines[indexPath.row].title.contains("FAQ"))){
+            
+            performSegue(withIdentifier: "thefaqsegue", sender: self)
+            
+        }
+        else if((headlines[indexPath.row].title.contains("ART GUIDELINES"))){
+            
+            guard let url = URL(string: "http://www.nascop.or.ke/?page_id=2431") else { return }
+            
+            let svc = SFSafariViewController(url: url)
+            present(svc, animated: true, completion: nil)
+            
+        }
+        else if((headlines[indexPath.row].title.contains("NASCOP WEBSITE"))){
+            
+            guard let url = URL(string: "http://www.nascop.or.ke") else { return }
+            
+            let svc = SFSafariViewController(url: url)
+            present(svc, animated: true, completion: nil)
+            
+        }
+        else if((headlines[indexPath.row].title.contains("NASCOP HIV Services M&E tools training course"))){
+            
+            SCLAlertView().showInfo("Status", subTitle: "Work in progress")
+            
+        }
+        else if((headlines[indexPath.row].title.contains("RESOURCE LINKS"))){
+            
+            SCLAlertView().showInfo("Status", subTitle: "Work in progress")
+            
+        }
+        
     }
     
     
