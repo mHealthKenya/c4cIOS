@@ -99,8 +99,8 @@ class MyCardViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.locationDescription.text = locationDescription[indexPath.row]
         
         //This creates the shadows and modifies the cards a little bit
-        cell.contentView.layer.cornerRadius = 4.0
-        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.cornerRadius = 10.0
+        cell.contentView.layer.borderWidth = 5.0
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
         cell.contentView.layer.masksToBounds = false
         cell.layer.shadowColor = UIColor.gray.cgColor

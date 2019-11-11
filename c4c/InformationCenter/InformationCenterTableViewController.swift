@@ -108,7 +108,7 @@ class InformationCenterTableViewController: UITableViewController {
         }
         else if((headlines[indexPath.row].title.contains("RESOURCE LINKS"))){
             
-            SCLAlertView().showInfo("Status", subTitle: "Work in progress")
+            performSegue(withIdentifier: "resourcelinksegue", sender: self)
             
         }
         
@@ -121,6 +121,14 @@ class InformationCenterTableViewController: UITableViewController {
         }
         
         return tableView.sectionHeaderHeight
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
     
 

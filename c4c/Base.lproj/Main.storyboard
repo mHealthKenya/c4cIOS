@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4P-Ll-Sba">
-                                <rect key="frame" x="-24" y="4" width="423" height="804"/>
+                                <rect key="frame" x="-24" y="48" width="423" height="716"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stetho2" translatesAutoresizingMaskIntoConstraints="NO" id="zoR-KV-B1q">
                                         <rect key="frame" x="0.0" y="0.0" width="423" height="776"/>
@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdX-bG-5Xn">
-                                <rect key="frame" x="-24" y="4" width="423" height="804"/>
+                                <rect key="frame" x="-24" y="48" width="423" height="716"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stetho2" translatesAutoresizingMaskIntoConstraints="NO" id="Ql3-Wz-nmF">
                                         <rect key="frame" x="0.0" y="0.0" width="1064" height="1406"/>
@@ -345,7 +345,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPM-fJ-dNE">
-                                <rect key="frame" x="0.0" y="24" width="768" height="2542"/>
+                                <rect key="frame" x="0.0" y="68" width="768" height="2498"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rko-Un-SeT" userLabel="contentView">
                                         <rect key="frame" x="8" y="0.0" width="768" height="2594"/>
@@ -386,7 +386,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="two-rg-hQZ" customClass="DLRadioButton">
-                                                        <rect key="frame" x="0.0" y="104.66666666666666" width="200" height="34"/>
+                                                        <rect key="frame" x="0.0" y="104.66666666666669" width="200" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="fll-Bm-tpI"/>
                                                         </constraints>
@@ -589,7 +589,7 @@
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of first dose" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQI-9d-Hba">
-                                                        <rect key="frame" x="0.0" y="429.66666666666663" width="708" height="30.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="429.66666666666674" width="708" height="30.333333333333314"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -1066,7 +1066,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-y8-awU">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="400" id="fNP-xl-9VX" customClass="OptionsCell" customModule="c4c" customModuleProvider="target">
@@ -1137,7 +1137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-Wx-jGc">
-                                <rect key="frame" x="0.0" y="24" width="768" height="1742"/>
+                                <rect key="frame" x="0.0" y="68" width="768" height="1698"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whL-ll-FOb" userLabel="contentView">
                                         <rect key="frame" x="8" y="0.0" width="768" height="1847.6666666666667"/>
@@ -1154,7 +1154,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date and Time of exposure" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDN-PE-tJS">
-                                                <rect key="frame" x="40" y="89.666666666666671" width="688" height="30"/>
+                                                <rect key="frame" x="40" y="89.666666666666657" width="688" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1167,7 +1167,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yl5-Bf-TpA">
-                                                <rect key="frame" x="40" y="229.66666666666666" width="688" height="29.999999999999972"/>
+                                                <rect key="frame" x="40" y="229.66666666666669" width="688" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1237,7 +1237,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="For what purpose was the sharp item originally used?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yqs-7l-GJK">
-                                                <rect key="frame" x="40" y="999.66666666666663" width="688" height="29.999999999999886"/>
+                                                <rect key="frame" x="40" y="999.66666666666674" width="688" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -1550,7 +1550,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of9-ru-9YO">
-                                <rect key="frame" x="-24" y="4" width="423" height="804"/>
+                                <rect key="frame" x="-24" y="48" width="423" height="716"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stetho2" translatesAutoresizingMaskIntoConstraints="NO" id="t7D-5v-Z4l">
                                         <rect key="frame" x="0.0" y="0.0" width="1064" height="1406"/>
@@ -1628,7 +1628,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1F4-8g-dEy">
-                                        <rect key="frame" x="40" y="480.66666666666674" width="343" height="73"/>
+                                        <rect key="frame" x="40" y="480.66666666666663" width="343" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10Q-hc-fCy" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
@@ -1641,7 +1641,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-6n-Njc" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="38.999999999999943" width="343" height="34"/>
+                                                <rect key="frame" x="0.0" y="39" width="343" height="34"/>
                                                 <state key="normal" title="No">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1800,6 +1800,7 @@
                     </tableView>
                     <connections>
                         <segue destination="4f0-Ue-N2s" kind="show" identifier="thefaqsegue" id="X8A-tS-FjC"/>
+                        <segue destination="xQO-RM-Dgb" kind="show" identifier="resourcelinksegue" id="LZB-Oi-EI9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIB-Ph-zGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1815,7 +1816,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2k-6l-8ad">
-                                <rect key="frame" x="-24" y="4" width="423" height="804"/>
+                                <rect key="frame" x="-24" y="48" width="423" height="716"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stetho2" translatesAutoresizingMaskIntoConstraints="NO" id="niD-Me-83l">
                                         <rect key="frame" x="0.0" y="0.0" width="423" height="666.66666666666663"/>
@@ -2002,7 +2003,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T0X-jF-tgy">
-                                <rect key="frame" x="0.0" y="20" width="375" height="758"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="714"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D4o-U5-fi1">
                                     <size key="itemSize" width="349" height="250"/>
@@ -2084,6 +2085,51 @@
             </objects>
             <point key="canvasLocation" x="953" y="-157"/>
         </scene>
+        <!--Resource Links Table View Controller-->
+        <scene sceneID="i5M-Oj-zce">
+            <objects>
+                <tableViewController id="xQO-RM-Dgb" customClass="ResourceLinksTableViewController" customModule="c4c" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WxI-4M-jd3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" textLabel="vW6-nz-F1v" detailTextLabel="O8R-9b-45X" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="KKK-j4-FQr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KKK-j4-FQr" id="rok-qK-cOL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vW6-nz-F1v">
+                                            <rect key="frame" x="16.000000000000004" y="9.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O8R-9b-45X">
+                                            <rect key="frame" x="15.999999999999996" y="33.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="xQO-RM-Dgb" id="7qj-AV-NtM"/>
+                            <outlet property="delegate" destination="xQO-RM-Dgb" id="f5h-mn-N62"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nRO-AV-xvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5798" y="-1108"/>
+        </scene>
     </scenes>
     <resources>
         <image name="c4c_logo" width="426" height="429"/>
@@ -2091,9 +2137,8 @@
         <image name="stetho2" width="1000" height="666.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FsD-yr-W7h"/>
         <segue reference="EBe-Bo-D13"/>
-        <segue reference="J4s-p4-CXO"/>
+        <segue reference="Utc-kK-WV8"/>
         <segue reference="Lab-CP-Qcx"/>
         <segue reference="wWu-b3-9G1"/>
         <segue reference="xYw-Ji-wkw"/>
