@@ -14,6 +14,8 @@ class OptionsCell: UITableViewCell {
     @IBOutlet weak var theimage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+       
         // Initialization code
     }
 

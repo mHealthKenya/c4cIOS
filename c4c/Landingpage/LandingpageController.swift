@@ -36,6 +36,9 @@ class LandingpageController: UIViewController ,UITableViewDataSource,UITableView
         let myoptions=options[indexPath.row]
         
         cell.thelabel.text = myoptions.name
+        cell.thelabel.lineBreakMode = .byTruncatingTail
+        cell.thelabel.numberOfLines = 0;
+        
         cell.theimage.image = UIImage(named: myoptions.imageurl!)
         return cell
     }

@@ -2019,42 +2019,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="349" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hawaiiResort" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-12-1LK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="128"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L74-0X-hvk">
-                                                    <rect key="frame" x="12" y="210" width="325" height="30"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hawaiiResort" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-12-1LK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="aCm-fQ-EX4"/>
+                                                        <constraint firstAttribute="height" constant="200" id="hc7-FM-W7C"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLS-nZ-fh2">
-                                                    <rect key="frame" x="12" y="241" width="325" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L74-0X-hvk">
+                                                    <rect key="frame" x="12" y="215" width="325" height="20.333333333333343"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="fLS-nZ-fh2" firstAttribute="top" secondItem="L74-0X-hvk" secondAttribute="bottom" constant="1" id="BgX-Je-2rO"/>
-                                            <constraint firstItem="fLS-nZ-fh2" firstAttribute="centerX" secondItem="L74-0X-hvk" secondAttribute="centerX" id="JQZ-wI-EZC"/>
-                                            <constraint firstItem="L74-0X-hvk" firstAttribute="leading" secondItem="Ml0-3N-oVK" secondAttribute="leadingMargin" constant="4" id="KV3-uc-Foi"/>
+                                            <constraint firstItem="8I5-12-1LK" firstAttribute="top" secondItem="Ml0-3N-oVK" secondAttribute="top" id="KUy-rZ-BlF"/>
+                                            <constraint firstItem="L74-0X-hvk" firstAttribute="top" secondItem="Ml0-3N-oVK" secondAttribute="top" constant="215" id="XQx-zs-fi6"/>
                                             <constraint firstItem="8I5-12-1LK" firstAttribute="leading" secondItem="Ml0-3N-oVK" secondAttribute="leading" id="aEG-h8-fub"/>
                                             <constraint firstAttribute="trailing" secondItem="8I5-12-1LK" secondAttribute="trailing" id="bRC-ga-igq"/>
-                                            <constraint firstItem="8I5-12-1LK" firstAttribute="top" secondItem="Ml0-3N-oVK" secondAttribute="top" id="mbG-wd-Q7a"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="fLS-nZ-fh2" secondAttribute="bottom" constant="1" id="pww-8K-ACN"/>
-                                            <constraint firstItem="8I5-12-1LK" firstAttribute="centerX" secondItem="L74-0X-hvk" secondAttribute="centerX" id="r4v-K1-mDf"/>
-                                            <constraint firstItem="L74-0X-hvk" firstAttribute="top" secondItem="8I5-12-1LK" secondAttribute="bottom" constant="15" id="vJa-wC-aox"/>
-                                            <constraint firstItem="fLS-nZ-fh2" firstAttribute="leading" secondItem="Ml0-3N-oVK" secondAttribute="leadingMargin" constant="4" id="vT1-N3-9nt"/>
+                                            <constraint firstItem="L74-0X-hvk" firstAttribute="centerX" secondItem="Ml0-3N-oVK" secondAttribute="centerX" id="gvZ-YH-HHQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="L74-0X-hvk" secondAttribute="trailing" constant="12" id="hhO-NJ-KIy"/>
                                         </constraints>
-                                        <size key="customSize" width="349" height="250"/>
                                         <connections>
-                                            <outlet property="locationDescription" destination="fLS-nZ-fh2" id="zR2-in-AHJ"/>
                                             <outlet property="locationImage" destination="8I5-12-1LK" id="xYD-sk-pEP"/>
                                             <outlet property="locationName" destination="L74-0X-hvk" id="fu1-n1-oTP"/>
                                         </connections>
@@ -2083,7 +2071,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fep-K7-ERr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="-157"/>
+            <point key="canvasLocation" x="952.79999999999995" y="-157.38916256157637"/>
         </scene>
         <!--Resource Links Table View Controller-->
         <scene sceneID="i5M-Oj-zce">

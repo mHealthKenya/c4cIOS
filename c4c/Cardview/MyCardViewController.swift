@@ -96,7 +96,7 @@ class MyCardViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         cell.locationImage.image = locationImages[indexPath.row]
         cell.locationName.text = locationNames[indexPath.row]
-        cell.locationDescription.text = locationDescription[indexPath.row]
+//        cell.locationDescription.text = locationDescription[indexPath.row]
         
         //This creates the shadows and modifies the cards a little bit
         cell.contentView.layer.cornerRadius = 10.0
