@@ -80,6 +80,12 @@ class MyCardViewController: UIViewController, UICollectionViewDelegate, UICollec
             performSegue(withIdentifier: "theinformationsegue", sender: self)
             
         }
+            
+        else if((locationNames[indexPath.row].contains("Annual Checkup & Vaccination Schedule"))){
+            
+            performSegue(withIdentifier: "vaccinationschedulesegue", sender: self)
+            
+        }
         else{
             
             SCLAlertView().showInfo("Status", subTitle: "Work in progress") // Info

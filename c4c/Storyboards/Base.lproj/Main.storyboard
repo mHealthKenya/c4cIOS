@@ -2067,6 +2067,7 @@
                         <segue destination="k4c-RE-lsr" kind="show" identifier="theimmunisationsegue" id="Cze-xz-Mni"/>
                         <segue destination="be6-lF-8fo" kind="show" identifier="thereportexposuresegue" id="wWu-b3-9G1"/>
                         <segue destination="Ten-OP-SPV" kind="show" identifier="theinformationsegue" id="Lab-CP-Qcx"/>
+                        <segue destination="YX5-SY-w9V" kind="show" identifier="vaccinationschedulesegue" id="CsE-md-VYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fep-K7-ERr" sceneMemberID="firstResponder"/>
@@ -2118,18 +2119,106 @@
             </objects>
             <point key="canvasLocation" x="5798" y="-1108"/>
         </scene>
+        <!--Pending Vaccination-->
+        <scene sceneID="RYg-vM-0mw">
+            <objects>
+                <viewController id="Lkt-cH-7O1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2HC-NR-15K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ggZ-Ga-ONH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pending Vaccination" image="coins" id="09G-CH-jEC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4r-OD-5xa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4551" y="700"/>
+        </scene>
+        <!--Vaccinated-->
+        <scene sceneID="gl6-eD-ALA">
+            <objects>
+                <viewController id="fGl-rA-qsc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jmZ-WG-PMa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.29870660710000002" blue="0.37136037669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="7Ye-eq-2aE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Vaccinated" image="bell" id="RZR-Hz-Zs2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rv0-hk-0yd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5762" y="706"/>
+        </scene>
+        <!--Not Vaccinated-->
+        <scene sceneID="AFp-mX-XKf">
+            <objects>
+                <viewController id="Ssx-bc-X4l" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNz-Yg-FDx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.2524794279" green="1" blue="0.18979953529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="Qen-RO-ryj"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Not Vaccinated" image="heart" id="SEC-Qc-LBL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbP-PP-3mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6689" y="706"/>
+        </scene>
+        <!--Checkup Calendar-->
+        <scene sceneID="tsb-H7-dGw">
+            <objects>
+                <viewController id="fE1-3p-m8f" customClass="CheckupCalendarViewController" customModule="c4c" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vKD-pu-mI1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Wya-L8-xy0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Checkup Calendar" image="bar_chart" id="0iU-dL-DbC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ys-xW-QiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7941" y="706"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aib-08-9OQ">
+            <objects>
+                <tabBarController id="YX5-SY-w9V" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rxW-SL-CLq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fGl-rA-qsc" kind="relationship" relationship="viewControllers" id="bc0-Yt-fLG"/>
+                        <segue destination="Lkt-cH-7O1" kind="relationship" relationship="viewControllers" id="zYK-Vb-HZB"/>
+                        <segue destination="Ssx-bc-X4l" kind="relationship" relationship="viewControllers" id="N4O-qn-YZ0"/>
+                        <segue destination="fE1-3p-m8f" kind="relationship" relationship="viewControllers" id="Vno-QU-eqQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjD-Tm-8l8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5270" y="-157"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bar_chart" width="30" height="30"/>
+        <image name="bell" width="30" height="30"/>
         <image name="c4c_logo" width="426" height="429"/>
+        <image name="coins" width="30" height="30"/>
         <image name="hawaiiResort" width="1280" height="720"/>
+        <image name="heart" width="30" height="30"/>
         <image name="stetho2" width="1000" height="666.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EBe-Bo-D13"/>
+        <segue reference="wXI-gL-agK"/>
         <segue reference="Utc-kK-WV8"/>
         <segue reference="Lab-CP-Qcx"/>
         <segue reference="wWu-b3-9G1"/>
-        <segue reference="xYw-Ji-wkw"/>
+        <segue reference="PSQ-uy-otZ"/>
         <segue reference="Cze-xz-Mni"/>
     </inferredMetricsTieBreakers>
 </document>

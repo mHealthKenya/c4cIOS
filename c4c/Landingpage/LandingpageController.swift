@@ -62,9 +62,15 @@ class LandingpageController: UIViewController ,UITableViewDataSource,UITableView
             performSegue(withIdentifier: "informationcentersegue", sender: self)
             
         }
+            
+        else if((selectedOption.name?.contains("Annual Checkup & Vaccination Schedule"))!){
+            
+            performSegue(withIdentifier: "vaccinationschedulesegue", sender: self)
+            
+        }
         else{
             
-            SCLAlertView().showInfo("Status", subTitle: "Work in progress") // Info
+            performSegue(withIdentifier: "vaccinationschedulesegue", sender: self)
             
         }
         
