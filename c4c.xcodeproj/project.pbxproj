@@ -33,6 +33,10 @@
 		3E61BBD7237417BE000CCD49 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BBD6237417BE000CCD49 /* FaqTableViewCell.swift */; };
 		3E61BBD923741982000CCD49 /* FAQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BBD823741982000CCD49 /* FAQuestionsViewController.swift */; };
 		3E89CEE923682FCA00EABDF2 /* ImmunisationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */; };
+		3EA9354D237BE5AB00639789 /* VaccinatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9354C237BE5AB00639789 /* VaccinatedViewController.swift */; };
+		3EA9354F237BE60900639789 /* VaccinatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9354E237BE60900639789 /* VaccinatedCollectionViewCell.swift */; };
+		3EA93551237BEF1000639789 /* PendingVaccinationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA93550237BEF1000639789 /* PendingVaccinationCollectionViewCell.swift */; };
+		3EA93553237BEF2E00639789 /* PendingVaccinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA93552237BEF2E00639789 /* PendingVaccinationViewController.swift */; };
 		3EA963D2235EE31F00F4FD32 /* Loadcounties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA963D1235EE31F00F4FD32 /* Loadcounties.swift */; };
 		3EA963D5235EFFB000F4FD32 /* SignupTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA963D4235EFFB000F4FD32 /* SignupTables.swift */; };
 		3EABCD102322443400334907 /* HideKeyboardOnReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */; };
@@ -99,6 +103,10 @@
 		3E61BBD6237417BE000CCD49 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		3E61BBD823741982000CCD49 /* FAQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQuestionsViewController.swift; sourceTree = "<group>"; };
 		3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfileViewController.swift; sourceTree = "<group>"; };
+		3EA9354C237BE5AB00639789 /* VaccinatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinatedViewController.swift; sourceTree = "<group>"; };
+		3EA9354E237BE60900639789 /* VaccinatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinatedCollectionViewCell.swift; sourceTree = "<group>"; };
+		3EA93550237BEF1000639789 /* PendingVaccinationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVaccinationCollectionViewCell.swift; sourceTree = "<group>"; };
+		3EA93552237BEF2E00639789 /* PendingVaccinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVaccinationViewController.swift; sourceTree = "<group>"; };
 		3EA963D1235EE31F00F4FD32 /* Loadcounties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadcounties.swift; sourceTree = "<group>"; };
 		3EA963D4235EFFB000F4FD32 /* SignupTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTables.swift; sourceTree = "<group>"; };
 		3EABCD0F2322443400334907 /* HideKeyboardOnReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardOnReturn.swift; sourceTree = "<group>"; };
@@ -278,6 +286,8 @@
 		3E47D2C3237AA5C40083C246 /* PendingVaccination */ = {
 			isa = PBXGroup;
 			children = (
+				3EA93550237BEF1000639789 /* PendingVaccinationCollectionViewCell.swift */,
+				3EA93552237BEF2E00639789 /* PendingVaccinationViewController.swift */,
 			);
 			path = PendingVaccination;
 			sourceTree = "<group>";
@@ -285,6 +295,8 @@
 		3E47D2C4237AA5D10083C246 /* Vaccinated */ = {
 			isa = PBXGroup;
 			children = (
+				3EA9354C237BE5AB00639789 /* VaccinatedViewController.swift */,
+				3EA9354E237BE60900639789 /* VaccinatedCollectionViewCell.swift */,
 			);
 			path = Vaccinated;
 			sourceTree = "<group>";
@@ -663,11 +675,15 @@
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
 				3E18B2342258D46F0094117B /* Data.swift in Sources */,
 				3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */,
+				3EA9354D237BE5AB00639789 /* VaccinatedViewController.swift in Sources */,
 				3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */,
 				3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */,
 				3E20FCB32374525900AF7343 /* CollectionViewCell.swift in Sources */,
 				3E0D5733235732F800B9CFC9 /* Config.swift in Sources */,
+				3EA93553237BEF2E00639789 /* PendingVaccinationViewController.swift in Sources */,
+				3EA9354F237BE60900639789 /* VaccinatedCollectionViewCell.swift in Sources */,
 				3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */,
+				3EA93551237BEF1000639789 /* PendingVaccinationCollectionViewCell.swift in Sources */,
 				3EB5A3BA2372B0F1005498F9 /* InformationCenterTableViewController.swift in Sources */,
 				3E20FCB12374521500AF7343 /* MyCardViewController.swift in Sources */,
 				3E4CEF6B23719E0F00B610B1 /* NavigationBarExtension.swift in Sources */,
