@@ -115,8 +115,9 @@ extension ReportExposureViewController{
     @objc func dateOfsecondDoseValueChanged(sender: UIDatePicker){
         
         let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = DateFormatter.Style.none
+        formatter.dateFormat = "dd/MM/yyyy hh:mm a"
+//        formatter.dateStyle = DateFormatter.Style.medium
+//        formatter.timeStyle = DateFormatter.Style.none
         dateofinitiationcurrentpep.text = formatter.string(from: sender.date)
         //        self.view.endEditing(true)
         
@@ -124,7 +125,7 @@ extension ReportExposureViewController{
     
     func setDateOfSecondDose(){
         
-        dateOfPepInitpicker.datePickerMode = UIDatePicker.Mode.date
+        dateOfPepInitpicker.datePickerMode = UIDatePicker.Mode.dateAndTime
         
         dateOfPepInitpicker.addTarget(self, action: #selector(dateOfsecondDoseValueChanged(sender:)), for:  UIControl.Event.valueChanged)
         
