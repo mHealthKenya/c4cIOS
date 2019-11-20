@@ -9,10 +9,21 @@
 import UIKit
 
 class CheckupCalendarViewController: UIViewController {
-
+    
+    let dateOfCheckupPicker = UIDatePicker()
+    
+    
+    
+    @IBAction func saveCheckup(_ sender: Any) {
+        
+    }
+    @IBOutlet weak var dateofcheckup: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Checkup Calendar"
+        setDateOfCheckup()
+        
 
         // Do any additional setup after loading the view.
     }

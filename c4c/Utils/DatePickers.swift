@@ -448,3 +448,30 @@ extension ImmunisationProfileViewController{
     
     
 }
+
+extension CheckupCalendarViewController{
+    
+    
+    
+    @objc func dateOfCheckupValueChanged(sender: UIDatePicker){
+        
+        let formatter = DateFormatter()
+        
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        dateofcheckup.text = formatter.string(from: sender.date)
+        //        self.view.endEditing(true)
+        
+    }
+    
+    func setDateOfCheckup(){
+        
+        dateOfCheckupPicker.datePickerMode = UIDatePicker.Mode.date
+        
+        dateOfCheckupPicker.addTarget(self, action: #selector(dateOfCheckupValueChanged(sender:)), for:  UIControl.Event.valueChanged)
+        
+        dateofcheckup.inputView = dateOfCheckupPicker
+        
+    }
+    
+}

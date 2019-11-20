@@ -43,6 +43,8 @@
 		3EABCD1223224CF500334907 /* DatePickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABCD1123224CF500334907 /* DatePickers.swift */; };
 		3EB0FD762370181500AAC46E /* ImmunisationProfileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0FD752370181500AAC46E /* ImmunisationProfileExtension.swift */; };
 		3EB5A3BA2372B0F1005498F9 /* InformationCenterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5A3B92372B0F1005498F9 /* InformationCenterTableViewController.swift */; };
+		3EB72CFA23850AAD004F5607 /* NotVaccinatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB72CF923850AAD004F5607 /* NotVaccinatedViewController.swift */; };
+		3EB72CFC23850B41004F5607 /* NotVaccinatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB72CFB23850B41004F5607 /* NotVaccinatedCollectionViewCell.swift */; };
 		3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4A72264602B00DE7414 /* LandingpageController.swift */; };
 		3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4A9226463BB00DE7414 /* Options.swift */; };
 		3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFC4AB226468F700DE7414 /* OptionsCell.swift */; };
@@ -113,6 +115,8 @@
 		3EABCD1123224CF500334907 /* DatePickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickers.swift; sourceTree = "<group>"; };
 		3EB0FD752370181500AAC46E /* ImmunisationProfileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfileExtension.swift; sourceTree = "<group>"; };
 		3EB5A3B92372B0F1005498F9 /* InformationCenterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCenterTableViewController.swift; sourceTree = "<group>"; };
+		3EB72CF923850AAD004F5607 /* NotVaccinatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotVaccinatedViewController.swift; sourceTree = "<group>"; };
+		3EB72CFB23850B41004F5607 /* NotVaccinatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotVaccinatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		3EBED7C2235849B9007D56A6 /* c4c-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "c4c-Bridging-Header.h"; sourceTree = "<group>"; };
 		3ECFC4A72264602B00DE7414 /* LandingpageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingpageController.swift; sourceTree = "<group>"; };
 		3ECFC4A9226463BB00DE7414 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 		3E47D2C5237AA5ED0083C246 /* NotVaccinated */ = {
 			isa = PBXGroup;
 			children = (
+				3EB72CF923850AAD004F5607 /* NotVaccinatedViewController.swift */,
+				3EB72CFB23850B41004F5607 /* NotVaccinatedCollectionViewCell.swift */,
 			);
 			path = NotVaccinated;
 			sourceTree = "<group>";
@@ -673,8 +679,10 @@
 				3E3CFB642372CD5D00B123E4 /* ColorExtension.swift in Sources */,
 				3E61BBD7237417BE000CCD49 /* FaqTableViewCell.swift in Sources */,
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
+				3EB72CFA23850AAD004F5607 /* NotVaccinatedViewController.swift in Sources */,
 				3E18B2342258D46F0094117B /* Data.swift in Sources */,
 				3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */,
+				3EB72CFC23850B41004F5607 /* NotVaccinatedCollectionViewCell.swift in Sources */,
 				3EA9354D237BE5AB00639789 /* VaccinatedViewController.swift in Sources */,
 				3E18B2322258D0DE0094117B /* SignupSecondController.swift in Sources */,
 				3ECFC4AA226463BB00DE7414 /* Options.swift in Sources */,

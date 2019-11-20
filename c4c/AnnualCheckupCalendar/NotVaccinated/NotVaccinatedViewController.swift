@@ -1,28 +1,25 @@
 //
-//  VaccinatedViewController.swift
+//  NotVaccinatedViewController.swift
 //  c4c
 //
-//  Created by MHEALTH KENYA on 13/11/2019.
+//  Created by MHEALTH KENYA on 20/11/2019.
 //  Copyright © 2019 MHEALTH. All rights reserved.
 //
 
 import UIKit
-import SCLAlertView
 
-class VaccinatedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class NotVaccinatedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let vaccineName = ["vaccine name one", "vaccine name two", "vaccine name three","vaccine name four"]
-    let vaccineStatus = ["Vaccinated", "Vaccinated", "Vaccinated","Vaccinated"]
-
+    let vaccineStatus = ["Not Vaccinated", "Not Vaccinated", "Not Vaccinated","Not Vaccinated"]
+    
     
     override func viewDidLoad() {
+        self.title="Not Vaccinated"
         
-        self.title="Vaccinated"
-        
-    
     }
- 
-   
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return vaccineName.count
     }
@@ -34,10 +31,10 @@ class VaccinatedViewController: UIViewController, UICollectionViewDelegate, UICo
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VaccinatedCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NotVaccinatedCollectionViewCell
         
         
-        cell.vaccineLabel.text = vaccineName[indexPath.row]
+        cell.vaccineName.text = vaccineName[indexPath.row]
         cell.vaccineStatus.text = vaccineStatus[indexPath.row]
         //        cell.locationDescription.text = locationDescription[indexPath.row]
         
@@ -58,4 +55,5 @@ class VaccinatedViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
 }
+
 

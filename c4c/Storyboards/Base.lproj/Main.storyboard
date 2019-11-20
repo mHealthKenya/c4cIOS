@@ -2121,22 +2121,6 @@
             </objects>
             <point key="canvasLocation" x="5798" y="-1108"/>
         </scene>
-        <!--Not Vaccinated-->
-        <scene sceneID="AFp-mX-XKf">
-            <objects>
-                <viewController id="Ssx-bc-X4l" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RNz-Yg-FDx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.2524794279" green="1" blue="0.18979953529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="Qen-RO-ryj"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Not Vaccinated" image="heart" id="SEC-Qc-LBL"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rbP-PP-3mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6689" y="706"/>
-        </scene>
         <!--Checkup Calendar-->
         <scene sceneID="tsb-H7-dGw">
             <objects>
@@ -2144,10 +2128,49 @@
                     <view key="view" contentMode="scaleToFill" id="vKD-pu-mI1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of general checkup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBg-sE-KEM">
+                                <rect key="frame" x="40" y="118" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of general checkup" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmP-Vb-afQ">
+                                <rect key="frame" x="40" y="179" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc0-Ig-Ukv">
+                                <rect key="frame" x="40" y="249" width="295" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveCheckup:" destination="fE1-3p-m8f" eventType="touchUpInside" id="8eS-hO-Xy3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Uc0-Ig-Ukv" firstAttribute="leading" secondItem="Wya-L8-xy0" secondAttribute="leading" constant="40" id="4qS-lX-ddu"/>
+                            <constraint firstItem="Wya-L8-xy0" firstAttribute="trailing" secondItem="bmP-Vb-afQ" secondAttribute="trailing" constant="40" id="HVv-FS-rCx"/>
+                            <constraint firstItem="fBg-sE-KEM" firstAttribute="leading" secondItem="Wya-L8-xy0" secondAttribute="leading" constant="40" id="HtT-wy-HWl"/>
+                            <constraint firstItem="bmP-Vb-afQ" firstAttribute="leading" secondItem="Wya-L8-xy0" secondAttribute="leading" constant="40" id="IwC-4A-ZjH"/>
+                            <constraint firstItem="Uc0-Ig-Ukv" firstAttribute="top" secondItem="bmP-Vb-afQ" secondAttribute="bottom" constant="40" id="Yjw-W1-qWp"/>
+                            <constraint firstItem="Wya-L8-xy0" firstAttribute="trailing" secondItem="fBg-sE-KEM" secondAttribute="trailing" constant="40" id="eEX-DE-P20"/>
+                            <constraint firstItem="fBg-sE-KEM" firstAttribute="top" secondItem="Wya-L8-xy0" secondAttribute="top" constant="30" id="hER-Sk-LAs"/>
+                            <constraint firstItem="bmP-Vb-afQ" firstAttribute="top" secondItem="fBg-sE-KEM" secondAttribute="bottom" constant="40" id="i1O-ug-l1v"/>
+                            <constraint firstItem="Wya-L8-xy0" firstAttribute="trailing" secondItem="Uc0-Ig-Ukv" secondAttribute="trailing" constant="40" id="ykW-i7-wps"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Wya-L8-xy0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Checkup Calendar" image="bar_chart" id="0iU-dL-DbC"/>
+                    <connections>
+                        <outlet property="dateofcheckup" destination="bmP-Vb-afQ" id="3eE-zO-vYU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ys-xW-QiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2163,10 +2186,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ssx-bc-X4l" kind="relationship" relationship="viewControllers" id="N4O-qn-YZ0"/>
                         <segue destination="fE1-3p-m8f" kind="relationship" relationship="viewControllers" id="Vno-QU-eqQ"/>
                         <segue destination="rpl-wx-VNv" kind="relationship" relationship="viewControllers" id="9AO-9s-C8E"/>
                         <segue destination="4ic-ad-aU7" kind="relationship" relationship="viewControllers" id="F0b-fQ-Opz"/>
+                        <segue destination="Mf0-xL-Xiz" kind="relationship" relationship="viewControllers" id="rpo-tM-wvi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DjD-Tm-8l8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2323,6 +2346,81 @@
             </objects>
             <point key="canvasLocation" x="5319" y="737"/>
         </scene>
+        <!--Not Vaccinated-->
+        <scene sceneID="04f-D4-qi6">
+            <objects>
+                <viewController id="Mf0-xL-Xiz" customClass="NotVaccinatedViewController" customModule="c4c" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DQr-31-0dh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G2b-Ri-i2d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="665"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DVv-M8-kpL">
+                                    <size key="itemSize" width="349" height="118"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="imi-km-Nf4" customClass="NotVaccinatedCollectionViewCell" customModule="c4c" customModuleProvider="target">
+                                        <rect key="frame" x="13" y="10" width="349" height="118"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="118"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxQ-sL-q0B">
+                                                    <rect key="frame" x="18" y="20" width="313" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpR-nf-xFP">
+                                                    <rect key="frame" x="18" y="77" width="313" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ZxQ-sL-q0B" secondAttribute="trailing" constant="10" id="03J-xj-0D1"/>
+                                            <constraint firstItem="ZxQ-sL-q0B" firstAttribute="leading" secondItem="imi-km-Nf4" secondAttribute="leadingMargin" constant="10" id="I7Q-SK-xk7"/>
+                                            <constraint firstItem="mpR-nf-xFP" firstAttribute="leading" secondItem="imi-km-Nf4" secondAttribute="leadingMargin" constant="10" id="LwS-O0-EPa"/>
+                                            <constraint firstItem="ZxQ-sL-q0B" firstAttribute="top" secondItem="imi-km-Nf4" secondAttribute="top" constant="20" id="c9b-eR-nQ5"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="mpR-nf-xFP" secondAttribute="trailing" constant="10" id="d1z-qi-GPX"/>
+                                            <constraint firstItem="mpR-nf-xFP" firstAttribute="top" secondItem="ZxQ-sL-q0B" secondAttribute="bottom" constant="36.666666666666671" id="udu-1L-KTY"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="vaccineName" destination="ZxQ-sL-q0B" id="cIq-LF-tbq"/>
+                                            <outlet property="vaccineStatus" destination="mpR-nf-xFP" id="pNH-gC-rky"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Mf0-xL-Xiz" id="vgb-HI-S9K"/>
+                                    <outlet property="delegate" destination="Mf0-xL-Xiz" id="wrO-lB-Dh7"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="G2b-Ri-i2d" firstAttribute="top" secondItem="DQr-31-0dh" secondAttribute="topMargin" constant="-24" id="4zh-gM-In7"/>
+                            <constraint firstItem="JfK-Ny-utz" firstAttribute="bottom" secondItem="G2b-Ri-i2d" secondAttribute="bottom" id="86i-Fq-whe"/>
+                            <constraint firstItem="G2b-Ri-i2d" firstAttribute="leading" secondItem="JfK-Ny-utz" secondAttribute="leading" id="LTm-sn-h2p"/>
+                            <constraint firstItem="G2b-Ri-i2d" firstAttribute="trailing" secondItem="JfK-Ny-utz" secondAttribute="trailing" id="jUn-CM-ryV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JfK-Ny-utz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Not Vaccinated" image="coins" id="yrV-k7-svV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnI-iq-b2C" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6505" y="737"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bar_chart" width="30" height="30"/>
@@ -2330,7 +2428,6 @@
         <image name="c4c_logo" width="426" height="429"/>
         <image name="coins" width="30" height="30"/>
         <image name="hawaiiResort" width="1280" height="720"/>
-        <image name="heart" width="30" height="30"/>
         <image name="stetho2" width="1000" height="666.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
