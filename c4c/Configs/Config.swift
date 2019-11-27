@@ -22,6 +22,8 @@ let CREATPROFILE_URL = "https://c4c.mhealthkenya.co.ke/Core/SignUp";
 
 let REPORTEXPOSURE_URL = "https://c4c.mhealthkenya.co.ke/Core/RptExp";
 
+let BROADCAST_URL = "https://c4c.mhealthkenya.co.ke/Core/bSMS";
+
 
 let mycadre:[String]=[ "Student", "Doctor", "Nurse", "Clinical Officer", "Laboratory Technologist", "Cleaner", "Waste Handlers", "VCT Counselor", "Other"]
 let mygender:[String]=["Male","Female"]
@@ -127,3 +129,16 @@ let KEY_REPORTEXPOSURE_DEEP = "deep";
 let KEY_REPORTEXPOSURE_DATEPEP = "datepep";
 let KEY_REPORTEXPOSURE_EXPRESULT = "expresult";
 let KEY_REPORTEXPOSURE_PHONENO = "phone_no";
+
+
+
+let SPINNERLISTCADRE:[String] = [
+    "Student",
+    "Doctor",
+    "Nurse",
+    "Clinical officer",
+    "Laboratory technologist",
+    "Cleaner",
+    "Waste Handlers",
+    "Vct Counsellor"
+];

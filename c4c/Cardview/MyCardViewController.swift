@@ -11,11 +11,11 @@ import SCLAlertView
 
 class MyCardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let locationNames = ["Report Exposure", "Immunisation Profile", "Annual Checkup & Vaccination Schedule","Information Center"]
+    let locationNames = ["Report Exposure", "Immunisation Profile", "Annual Checkup & Vaccination Schedule","Information Center","Broadcast"]
     
-    let locationImages = [UIImage(named: "report"), UIImage(named: "stethoscope"), UIImage(named: "stethoscope"),UIImage(named: "broadcast")]
+    let locationImages = [UIImage(named: "report"), UIImage(named: "stethoscope"), UIImage(named: "stethoscope"),UIImage(named: "broadcast"),UIImage(named: "broadcast")]
     
-    let locationDescription = ["", "", "",""]
+    let locationDescription = ["", "", "","",""]
     
 //    self.options.append(Options(name: "Report Exposure", imageurl: "stetho3"))
 //    self.options.append(Options(name: "Immunisation Profile", imageurl: "stetho3"))
@@ -84,6 +84,12 @@ class MyCardViewController: UIViewController, UICollectionViewDelegate, UICollec
         else if((locationNames[indexPath.row].contains("Annual Checkup & Vaccination Schedule"))){
             
             performSegue(withIdentifier: "vaccinationschedulesegue", sender: self)
+            
+        }
+            
+        else if((locationNames[indexPath.row].contains("Broadcast"))){
+            
+            performSegue(withIdentifier: "broadcastsegue", sender: self)
             
         }
         else{

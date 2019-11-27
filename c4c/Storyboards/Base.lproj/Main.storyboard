@@ -2070,6 +2070,7 @@
                         <segue destination="be6-lF-8fo" kind="show" identifier="thereportexposuresegue" id="wWu-b3-9G1"/>
                         <segue destination="Ten-OP-SPV" kind="show" identifier="theinformationsegue" id="Lab-CP-Qcx"/>
                         <segue destination="YX5-SY-w9V" kind="show" identifier="vaccinationschedulesegue" id="CsE-md-VYA"/>
+                        <segue destination="78B-A7-W4d" kind="show" identifier="broadcastsegue" id="URh-Zz-lkc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fep-K7-ERr" sceneMemberID="firstResponder"/>
@@ -2346,6 +2347,121 @@
             </objects>
             <point key="canvasLocation" x="5319" y="737"/>
         </scene>
+        <!--Broadcast View Controller-->
+        <scene sceneID="te9-fk-riC">
+            <objects>
+                <viewController id="78B-A7-W4d" customClass="BroadcastViewController" customModule="c4c" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhf-Ys-2xG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wV-qu-RA9">
+                                <rect key="frame" x="40" y="188" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOI-es-Smh">
+                                <rect key="frame" x="40" y="248" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-m1-wP6">
+                                <rect key="frame" x="40" y="138" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktE-qB-S4a">
+                                <rect key="frame" x="40" y="412" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cadre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zne-XM-4zW">
+                                <rect key="frame" x="40" y="453" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="78B-A7-W4d" id="hQc-br-xfG"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brodcast Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-a6-tMx">
+                                <rect key="frame" x="40" y="523" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Broadcast date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ari-bU-wdV">
+                                <rect key="frame" x="40" y="564" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af1-mh-y4r">
+                                <rect key="frame" x="40" y="644" width="295" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitBroadcast:" destination="78B-A7-W4d" eventType="touchUpInside" id="kJf-6a-Ls2"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="broadcast message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IP8-cY-APH">
+                                <rect key="frame" x="40" y="289" width="295" height="83"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IP8-cY-APH" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="0JL-yf-at8"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="IP8-cY-APH" secondAttribute="trailing" constant="40" id="AvZ-bp-Y04"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="Ari-bU-wdV" secondAttribute="trailing" constant="40" id="BcV-4M-L5f"/>
+                            <constraint firstItem="IGa-m1-wP6" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="CHb-dJ-qBh"/>
+                            <constraint firstItem="af1-mh-y4r" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="FaX-ht-Bml"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="Zne-XM-4zW" secondAttribute="trailing" constant="40" id="Fiq-Vr-tXo"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="bottom" secondItem="IP8-cY-APH" secondAttribute="bottom" constant="406" id="HpA-BY-qGW"/>
+                            <constraint firstItem="IP8-cY-APH" firstAttribute="top" secondItem="eOI-es-Smh" secondAttribute="bottom" constant="20" id="IWV-WO-viN"/>
+                            <constraint firstItem="Zne-XM-4zW" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="Iq9-Ek-vYs"/>
+                            <constraint firstItem="IGa-m1-wP6" firstAttribute="top" secondItem="BiG-3S-SIS" secondAttribute="top" constant="50" id="Jac-tx-DHt"/>
+                            <constraint firstItem="Ari-bU-wdV" firstAttribute="top" secondItem="nkb-a6-tMx" secondAttribute="bottom" constant="20" id="Jo1-e3-nM2"/>
+                            <constraint firstItem="4wV-qu-RA9" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="OBI-AX-iDo"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="4wV-qu-RA9" secondAttribute="trailing" constant="40" id="PL0-FW-Leu"/>
+                            <constraint firstItem="eOI-es-Smh" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="Psu-qY-873"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="nkb-a6-tMx" secondAttribute="trailing" constant="40" id="Ryp-71-6ud"/>
+                            <constraint firstItem="ktE-qB-S4a" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="SP0-EW-7KK"/>
+                            <constraint firstItem="Ari-bU-wdV" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="UQ8-gO-kz5"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="ktE-qB-S4a" secondAttribute="trailing" constant="40" id="Xd8-mE-Ava"/>
+                            <constraint firstItem="eOI-es-Smh" firstAttribute="top" secondItem="4wV-qu-RA9" secondAttribute="bottom" constant="30" id="a9p-GK-lND"/>
+                            <constraint firstItem="4wV-qu-RA9" firstAttribute="top" secondItem="IGa-m1-wP6" secondAttribute="bottom" constant="29" id="dwW-LA-hVc"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="eOI-es-Smh" secondAttribute="trailing" constant="40" id="hwx-IT-uZK"/>
+                            <constraint firstItem="af1-mh-y4r" firstAttribute="top" secondItem="Ari-bU-wdV" secondAttribute="bottom" constant="50" id="lOK-O3-FuB"/>
+                            <constraint firstItem="ktE-qB-S4a" firstAttribute="top" secondItem="IP8-cY-APH" secondAttribute="bottom" constant="40" id="puo-IC-M3F"/>
+                            <constraint firstItem="Zne-XM-4zW" firstAttribute="top" secondItem="ktE-qB-S4a" secondAttribute="bottom" constant="20" id="skf-1n-nEe"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="IGa-m1-wP6" secondAttribute="trailing" constant="40" id="wYQ-C0-RMk"/>
+                            <constraint firstItem="BiG-3S-SIS" firstAttribute="trailing" secondItem="af1-mh-y4r" secondAttribute="trailing" constant="40" id="yQc-Bp-PRl"/>
+                            <constraint firstItem="nkb-a6-tMx" firstAttribute="leading" secondItem="BiG-3S-SIS" secondAttribute="leading" constant="40" id="zm7-s1-Eib"/>
+                            <constraint firstItem="nkb-a6-tMx" firstAttribute="top" secondItem="Zne-XM-4zW" secondAttribute="bottom" constant="40" id="zrb-2O-bZi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BiG-3S-SIS"/>
+                    </view>
+                    <connections>
+                        <outlet property="broadcastCadre" destination="Zne-XM-4zW" id="3ka-aj-X7m"/>
+                        <outlet property="broadcastDate" destination="Ari-bU-wdV" id="iMT-e3-Nbx"/>
+                        <outlet property="broadcastMessage" destination="IP8-cY-APH" id="qv4-e2-1AF"/>
+                        <outlet property="broadcastTitle" destination="4wV-qu-RA9" id="EFb-KJ-Lmu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6K-91-jfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="774"/>
+        </scene>
         <!--Not Vaccinated-->
         <scene sceneID="04f-D4-qi6">
             <objects>
@@ -2431,11 +2547,11 @@
         <image name="stetho2" width="1000" height="666.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wXI-gL-agK"/>
+        <segue reference="EBe-Bo-D13"/>
         <segue reference="Utc-kK-WV8"/>
         <segue reference="Lab-CP-Qcx"/>
         <segue reference="wWu-b3-9G1"/>
-        <segue reference="PSQ-uy-otZ"/>
+        <segue reference="xYw-Ji-wkw"/>
         <segue reference="Cze-xz-Mni"/>
     </inferredMetricsTieBreakers>
 </document>

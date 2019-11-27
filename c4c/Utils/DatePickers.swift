@@ -475,3 +475,35 @@ extension CheckupCalendarViewController{
     }
     
 }
+
+
+
+extension BroadcastViewController{
+    
+    
+    @objc func dateOfBroadcastValueChanged(sender: UIDatePicker){
+        
+        let formatter = DateFormatter()
+                formatter.dateFormat = "dd/MM/yyyy hh:mm a"
+//        formatter.dateFormat = "dd/MM/yyyy"
+        //        formatter.dateStyle = DateFormatter.Style.medium
+        //        formatter.timeStyle = DateFormatter.Style.none
+        broadcastDate.text = formatter.string(from: sender.date)
+        //        self.view.endEditing(true)
+        
+    }
+    
+    func setDateOfBroadcast(){
+        
+                dateOfBroadcastpicker.datePickerMode = UIDatePicker.Mode.dateAndTime
+//        dateOfBroadcastpicker.datePickerMode = UIDatePicker.Mode.date
+        
+        dateOfBroadcastpicker.addTarget(self, action: #selector(dateOfBroadcastValueChanged(sender:)), for:  UIControl.Event.valueChanged)
+        
+        
+        
+        
+        broadcastDate.inputView = dateOfBroadcastpicker
+        
+    }
+}
