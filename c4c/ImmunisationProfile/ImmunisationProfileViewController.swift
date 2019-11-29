@@ -228,6 +228,13 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
         
         
         setHepatitisTableData()
+        setInfluenzaTableData()
+        setMeaslesTableData()
+        setMeningocoTableData()
+        setTdapTableData()
+        setVaricellaTableData()
+        
+        
         getHepatitisSavedData()
         
         
@@ -295,6 +302,300 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
     }
     
     
+    
+    func setInfluenzaTableData(){
+        
+        
+        var radiofirst = ""
+        var radiosecond = ""
+        var radiothird = ""
+        var firstdate = ""
+        
+        
+        if(InfluenzaPregnantNoOutlet.isEnabled && InfluenzaPregnantNoOutlet.isSelected){
+            
+            radiofirst = "No"
+            
+        }
+        
+        if(InfluenzaPregnantYesOutlet.isEnabled && InfluenzaPregnantYesOutlet.isSelected){
+            
+            radiofirst = "Yes"
+            
+        }
+        
+        if(InfluenzaTrimesterFirstOutlet.isEnabled && InfluenzaTrimesterFirstOutlet.isSelected){
+            
+            radiosecond = "First"
+            
+        }
+        
+        
+        if(InfluenzaTrimesterSecondOutlet.isEnabled && InfluenzaTrimesterSecondOutlet.isSelected){
+            
+            radiosecond = "Second"
+            
+        }
+        
+        
+        if(InfluenzaTrimesterThirdOutlet.isEnabled && InfluenzaTrimesterThirdOutlet.isSelected){
+            
+            radiosecond = "Third"
+            
+        }
+        
+        
+        if(InfluenzaVaccinatedNoOutlet.isEnabled && InfluenzaVaccinatedNoOutlet.isSelected){
+            
+            radiothird = "No"
+            
+        }
+        
+        if(InfluenzaVaccinatedYesOutlet.isEnabled && InfluenzaVaccinatedYesOutlet.isSelected){
+            
+            radiothird = "Yes"
+            
+        }
+        
+        
+        
+        if(influenzaDosedate.isEnabled){
+            
+            firstdate = influenzaDosedate.text!
+        }
+        else{
+            
+            firstdate = ""
+        }
+        
+        
+        
+        influenzaTable(gender: "", radiofirstS: radiofirst, radiosecondS: radiosecond, radiothirdS: radiothird, doseDateS: firstdate)
+        
+        
+    }
+    
+    
+    
+    func setVaricellaTableData(){
+        
+        
+        var radiofirst = ""
+        var radiosecond = ""
+        var firstdate = ""
+        var seconddate = ""
+        
+        
+        if(VaricellaVaccinatedNoOutlet.isSelected){
+            
+            radiofirst = "No"
+            
+        }
+        
+        if(VaricellaVaccinatedYesOutlet.isSelected){
+            
+            radiofirst = "Yes"
+            
+        }
+        
+        if(VaricellaHistoryNoOutlet.isSelected){
+            
+            radiosecond = "No"
+            
+        }
+        
+        
+        if(VaricellaHistoryYesOutlet.isSelected){
+            
+            radiosecond = "Yes"
+            
+        }
+      
+        
+        
+        
+        if(varicellaFirstdoseDate.isEnabled){
+            
+            firstdate = varicellaFirstdoseDate.text!
+        }
+        else{
+            
+            firstdate = ""
+        }
+        
+        if(varicellaSeconddoseDate.isEnabled){
+            
+            seconddate = varicellaSeconddoseDate.text!
+        }
+        else{
+            
+            seconddate = ""
+        }
+        
+        
+        
+        varicellaTable(radiofirstS: radiofirst, radiosecondS: radiosecond, doseOneDateS: firstdate, doseTwoDateS: seconddate)
+        
+        
+    }
+    
+    
+    
+    
+    func setTdapTableData(){
+        
+        
+        var radiofirst = ""
+        var radiosecond = ""
+        var firstdate = ""
+        var seconddate = ""
+        
+        
+        if(TdapImmunisationNoOutlet.isSelected){
+            
+            radiofirst = "No"
+            
+        }
+        
+        if(TdapImmunisationYesOutlet.isSelected){
+            
+            radiofirst = "Yes"
+            
+        }
+        
+        if(TdapBoosterNoOutlet.isSelected && TdapBoosterNoOutlet.isEnabled){
+            
+            radiosecond = "No"
+            
+        }
+        
+        if(TdapBoosterYesOutlet.isSelected && TdapBoosterYesOutlet.isEnabled){
+            
+            radiosecond = "Yes"
+            
+        }
+        
+        if(tdapFirstdoseDate.isEnabled){
+            
+            firstdate = tdapFirstdoseDate.text!
+        }
+        else{
+            
+            firstdate = ""
+        }
+        
+        if(tdapBoosterdoseDate.isEnabled){
+            
+            seconddate = tdapBoosterdoseDate.text!
+        }
+        else{
+            
+            seconddate = ""
+        }
+        
+        
+       tdapTable(radiofirstS: radiofirst, firstDateS: firstdate, radiosecondS: radiosecond, secondDateS: seconddate)
+        
+        
+    }
+    
+    
+    
+    
+    func setMeaslesTableData(){
+        
+        
+        var radiofirst = ""
+        var firstdate = ""
+        var seconddate = ""
+        
+        
+        if(MeaslesImmunisationNoOutlet.isSelected){
+            
+            radiofirst = "No"
+            
+        }
+        
+        if(MeaslesImmunisationYesOutlet.isSelected){
+            
+            radiofirst = "Yes"
+            
+        }
+      
+        
+        if(measlesFirstdoseDate.isEnabled){
+            
+            firstdate = measlesFirstdoseDate.text!
+        }
+        else{
+            
+            firstdate = ""
+        }
+        
+        if(measlesSeconddoseDate.isEnabled){
+            
+            seconddate = measlesSeconddoseDate.text!
+        }
+        else{
+            
+            seconddate = ""
+        }
+        
+        
+        measlesTable(radiofirstS: radiofirst, dateoneS: firstdate, datetwoS: seconddate)
+        
+        
+    }
+    
+    
+    
+    func setMeningocoTableData(){
+        
+        
+        var radiofirst = ""
+        var firstdate = ""
+        var seconddate = ""
+        
+        
+        if(MeningocoImmunisationNoOutlet.isSelected){
+            
+            radiofirst = "No"
+            
+        }
+        
+        if(MeningocoImmunisationYesOutlet.isSelected){
+            
+            radiofirst = "Yes"
+            
+        }
+        
+        
+        if(meningocoFirstdoseDate.isEnabled){
+            
+            firstdate = meningocoFirstdoseDate.text!
+        }
+        else{
+            
+            firstdate = ""
+        }
+        
+        if(meningocoSeconddoseDate.isEnabled){
+            
+            seconddate = meningocoSeconddoseDate.text!
+        }
+        else{
+            
+            seconddate = ""
+        }
+        
+        
+        meningocoTable(radiofirstS: radiofirst, dateoneS: firstdate, datetwoS: seconddate)
+        
+        
+    }
+    
+    
+    
     func getHepatitisSavedData(){
         
         
@@ -324,31 +625,7 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
                 print("radiofirst hepa is \(firstdate)")
                 print("radiosecond hepa is \(radiosecond)")
                 
-              
-//                if(hepatitisFirstdoseDate.isEnabled){
-//
-//                    hepatitisFirstdoseDate.text = firstdate
-//
-//                }
-//
-//                if(hepatitisSeconddoseDate.isEnabled){
-//
-//                    hepatitisSeconddoseDate.text = seconddate
-//
-//                }
-                
-//                hepatitisFirstdoseDate.isEnabled = false
-//                hepatitisFirstdoseDate.text = ""
-//                hepatitisSeconddoseDate.text = ""
-//                hepatitisSeconddoseDate.isEnabled = false
-//                HepatitisSecondDoseYesOutlet.isEnabled = false
-//                HepatitisSecondDoseYesOutlet.isSelected = false
-//                HepatitisSecondDoseNoOutlet.isEnabled = false
-//                HepatitisSecondDoseNoOutlet.isSelected = false
-//                HepatitisSecondDoseNoOutlet.titleLabel?.isEnabled = false
-//                HepatitisSecondDoseYesOutlet.titleLabel?.isEnabled = false
-//
-//                hpbsecondLabel.isEnabled = false
+
                 
                 
                 if(radiofirst == "Yes"){

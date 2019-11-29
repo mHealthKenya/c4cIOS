@@ -32,6 +32,10 @@
 		3E61BBD52373FFCF000CCD49 /* FaqExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BBD42373FFCF000CCD49 /* FaqExtension.swift */; };
 		3E61BBD7237417BE000CCD49 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BBD6237417BE000CCD49 /* FaqTableViewCell.swift */; };
 		3E61BBD923741982000CCD49 /* FAQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BBD823741982000CCD49 /* FAQuestionsViewController.swift */; };
+		3E80A7C52391151300B68D8F /* NascopHivViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80A7C42391151300B68D8F /* NascopHivViewController.swift */; };
+		3E80A7C72391153600B68D8F /* NascopHivExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80A7C62391153600B68D8F /* NascopHivExtension.swift */; };
+		3E80A7C92391155C00B68D8F /* NascopHivTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80A7C82391155C00B68D8F /* NascopHivTableViewCell.swift */; };
+		3E80A7CB239131CE00B68D8F /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80A7CA239131CE00B68D8F /* NSAttributedStringExtension.swift */; };
 		3E89CEE923682FCA00EABDF2 /* ImmunisationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */; };
 		3EA9354D237BE5AB00639789 /* VaccinatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9354C237BE5AB00639789 /* VaccinatedViewController.swift */; };
 		3EA9354F237BE60900639789 /* VaccinatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9354E237BE60900639789 /* VaccinatedCollectionViewCell.swift */; };
@@ -105,6 +109,10 @@
 		3E61BBD42373FFCF000CCD49 /* FaqExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqExtension.swift; sourceTree = "<group>"; };
 		3E61BBD6237417BE000CCD49 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		3E61BBD823741982000CCD49 /* FAQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQuestionsViewController.swift; sourceTree = "<group>"; };
+		3E80A7C42391151300B68D8F /* NascopHivViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NascopHivViewController.swift; sourceTree = "<group>"; };
+		3E80A7C62391153600B68D8F /* NascopHivExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NascopHivExtension.swift; sourceTree = "<group>"; };
+		3E80A7C82391155C00B68D8F /* NascopHivTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NascopHivTableViewCell.swift; sourceTree = "<group>"; };
+		3E80A7CA239131CE00B68D8F /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfileViewController.swift; sourceTree = "<group>"; };
 		3EA9354C237BE5AB00639789 /* VaccinatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinatedViewController.swift; sourceTree = "<group>"; };
 		3EA9354E237BE60900639789 /* VaccinatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinatedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -197,6 +205,7 @@
 		3E18B1FB2258BBEA0094117B /* c4c */ = {
 			isa = PBXGroup;
 			children = (
+				3E80A7C323910FB400B68D8F /* NascopHiv */,
 				3EBA242E238BB1B600D03AE9 /* Broadcast */,
 				3E47D2C2237AA58E0083C246 /* AnnualCheckupCalendar */,
 				3EA24158237A9F2400447387 /* Storyboards */,
@@ -218,6 +227,7 @@
 				3E18B2032258BBEB0094117B /* Assets.xcassets */,
 				3E18B2052258BBEB0094117B /* LaunchScreen.storyboard */,
 				3E18B2082258BBEB0094117B /* Info.plist */,
+				3E80A7CA239131CE00B68D8F /* NSAttributedStringExtension.swift */,
 			);
 			path = c4c;
 			sourceTree = "<group>";
@@ -332,6 +342,16 @@
 				3E20FCB22374525900AF7343 /* CollectionViewCell.swift */,
 			);
 			path = Cardview;
+			sourceTree = "<group>";
+		};
+		3E80A7C323910FB400B68D8F /* NascopHiv */ = {
+			isa = PBXGroup;
+			children = (
+				3E80A7C42391151300B68D8F /* NascopHivViewController.swift */,
+				3E80A7C62391153600B68D8F /* NascopHivExtension.swift */,
+				3E80A7C82391155C00B68D8F /* NascopHivTableViewCell.swift */,
+			);
+			path = NascopHiv;
 			sourceTree = "<group>";
 		};
 		3E89CEE723682FA200EABDF2 /* ImmunisationProfile */ = {
@@ -689,6 +709,7 @@
 				3E61BBD52373FFCF000CCD49 /* FaqExtension.swift in Sources */,
 				3E3CFB642372CD5D00B123E4 /* ColorExtension.swift in Sources */,
 				3E61BBD7237417BE000CCD49 /* FaqTableViewCell.swift in Sources */,
+				3E80A7C52391151300B68D8F /* NascopHivViewController.swift in Sources */,
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
 				3EB72CFA23850AAD004F5607 /* NotVaccinatedViewController.swift in Sources */,
 				3E18B2342258D46F0094117B /* Data.swift in Sources */,
@@ -701,7 +722,9 @@
 				3E20FCB32374525900AF7343 /* CollectionViewCell.swift in Sources */,
 				3E0D5733235732F800B9CFC9 /* Config.swift in Sources */,
 				3EA93553237BEF2E00639789 /* PendingVaccinationViewController.swift in Sources */,
+				3E80A7C72391153600B68D8F /* NascopHivExtension.swift in Sources */,
 				3EA9354F237BE60900639789 /* VaccinatedCollectionViewCell.swift in Sources */,
+				3E80A7C92391155C00B68D8F /* NascopHivTableViewCell.swift in Sources */,
 				3E5DADC52263486E00AFA8CB /* SignupThirdController.swift in Sources */,
 				3EA93551237BEF1000639789 /* PendingVaccinationCollectionViewCell.swift in Sources */,
 				3EB5A3BA2372B0F1005498F9 /* InformationCenterTableViewController.swift in Sources */,
@@ -716,6 +739,7 @@
 				3EA963D5235EFFB000F4FD32 /* SignupTables.swift in Sources */,
 				3ECFC4AC226468F700DE7414 /* OptionsCell.swift in Sources */,
 				3ECFC4AF2264806000DE7414 /* LoginController.swift in Sources */,
+				3E80A7CB239131CE00B68D8F /* NSAttributedStringExtension.swift in Sources */,
 				3EABCD1223224CF500334907 /* DatePickers.swift in Sources */,
 				3E61BBD923741982000CCD49 /* FAQuestionsViewController.swift in Sources */,
 				3E2A701E23618FBA00BA3825 /* ReportExposureViewController.swift in Sources */,
