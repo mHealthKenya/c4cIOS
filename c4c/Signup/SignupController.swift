@@ -381,6 +381,7 @@ class SignupController: UIViewController ,UITextFieldDelegate,UIPickerViewDelega
         measlesTable()
         meningocoTable()
         hepatitisTable()
+        varicellaTable()
         
 
         // Do any additional setup after loading the view.

@@ -30,7 +30,7 @@ class NascopHivViewController: UIViewController ,UITableViewDelegate, UITableVie
         updateTextView()
         
         self.tableView!.tableFooterView = UIView()
-        self.title = "FAQ"
+        self.title = "NASCOP HIV Services"
         sizeHeaderToFit()
     }
     

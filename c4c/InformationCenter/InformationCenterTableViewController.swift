@@ -103,7 +103,7 @@ class InformationCenterTableViewController: UITableViewController {
         }
         else if((headlines[indexPath.row].title.contains("NASCOP HIV Services M&E tools training course"))){
             
-            SCLAlertView().showInfo("Status", subTitle: "Work in progress")
+            performSegue(withIdentifier: "nascophivsegue", sender: self)
             
         }
         else if((headlines[indexPath.row].title.contains("RESOURCE LINKS"))){

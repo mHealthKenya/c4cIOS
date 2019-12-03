@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5jN-M2-ee1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GzV-4J-EVM">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1803,11 +1803,12 @@
                     <connections>
                         <segue destination="4f0-Ue-N2s" kind="show" identifier="thefaqsegue" id="X8A-tS-FjC"/>
                         <segue destination="xQO-RM-Dgb" kind="show" identifier="resourcelinksegue" id="LZB-Oi-EI9"/>
+                        <segue destination="5jN-M2-ee1" kind="show" identifier="nascophivsegue" id="yrG-DO-Ods"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIB-Ph-zGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3434" y="-1108"/>
+            <point key="canvasLocation" x="4726" y="-1583"/>
         </scene>
         <!--Login Page-->
         <scene sceneID="yku-RC-sns">
@@ -2593,7 +2594,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Would you like to subscribe to our services?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHe-Vt-LEM">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHe-Vt-LEM">
                                 <rect key="frame" x="10" y="520" width="355" height="38"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

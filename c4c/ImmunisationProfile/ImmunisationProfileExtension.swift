@@ -485,6 +485,50 @@ extension ImmunisationProfileViewController{
     
     
     
+    func getGender()->String{
+        
+        var gender:String = ""
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return ""
+        }
+        
+        do {
+            
+            let rs = try database.executeQuery("select gender from userData", values: nil)
+            while rs.next() {
+            
+            let mgender = rs.string(forColumn: "gender")
+                
+            gender=mgender!
+            
+            
+            }
+            
+            
+        }catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        return gender
+        
+        
+    }
+    
+//    userData (phone,fname,lname,uname,password,secqn,secans,gender,cadre,idnum,age,mflcode)
+    
+    
+    
+    
     func varicellaTable(radiofirstS: String,radiosecondS: String,doseOneDateS: String,doseTwoDateS:String){
         
         

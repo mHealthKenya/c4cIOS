@@ -236,6 +236,11 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
         
         
         getHepatitisSavedData()
+        getInfluenzaSavedData()
+        getVaricellaSavedData()
+        getTdapSavedData()
+        getMeningocoSavedData()
+        getMeaslesSavedData()
         
         
         
@@ -370,7 +375,7 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
         
         
         
-        influenzaTable(gender: "", radiofirstS: radiofirst, radiosecondS: radiosecond, radiothirdS: radiothird, doseDateS: firstdate)
+        influenzaTable(gender: getGender(), radiofirstS: radiofirst, radiosecondS: radiosecond, radiothirdS: radiothird, doseDateS: firstdate)
         
         
     }
@@ -621,9 +626,7 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
                 let seconddate = rs.string(forColumn: "seconddate")
                 
                 
-                print("gender hepa is \(radiofirst)")
-                print("radiofirst hepa is \(firstdate)")
-                print("radiosecond hepa is \(radiosecond)")
+                
                 
 
                 
@@ -751,17 +754,90 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
         
         do {
             
+//            gender = ?,radiofirst = ?,radiosecond = ?,radiothird = ?, dosedate = ?
             
-            let rs = try database.executeQuery("select * from influenza", values: nil)
+            let rs = try database.executeQuery("select gender,radiofirst,radiosecond,radiothird,dosedate from influenza", values: nil)
             while rs.next() {
-                let radiofirst = rs.string(forColumn: "gender")
-                let firstdate = rs.string(forColumn: "radiofirst")
+                
+             
+                
+//                influenzaTable(gender: "", radiofirstS: radiofirst, radiosecondS: radiosecond, radiothirdS: radiothird, doseDateS: firstdate)
+                let gender = rs.string(forColumn: "gender")
+                let radiofirst = rs.string(forColumn: "radiofirst")
                 let radiosecond = rs.string(forColumn: "radiosecond")
-                let seconddate = rs.string(forColumn: "radiothird")
+                let radiothird = rs.string(forColumn: "radiothird")
+                let dosedate = rs.string(forColumn: "dosedate")
+                
+                print("gender influenza saved is \(gender)")
+                print("radiothird influenza is \(radiothird)")
+                print("dosedate influenza is \(dosedate)")
+                
+                if(gender?.lowercased()=="2"){
+                    
+                    influenzafirstLabel.isEnabled = true
+                    InfluenzaPregnantNoOutlet.isEnabled = true
+                    InfluenzaPregnantYesOutlet.isEnabled = true
+                    InfluenzaPregnantNoOutlet.titleLabel?.isEnabled = true
+                    InfluenzaPregnantYesOutlet.titleLabel?.isEnabled = true
+                    
+                }
+                
+                if(influenzafirstLabel.isEnabled && radiofirst=="No"){
+                    
+                    InfluenzaPregnantNoOutlet.isSelected = true
+                    InfluenzaTrimesterFirstOutlet.isEnabled = false
+                    InfluenzaTrimesterSecondOutlet.isEnabled = false
+                    InfluenzaTrimesterThirdOutlet.isEnabled = false
+                   
+                    InfluenzaTrimesterFirstOutlet.isSelected = false
+                    InfluenzaTrimesterSecondOutlet.isSelected = false
+                    InfluenzaTrimesterThirdOutlet.isSelected = false
+                
+                    InfluenzaTrimesterFirstOutlet.titleLabel?.isEnabled = false
+                    InfluenzaTrimesterSecondOutlet.titleLabel?.isEnabled = false
+                    InfluenzaTrimesterThirdOutlet.titleLabel?.isEnabled = false
+                    
+                }
                 
                 
-               print("gender is \(radiofirst)")
-               print("radiofirst is \(firstdate)")
+                if(influenzafirstLabel.isEnabled && radiofirst=="Yes"){
+                    
+                    
+                    InfluenzaPregnantYesOutlet.isSelected = true
+                    InfluenzaPregnantNoOutlet.titleLabel?.isEnabled = true
+                    InfluenzaPregnantYesOutlet.titleLabel?.isEnabled = true
+                    
+                    InfluenzaTrimesterFirstOutlet.isEnabled = true
+                    InfluenzaTrimesterSecondOutlet.isEnabled = true
+                    InfluenzaTrimesterThirdOutlet.isEnabled = true
+                    
+                    InfluenzaTrimesterFirstOutlet.isSelected = true
+                    InfluenzaTrimesterSecondOutlet.isSelected = true
+                    InfluenzaTrimesterThirdOutlet.isSelected = true
+                    
+                    InfluenzaTrimesterFirstOutlet.titleLabel?.isEnabled = true
+                    InfluenzaTrimesterSecondOutlet.titleLabel?.isEnabled = true
+                    InfluenzaTrimesterThirdOutlet.titleLabel?.isEnabled = true
+                    
+                }
+                
+                if(radiothird=="Yes"){
+                    
+                    influenzaDosedate.isEnabled = true
+                    InfluenzaVaccinatedYesOutlet.isSelected = true
+                
+                    influenzaDosedate.text=dosedate
+                    
+                }
+                
+                if(radiothird=="No"){
+                    
+                    influenzaDosedate.isEnabled = false
+                    InfluenzaVaccinatedNoOutlet.isSelected = true
+                    influenzaDosedate.text = ""
+                    
+                    }
+              
                 
                 
                 
@@ -780,6 +856,329 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
     
     
     
+    
+    func getVaricellaSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            //            gender = ?,radiofirst = ?,radiosecond = ?,radiothird = ?, dosedate = ?
+            
+//            radiofirst text,radiosecond text,doseone text,dosetwo text
+            
+            let rs = try database.executeQuery("select radiofirst,radiosecond,doseone,dosetwo from varicella", values: nil)
+            while rs.next() {
+    
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let radiosecond = rs.string(forColumn: "radiosecond")
+                let doseone = rs.string(forColumn: "doseone")
+                let dosetwo = rs.string(forColumn: "dosetwo")
+
+              
+                
+                if(radiofirst=="No"){
+                    
+                    VaricellaVaccinatedNoOutlet.isSelected = true
+                    varicellaFirstdoseDate.isEnabled=false
+                    varicellaSeconddoseDate.isEnabled=false
+                    varicellaFirstdoseDate.text=""
+                    varicellaSeconddoseDate.text=""
+                    
+                    
+                    
+                }
+                
+                
+                if(radiofirst=="Yes"){
+                    
+                    VaricellaVaccinatedYesOutlet.isSelected = true
+                    varicellaFirstdoseDate.isEnabled=true
+                    varicellaSeconddoseDate.isEnabled=true
+                    varicellaFirstdoseDate.text=doseone
+                    varicellaSeconddoseDate.text=dosetwo
+                    
+                }
+                
+                if(radiosecond == "Yes"){
+                    
+                    VaricellaHistoryYesOutlet.isSelected = true
+                    
+                }
+                if(radiosecond == "No"){
+                    
+                    VaricellaHistoryNoOutlet.isSelected = true
+                    
+                }
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    func getTdapSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            //            gender = ?,radiofirst = ?,radiosecond = ?,radiothird = ?, dosedate = ?
+            
+            //            radiofirst text,radiosecond text,doseone text,dosetwo text
+            
+//            tdap (radiofirst,dateone,radiosecond,datetwo)
+            
+            let rs = try database.executeQuery("select radiofirst,radiosecond,dateone,datetwo from tdap", values: nil)
+            while rs.next() {
+                
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let radiosecond = rs.string(forColumn: "radiosecond")
+                let doseone = rs.string(forColumn: "dateone")
+                let dosetwo = rs.string(forColumn: "datetwo")
+                
+                
+                
+                if(radiofirst=="No"){
+                    
+                    tdapFirstdoseDate.isEnabled = false
+                    tdapFirstdoseDate.text = ""
+                    tdapsecondLabel.isEnabled = false
+                    tdapBoosterdoseDate.isEnabled = false
+                    tdapBoosterdoseDate.text = ""
+                    TdapBoosterNoOutlet.isEnabled = false
+                    TdapBoosterYesOutlet.isEnabled = false
+                    TdapImmunisationNoOutlet.isSelected=true
+                    
+                    TdapBoosterNoOutlet.isSelected = false
+                    TdapBoosterYesOutlet.isSelected = false
+                    
+                    TdapBoosterNoOutlet.titleLabel?.isEnabled = false
+                    TdapBoosterYesOutlet.titleLabel?.isEnabled = false
+                    
+                    
+                    
+                }
+                
+                
+                if(radiofirst=="Yes"){
+                    
+                    tdapFirstdoseDate.isEnabled = true
+                    tdapFirstdoseDate.text = doseone
+                    tdapsecondLabel.isEnabled = true
+//                    tdapBoosterdoseDate.isEnabled = false
+//                    tdapBoosterdoseDate.text = ""
+                    TdapBoosterNoOutlet.isEnabled = true
+                    TdapBoosterYesOutlet.isEnabled = true
+                    TdapImmunisationYesOutlet.isSelected=true
+                    TdapImmunisationYesOutlet.isEnabled=true
+                    
+//                    TdapBoosterNoOutlet.isSelected = false
+//                    TdapBoosterYesOutlet.isSelected = false
+                    
+                    TdapBoosterNoOutlet.titleLabel?.isEnabled = true
+                    TdapBoosterYesOutlet.titleLabel?.isEnabled = true
+                    
+                }
+          
+                
+                if(radiosecond == "Yes"){
+                    
+                    
+                    TdapBoosterNoOutlet.isSelected = false
+                    TdapBoosterYesOutlet.isSelected = true
+                    
+                    tdapBoosterdoseDate.isEnabled = true
+                    tdapBoosterdoseDate.text = dosetwo
+                    
+                }
+                if(radiosecond == "No"){
+                    
+                    TdapBoosterNoOutlet.isSelected = true
+                    TdapBoosterYesOutlet.isSelected = false
+                    
+                    tdapBoosterdoseDate.isEnabled = false
+                    tdapBoosterdoseDate.text = ""
+                    
+                }
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    func getMeaslesSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+//         measles (radiofirst,dateone,datetwo)
+            
+            let rs = try database.executeQuery("select radiofirst,dateone,datetwo from measles", values: nil)
+            while rs.next() {
+                
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let doseone = rs.string(forColumn: "dateone")
+                let dosetwo = rs.string(forColumn: "datetwo")
+                
+                
+                
+                if(radiofirst=="No"){
+                    
+                    measlesFirstdoseDate.isEnabled = false
+                    measlesSeconddoseDate.isEnabled = false
+                    MeaslesImmunisationNoOutlet.isSelected=true
+                    
+                    measlesFirstdoseDate.text = ""
+                    measlesSeconddoseDate.text = ""
+                    
+                    
+                    
+                }
+                
+                
+                if(radiofirst=="Yes"){
+                    
+                    measlesFirstdoseDate.isEnabled = true
+                    measlesSeconddoseDate.isEnabled = true
+                    MeaslesImmunisationYesOutlet.isSelected=true
+                    
+                    measlesFirstdoseDate.text = doseone
+                    measlesSeconddoseDate.text = dosetwo
+                    
+                }
+              
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    func getMeningocoSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            //         measles (radiofirst,dateone,datetwo)
+            
+            let rs = try database.executeQuery("select radiofirst,dateone,datetwo from meningoco", values: nil)
+            while rs.next() {
+                
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let doseone = rs.string(forColumn: "dateone")
+                let dosetwo = rs.string(forColumn: "datetwo")
+                
+                
+                
+                if(radiofirst=="No"){
+                    
+                    meningocoFirstdoseDate.isEnabled = false
+                    meningocoSeconddoseDate.isEnabled = false
+                    MeningocoImmunisationNoOutlet.isSelected=true
+                    
+                    meningocoFirstdoseDate.text = ""
+                    meningocoSeconddoseDate.text = ""
+                    
+                    
+                }
+                
+                
+                if(radiofirst=="Yes"){
+                    
+                    meningocoFirstdoseDate.isEnabled = true
+                    meningocoSeconddoseDate.isEnabled = true
+                    MeningocoImmunisationYesOutlet.isSelected=true
+                    
+                    meningocoFirstdoseDate.text = doseone
+                    meningocoSeconddoseDate.text = dosetwo
+                    
+                }
+                
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
     
     //***************set outlets for radiobuttons********
     
@@ -904,8 +1303,15 @@ class ImmunisationProfileViewController: UIViewController,UIScrollViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+//        setInfluenzaTableData()
 //        getInfluenzaSavedData()
         getHepatitisSavedData()
+        getInfluenzaSavedData()
+        getVaricellaSavedData()
+        getTdapSavedData()
+        getMeningocoSavedData()
+        getMeaslesSavedData()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
