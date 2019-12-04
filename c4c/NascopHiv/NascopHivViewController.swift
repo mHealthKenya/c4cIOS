@@ -13,6 +13,8 @@ class NascopHivViewController: UIViewController ,UITableViewDelegate, UITableVie
     let kHeaderSectionTag: Int = 6900;
     
     
+    @IBAction func subscribeBtn(_ sender: UIButton) {
+    }
     @IBOutlet weak var hivServiceLink: UITextView!
     @IBOutlet weak var fellowshipLink: UITextView!
     
@@ -224,5 +226,8 @@ class NascopHivViewController: UIViewController ,UITableViewDelegate, UITableVie
             self.tableView!.endUpdates()
         }
     }
+    
+   
+    
 
 }

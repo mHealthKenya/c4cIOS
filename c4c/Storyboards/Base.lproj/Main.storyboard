@@ -2600,16 +2600,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXI-ah-zgQ">
+                                <rect key="frame" x="40" y="530" width="295" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Subscribe to our services">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="subscribeBtn:" destination="5jN-M2-ee1" eventType="touchUpInside" id="8tc-Vv-spa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eEZ-iX-DPS" firstAttribute="top" secondItem="eHe-Vt-LEM" secondAttribute="bottom" constant="220" id="28M-hg-PkW"/>
+                            <constraint firstItem="hXI-ah-zgQ" firstAttribute="leading" secondItem="ixn-jl-h52" secondAttribute="leading" constant="40" id="3cX-yZ-X5Z"/>
                             <constraint firstItem="ixn-jl-h52" firstAttribute="trailing" secondItem="6h6-BR-Zhj" secondAttribute="trailing" constant="10" id="H4C-Ac-f7h"/>
+                            <constraint firstItem="hXI-ah-zgQ" firstAttribute="top" secondItem="6h6-BR-Zhj" secondAttribute="bottom" constant="20" id="Iu9-UR-0w5"/>
                             <constraint firstItem="eHe-Vt-LEM" firstAttribute="leading" secondItem="ixn-jl-h52" secondAttribute="leading" constant="10" id="KHQ-gY-RwN"/>
                             <constraint firstItem="eEZ-iX-DPS" firstAttribute="top" secondItem="6h6-BR-Zhj" secondAttribute="bottom" constant="268" id="KWq-wQ-rDc"/>
                             <constraint firstItem="yDa-Fr-5vE" firstAttribute="top" secondItem="X09-iG-6Qs" secondAttribute="top" id="Mld-DP-y47"/>
                             <constraint firstItem="eHe-Vt-LEM" firstAttribute="top" secondItem="6h6-BR-Zhj" secondAttribute="bottom" constant="10" id="Ure-b5-kxM"/>
                             <constraint firstItem="eEZ-iX-DPS" firstAttribute="top" secondItem="yDa-Fr-5vE" secondAttribute="bottom" constant="365" id="Vvf-je-h5f"/>
+                            <constraint firstItem="ixn-jl-h52" firstAttribute="trailing" secondItem="hXI-ah-zgQ" secondAttribute="trailing" constant="40" id="fzo-f2-6L1"/>
                             <constraint firstItem="ixn-jl-h52" firstAttribute="trailing" secondItem="eHe-Vt-LEM" secondAttribute="trailing" constant="10" id="iZ9-dP-wy1"/>
                             <constraint firstItem="ixn-jl-h52" firstAttribute="trailing" secondItem="vvg-rv-0lK" secondAttribute="trailing" constant="10" id="ibn-wi-849"/>
                             <constraint firstItem="yDa-Fr-5vE" firstAttribute="leading" secondItem="ixn-jl-h52" secondAttribute="leading" id="jOE-Qf-wXD"/>

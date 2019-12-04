@@ -11,12 +11,20 @@ import SCLAlertView
 
 class PendingVaccinationViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let vaccineName = ["vaccine name one", "vaccine name two", "vaccine name three","vaccine name four"]
-    let vaccineStatus = ["Pending", "Pending", "Pending","Pending"]
+    var vaccineName = [String]()
+    
+    var vaccineStatus = [String]()
     
     
     override func viewDidLoad() {
         self.title = "Pending Vaccination"
+        
+        getMeaslesSavedData()
+        getMeningocoSavedData()
+        getTdapSavedData()
+        getVaricellaSavedData()
+        getInfluenzaSavedData()
+        getHepatitisSavedData()
         
         
     }
@@ -61,5 +69,298 @@ class PendingVaccinationViewController: UIViewController, UICollectionViewDelega
         
         return cell
     }
+    
+    
+    
+    
+    
+    
+    //get saved data
+    func getHepatitisSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            
+            let rs = try database.executeQuery("select radiofirst,firstdate,radiosecond,seconddate from hpb", values: nil)
+            while rs.next() {
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let firstdate = rs.string(forColumn: "firstdate")
+                let radiosecond = rs.string(forColumn: "radiosecond")
+                let seconddate = rs.string(forColumn: "seconddate")
+                
+                
+                if(!(radiofirst!.isEmpty) && ((radiosecond!.isEmpty) || (firstdate!.isEmpty) || (seconddate!.isEmpty))){
+                    
+                    vaccineName.append("Hepatitis")
+                    vaccineStatus.append("Pending Vaccination")
+                    
+                }
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    func getInfluenzaSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            
+            let rs = try database.executeQuery("select gender,radiofirst,radiosecond,radiothird,dosedate from influenza", values: nil)
+            while rs.next() {
+                
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let radiosecond = rs.string(forColumn: "radiosecond")
+                let radiothird = rs.string(forColumn: "radiothird")
+                let dosedate = rs.string(forColumn: "dosedate")
+                
+                if(!(radiofirst!.isEmpty) && ((radiosecond!.isEmpty) || (radiothird!.isEmpty) || (dosedate!.isEmpty))){
+                    
+                    vaccineName.append("Influenza")
+                    vaccineStatus.append("Pending Vaccination")
+                    
+                }
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    
+    func getVaricellaSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            let rs = try database.executeQuery("select radiofirst,radiosecond,doseone,dosetwo from varicella", values: nil)
+            while rs.next() {
+                
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let radiosecond = rs.string(forColumn: "radiosecond")
+                let doseone = rs.string(forColumn: "doseone")
+                let dosetwo = rs.string(forColumn: "dosetwo")
+                
+                
+                if(!(radiofirst!.isEmpty) && ((radiosecond!.isEmpty) || (doseone!.isEmpty) || (dosetwo!.isEmpty))){
+                    
+                    vaccineName.append("Varicella")
+                    vaccineStatus.append("Pending Vaccination")
+                    
+                }
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    func getTdapSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            
+            let rs = try database.executeQuery("select radiofirst,radiosecond,dateone,datetwo from tdap", values: nil)
+            while rs.next() {
+                
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let radiosecond = rs.string(forColumn: "radiosecond")
+                let doseone = rs.string(forColumn: "dateone")
+                let dosetwo = rs.string(forColumn: "datetwo")
+                
+                if(!(radiofirst!.isEmpty) && ((radiosecond!.isEmpty) || (doseone!.isEmpty) || (dosetwo!.isEmpty))){
+                    
+                    vaccineName.append("Tdap")
+                    vaccineStatus.append("Pending Vaccination")
+                    
+                }
+                
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    func getMeaslesSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            //         measles (radiofirst,dateone,datetwo)
+            
+            let rs = try database.executeQuery("select radiofirst,dateone,datetwo from measles", values: nil)
+            while rs.next() {
+                
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let doseone = rs.string(forColumn: "dateone")
+                let dosetwo = rs.string(forColumn: "datetwo")
+                
+                if(!(radiofirst!.isEmpty) && ((doseone!.isEmpty) || (dosetwo!.isEmpty))){
+                    
+                    vaccineName.append("Measles")
+                    vaccineStatus.append("Pending Vaccination")
+                    
+                }
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    func getMeningocoSavedData(){
+        
+        
+        let fileURL = try! FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("userdb.sqlite")
+        
+        let database = FMDatabase(url: fileURL)
+        
+        guard database.open() else {
+            print("Unable to open database")
+            return
+        }
+        
+        do {
+            
+            //         measles (radiofirst,dateone,datetwo)
+            
+            let rs = try database.executeQuery("select radiofirst,dateone,datetwo from meningoco", values: nil)
+            while rs.next() {
+                
+                
+                let radiofirst = rs.string(forColumn: "radiofirst")
+                let doseone = rs.string(forColumn: "dateone")
+                let dosetwo = rs.string(forColumn: "datetwo")
+                
+                if(!(radiofirst!.isEmpty) && ((doseone!.isEmpty) || (dosetwo!.isEmpty))){
+                    
+                    vaccineName.append("Meningoco")
+                    vaccineStatus.append("Pending Vaccination")
+                    
+                }
+                
+            }
+        }
+        catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        database.close()
+        
+        
+    }
+    
     
 }
