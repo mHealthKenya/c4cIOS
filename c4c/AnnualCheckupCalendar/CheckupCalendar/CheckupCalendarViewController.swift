@@ -8,11 +8,12 @@
 
 import UIKit
 
-class CheckupCalendarViewController: UIViewController {
+class CheckupCalendarViewController: UIViewController,UIScrollViewDelegate {
     
     let dateOfCheckupPicker = UIDatePicker()
     
     
+    @IBOutlet weak var myscrollview: UIScrollView!
     
     @IBAction func saveCheckup(_ sender: Any) {
         
@@ -23,20 +24,20 @@ class CheckupCalendarViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Checkup Calendar"
         setDateOfCheckup()
+        myscrollview.delegate = self
         
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x != 0 {
+            
+            scrollView.contentOffset.x = 0
+            
+        }
     }
-    */
 
 }

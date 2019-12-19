@@ -36,6 +36,7 @@
 		3E80A7C72391153600B68D8F /* NascopHivExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80A7C62391153600B68D8F /* NascopHivExtension.swift */; };
 		3E80A7C92391155C00B68D8F /* NascopHivTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80A7C82391155C00B68D8F /* NascopHivTableViewCell.swift */; };
 		3E80A7CB239131CE00B68D8F /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80A7CA239131CE00B68D8F /* NSAttributedStringExtension.swift */; };
+		3E81A24623A67E1D00B71F3D /* BroadcastScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E81A24523A67E1D00B71F3D /* BroadcastScrollViewController.swift */; };
 		3E89CEE923682FCA00EABDF2 /* ImmunisationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */; };
 		3EA9354D237BE5AB00639789 /* VaccinatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9354C237BE5AB00639789 /* VaccinatedViewController.swift */; };
 		3EA9354F237BE60900639789 /* VaccinatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9354E237BE60900639789 /* VaccinatedCollectionViewCell.swift */; };
@@ -113,6 +114,7 @@
 		3E80A7C62391153600B68D8F /* NascopHivExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NascopHivExtension.swift; sourceTree = "<group>"; };
 		3E80A7C82391155C00B68D8F /* NascopHivTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NascopHivTableViewCell.swift; sourceTree = "<group>"; };
 		3E80A7CA239131CE00B68D8F /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
+		3E81A24523A67E1D00B71F3D /* BroadcastScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastScrollViewController.swift; sourceTree = "<group>"; };
 		3E89CEE823682FCA00EABDF2 /* ImmunisationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmunisationProfileViewController.swift; sourceTree = "<group>"; };
 		3EA9354C237BE5AB00639789 /* VaccinatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinatedViewController.swift; sourceTree = "<group>"; };
 		3EA9354E237BE60900639789 /* VaccinatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinatedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				3EBA242F238BB20200D03AE9 /* BroadcastViewController.swift */,
+				3E81A24523A67E1D00B71F3D /* BroadcastScrollViewController.swift */,
 			);
 			path = Broadcast;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				3E80A7C52391151300B68D8F /* NascopHivViewController.swift in Sources */,
 				3E18B22C2258C0480094117B /* SignupController.swift in Sources */,
 				3EB72CFA23850AAD004F5607 /* NotVaccinatedViewController.swift in Sources */,
+				3E81A24623A67E1D00B71F3D /* BroadcastScrollViewController.swift in Sources */,
 				3E18B2342258D46F0094117B /* Data.swift in Sources */,
 				3ECFC4A82264602B00DE7414 /* LandingpageController.swift in Sources */,
 				3EB72CFC23850B41004F5607 /* NotVaccinatedCollectionViewCell.swift in Sources */,

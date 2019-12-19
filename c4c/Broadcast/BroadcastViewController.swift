@@ -11,7 +11,7 @@ import SCLAlertView
 import Alamofire
 import SwiftyJSON
 
-class BroadcastViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
+class BroadcastViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource ,UIScrollViewDelegate{
     
     
     let dateOfBroadcastpicker = UIDatePicker()
@@ -27,6 +27,16 @@ class BroadcastViewController: UIViewController,UITextFieldDelegate,UIPickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x != 0 {
+            
+            scrollView.contentOffset.x = 0
+            
+        }
+    }
+    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(currentTextField==broadcastCadre){
@@ -105,6 +115,7 @@ class BroadcastViewController: UIViewController,UITextFieldDelegate,UIPickerView
     }
     
     
+    @IBOutlet weak var myscrollview: UIScrollView!
     
     @IBOutlet weak var broadcastTitle: UITextField!
     
@@ -120,6 +131,7 @@ class BroadcastViewController: UIViewController,UITextFieldDelegate,UIPickerView
         
         self.title="Broadcast"
         setDateOfBroadcast()
+         myscrollview.delegate = self
 
         // Do any additional setup after loading the view.
     }
